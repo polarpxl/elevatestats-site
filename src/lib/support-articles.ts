@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import GithubSlugger from 'github-slugger'
 import matter from 'gray-matter'
-import type { SupportCategoryId } from '@/lib/support'
+import { calculateReadTime, type SupportCategoryId } from '@/lib/support'
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/support')
 
@@ -35,7 +35,7 @@ function readAllArticles(): RawArticle[] {
         category: data.category as SupportCategoryId,
         order: Number(data.order ?? 0),
         updated: String(data.updated ?? ''),
-        readTime: Number(data.readTime ?? 0),
+        readTime: calculateReadTime(content),
       },
       body: content,
     }

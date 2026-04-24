@@ -39,4 +39,23 @@ export const toneBgClass: Record<CategoryTone, string> = {
   gray: 'bg-brand-gray',
 }
 
+const WORDS_PER_MINUTE = 180
+
+export function calculateReadTime(content: string): number {
+  const stripped = content
+    // Fenced code blocks
+    .replace(/```[\s\S]*?```/g, '')
+    // Inline code
+    .replace(/`[^`]*`/g, '')
+    // Self-closing JSX/MDX component tags (<YouTubeEmbed id="..." />)
+    .replace(/<[A-Za-z][^>]*\/>/g, '')
+    // Opening and closing JSX/MDX tags — keep their inner text
+    .replace(/<\/?[A-Za-z][^>]*>/g, '')
+    // Markdown image syntax
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+
+  const words = stripped.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.ceil(words / WORDS_PER_MINUTE))
+}
+
 
