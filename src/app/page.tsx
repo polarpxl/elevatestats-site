@@ -1,3 +1,4 @@
+import { BlogPreview } from '@/components/sections/BlogPreview'
 import { CtaPanel } from '@/components/sections/CtaPanel'
 import { FeaturesBento } from '@/components/sections/FeaturesBento'
 import { Hero } from '@/components/sections/Hero'
@@ -17,6 +18,7 @@ export default function Home() {
         <UseCases />
         <Testimonials />
         <CtaPanel />
+        <BlogPreview />
       </main>
     </>
   )
