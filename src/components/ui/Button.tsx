@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { cn } from '@/lib/cn'
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'onDark'
+type Variant = 'primary' | 'secondary' | 'ghost' | 'onDark' | 'onBrand'
 type Size = 'md' | 'lg'
 
 const base =
@@ -13,6 +13,7 @@ const variants: Record<Variant, string> = {
   secondary: 'bg-white text-ink ring-1 ring-black/10 hover:bg-surface-alt',
   ghost: 'text-ink hover:bg-black/5',
   onDark: 'bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/15',
+  onBrand: 'bg-white text-brand-orange shadow-lg shadow-black/10 hover:bg-white/95',
 }
 
 const sizes: Record<Size, string> = {

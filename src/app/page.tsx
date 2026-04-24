@@ -1,6 +1,7 @@
 import { BlogPreview } from '@/components/sections/BlogPreview'
 import { CtaPanel } from '@/components/sections/CtaPanel'
 import { FeaturesBento } from '@/components/sections/FeaturesBento'
+import { FooterCta } from '@/components/sections/FooterCta'
 import { Hero } from '@/components/sections/Hero'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { Nav } from '@/components/sections/Nav'
@@ -20,6 +21,7 @@ export default function Home() {
         <CtaPanel />
         <BlogPreview />
       </main>
+      <FooterCta />
     </>
   )
 }
