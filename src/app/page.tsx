@@ -2,6 +2,7 @@ import { FeaturesBento } from '@/components/sections/FeaturesBento'
 import { Hero } from '@/components/sections/Hero'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { Nav } from '@/components/sections/Nav'
+import { Testimonials } from '@/components/sections/Testimonials'
 import { UseCases } from '@/components/sections/UseCases'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <FeaturesBento />
         <HowItWorks />
         <UseCases />
+        <Testimonials />
       </main>
     </>
   )
