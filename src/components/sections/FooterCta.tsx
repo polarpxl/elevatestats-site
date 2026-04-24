@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
+import { cn } from '@/lib/cn'
 import { links } from '@/lib/links'
 
 type FooterLink = { label: string; href: string; internal: boolean }
@@ -69,7 +70,43 @@ function LinkColumn({ heading, items }: { heading: string; items: FooterLink[] }
   )
 }
 
-function GradientCta() {
+type GradientCtaContent = {
+  eyebrow?: string
+  headline: string
+  subhead: string
+  primaryCtaLabel: string
+  primaryCtaHref: string
+  secondaryLabel?: string
+  secondaryHref?: string
+}
+
+function SecondaryLink({ label, href }: { label: string; href: string }) {
+  const classes =
+    'inline-flex items-center gap-1 font-heading text-sm font-semibold text-white underline-offset-4 transition-colors hover:underline'
+  if (/^https?:\/\//i.test(href)) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={classes}>
+        {label}
+      </a>
+    )
+  }
+  return (
+    <Link href={href} className={classes}>
+      {label}
+    </Link>
+  )
+}
+
+function GradientCta({
+  eyebrow,
+  headline,
+  subhead,
+  primaryCtaLabel,
+  primaryCtaHref,
+  secondaryLabel,
+  secondaryHref,
+}: GradientCtaContent) {
+  const hasSecondary = Boolean(secondaryLabel && secondaryHref)
   return (
     <section
       className="relative overflow-hidden py-20 md:py-28"
@@ -78,7 +115,6 @@ function GradientCta() {
           'linear-gradient(135deg, #FF6600 0%, #FF3D7F 55%, #00BFFF 100%)',
       }}
     >
-      {/* subtle noise-like darker radial for depth */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -88,20 +124,36 @@ function GradientCta() {
         }}
       />
       <Container className="relative text-center">
-        <h2 className="font-heading text-3xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl">
-          Ready to elevate your game?
+        {eyebrow && (
+          <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
+            {eyebrow}
+          </p>
+        )}
+        <h2
+          className={cn(
+            'font-heading text-3xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-6xl',
+            eyebrow && 'mt-4',
+          )}
+        >
+          {headline}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-lg text-white/90">
-          Your next whistle is the right time. Free forever plan, no card required.
-        </p>
-        <div className="mt-8 flex justify-center">
-          <Button href={links.appHome} variant="onBrand" size="lg">
-            Start free
+        <p className="mx-auto mt-5 max-w-xl text-lg text-white/90">{subhead}</p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4">
+          <Button href={primaryCtaHref} variant="onBrand" size="lg">
+            {primaryCtaLabel}
           </Button>
+          {hasSecondary && <SecondaryLink label={secondaryLabel!} href={secondaryHref!} />}
         </div>
       </Container>
     </section>
   )
+}
+
+const DEFAULT_GRADIENT: GradientCtaContent = {
+  headline: 'Ready to elevate your game?',
+  subhead: 'Your next whistle is the right time. Free forever plan, no card required.',
+  primaryCtaLabel: 'Start free',
+  primaryCtaHref: links.appHome,
 }
 
 function Footer() {
@@ -145,10 +197,11 @@ function Footer() {
   )
 }
 
-export function FooterCta() {
+export function FooterCta(props: Partial<GradientCtaContent> = {}) {
+  const content: GradientCtaContent = { ...DEFAULT_GRADIENT, ...props }
   return (
     <>
-      <GradientCta />
+      <GradientCta {...content} />
       <Footer />
     </>
   )
