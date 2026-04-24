@@ -20,7 +20,7 @@ export function CtaPanel() {
 
           <div className="relative grid items-center gap-10 text-center md:grid-cols-2 md:gap-12 md:text-left">
             <div>
-              <h2 className="font-heading text-3xl font-extrabold leading-[1.05] tracking-tight md:text-5xl">
+              <h2 className="font-heading text-3xl font-extrabold leading-[1.05] tracking-tight md:text-4xl lg:text-5xl">
                 The rink is waiting.
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-lg text-white/70 md:mx-0">
