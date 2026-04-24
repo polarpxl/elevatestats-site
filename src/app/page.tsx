@@ -1,3 +1,4 @@
+import { FeaturesBento } from '@/components/sections/FeaturesBento'
 import { Hero } from '@/components/sections/Hero'
 import { Nav } from '@/components/sections/Nav'
 
@@ -7,6 +8,7 @@ export default function Home() {
       <Nav />
       <main className="pt-16 md:pt-20">
         <Hero />
+        <FeaturesBento />
       </main>
     </>
   )
