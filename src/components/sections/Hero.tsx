@@ -101,8 +101,8 @@ export function Hero() {
               float={{ duration: 7, delay: 0, travel: 10 }}
               className="absolute left-1/2 top-0 z-10 w-[58%] -translate-x-1/2 md:w-[55%]"
             >
-              <div className="rounded-[2.25rem] bg-surface-dark p-[6px] shadow-2xl ring-1 ring-white/10">
-                <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.85rem] bg-black">
+              <div className="rounded-[2.75rem] bg-surface-dark p-[10px] shadow-2xl ring-1 ring-white/10">
+                <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2.1rem] bg-black">
                   <Image
                     src={heroStatBars}
                     alt="Player stat bar chart in the Elevate Hockey Stats app"
@@ -120,7 +120,7 @@ export function Hero() {
               float={{ duration: 5.5, delay: 0.6, travel: 8 }}
               className="absolute right-[-2%] top-[6%] z-20 w-[40%]"
             >
-              <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
+              <div className="ui-tile overflow-hidden rounded-2xl bg-white">
                 <Image
                   src={heroTrackingWheel}
                   alt="Shot-tracking wheel showing rink zones"
@@ -136,7 +136,7 @@ export function Hero() {
               float={{ duration: 6.5, delay: 1.1, travel: 12 }}
               className="absolute left-[-6%] bottom-[6%] z-20 w-[54%]"
             >
-              <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
+              <div className="ui-tile overflow-hidden rounded-2xl bg-white">
                 <Image
                   src={heroAiInsights}
                   alt="AI-generated coaching insights card"
