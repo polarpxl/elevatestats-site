@@ -201,7 +201,7 @@ function SocialLinks() {
   const visible = entries.filter((e) => e.href)
   if (visible.length === 0) return null
   return (
-    <ul className="mt-6 flex items-center gap-5">
+    <ul className="mt-6 flex items-center gap-6">
       {visible.map(({ label, href, Icon }) => (
         <li key={label}>
           <a
@@ -211,7 +211,7 @@ function SocialLinks() {
             aria-label={`Elevate Hockey Stats on ${label}`}
             className="inline-flex text-white/70 transition-colors hover:text-white"
           >
-            <Icon className="h-5 w-5" />
+            <Icon className="h-6 w-6" />
           </a>
         </li>
       ))}
@@ -243,7 +243,7 @@ function Footer() {
           <LinkColumn heading="Legal" items={legalLinks} />
         </div>
 
-        <div className="safe-bottom mt-16 flex flex-col items-start gap-2 border-t border-white/10 pt-6 pb-16 text-sm text-white/60 md:flex-row md:items-center md:justify-between md:pb-20">
+        <div className="safe-bottom mt-16 flex flex-col items-start gap-2 border-t border-white/10 pt-6 pb-24 text-sm text-white/60 md:flex-row md:items-center md:justify-between md:pb-28">
           <p>Made in Canada.</p>
           <p>&copy; 2026 Elevate Sports Labs Inc.</p>
         </div>
