@@ -1,14 +1,17 @@
+import Image, { type StaticImageData } from 'next/image'
 import { Container } from '@/components/ui/Container'
-import { Placeholder } from '@/components/ui/Placeholder'
 
-type Tone = 'orange' | 'blue' | 'gray'
+import howitworksSignup from '../../../public/app/howitworks-signup.webp'
+import howitworksRoster from '../../../public/app/howitworks-roster.webp'
+import howitworksTracking from '../../../public/app/howitworks-tracking.webp'
 
 type Step = {
   number: string
   title: string
   body: string
-  tone: Tone
-  placeholderLabel: string
+  image: StaticImageData
+  imageAlt: string
+  imageSizes: string
   Icon: (props: { className?: string }) => React.ReactElement
 }
 
@@ -69,29 +72,34 @@ function TargetRinkIcon({ className }: { className?: string }) {
   )
 }
 
+const STEP_SIZES = '(min-width: 1024px) 230px, (min-width: 768px) 180px, 100vw'
+
 const steps: Step[] = [
   {
     number: '01',
     title: 'Sign up, free.',
     body: 'Three free Pro games. No credit card, no account required for players or parents. Just an email to get started.',
-    tone: 'blue',
-    placeholderLabel: 'Signup UI placeholder',
+    image: howitworksSignup,
+    imageAlt: 'Email signup form for Elevate Hockey Stats',
+    imageSizes: STEP_SIZES,
     Icon: EnvelopeIcon,
   },
   {
     number: '02',
     title: 'Add your team and opponents.',
     body: "Import rosters and opponent lists from a CSV, or add players manually if you're starting from scratch. Set up the rest of your season schedule whenever you're ready.",
-    tone: 'orange',
-    placeholderLabel: 'Roster card placeholder',
+    image: howitworksRoster,
+    imageAlt: 'Team roster card with player names',
+    imageSizes: STEP_SIZES,
     Icon: RosterIcon,
   },
   {
     number: '03',
     title: 'Track your first game.',
     body: 'Tap once per shift, dot the rink for shots. The app handles ice time, plus-minus, and line combinations automatically. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
-    tone: 'gray',
-    placeholderLabel: 'Tracking wheel placeholder',
+    image: howitworksTracking,
+    imageAlt: 'In-game tracking wheel for shot location entry',
+    imageSizes: STEP_SIZES,
     Icon: TargetRinkIcon,
   },
 ]
@@ -122,11 +130,11 @@ function StepRow({ step }: { step: Step }) {
 
       {/* UI snippet */}
       <div className="md:col-span-3">
-        <Placeholder
-          label={step.placeholderLabel}
-          tone={step.tone}
-          aspect="4/3"
-          className="ui-screenshot w-full rounded-2xl"
+        <Image
+          src={step.image}
+          alt={step.imageAlt}
+          sizes={step.imageSizes}
+          className="ui-screenshot h-auto w-full rounded-2xl"
         />
       </div>
     </div>
