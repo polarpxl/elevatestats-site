@@ -31,6 +31,22 @@ body {
 .safe-top { padding-top: env(safe-area-inset-top); }
 .safe-bottom { margin-bottom: env(safe-area-inset-bottom); }
 
+/* Circular gradient ring used by step icons in HowItWorks. White
+   inner fill so the SVG sits on a clean canvas. Pulls from the same
+   brand colour tokens as .ui-tile and .brand-underline. */
+.step-icon-ring {
+  border: 4px solid transparent;
+  border-radius: 9999px;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      135deg,
+      var(--color-brand-orange),
+      var(--color-brand-pink) 55%,
+      var(--color-brand-blue)
+    ) border-box;
+}
+
 /* Screenshot inside a feature card: soft drop shadow for depth.
    Same shadow as the hero .ui-tile minus the gradient border. Apply
    alongside rounded-2xl on the screenshot element. */

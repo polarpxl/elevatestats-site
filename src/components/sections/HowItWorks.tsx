@@ -1,6 +1,5 @@
 import { Container } from '@/components/ui/Container'
 import { Placeholder } from '@/components/ui/Placeholder'
-import { cn } from '@/lib/cn'
 
 type Tone = 'orange' | 'blue' | 'gray'
 
@@ -10,59 +9,125 @@ type Step = {
   body: string
   tone: Tone
   placeholderLabel: string
+  Icon: (props: { className?: string }) => React.ReactElement
+}
+
+function EnvelopeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x="3" y="5.5" width="18" height="13" rx="2" />
+      <path d="M3.5 7l8.5 6 8.5-6" />
+    </svg>
+  )
+}
+
+function RosterIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <rect x="4" y="4" width="16" height="17" rx="2" />
+      <path d="M9 3.5h6v3H9z" fill="currentColor" stroke="none" />
+      <path d="M8 11h8M8 14.5h8M8 18h5" />
+    </svg>
+  )
+}
+
+function TargetRinkIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5.5" />
+      <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+      <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3" />
+    </svg>
+  )
 }
 
 const steps: Step[] = [
   {
     number: '01',
     title: 'Sign up, free.',
-    body: 'Three free Pro games. No credit card. Just an email.',
+    body: 'Three free Pro games. No credit card, no account required for players or parents. Just an email to get started.',
     tone: 'blue',
-    placeholderLabel: 'Sign up placeholder',
+    placeholderLabel: 'Signup UI placeholder',
+    Icon: EnvelopeIcon,
   },
   {
     number: '02',
-    title: 'Add your team.',
-    body: 'Import a roster from a CSV or add players manually. No accounts needed for players or parents.',
+    title: 'Add your team and opponents.',
+    body: "Import rosters and opponent lists from a CSV, or add players manually if you're starting from scratch. Set up the rest of your season schedule whenever you're ready.",
     tone: 'orange',
-    placeholderLabel: 'Team setup placeholder',
+    placeholderLabel: 'Roster card placeholder',
+    Icon: RosterIcon,
   },
   {
     number: '03',
     title: 'Track your first game.',
-    body: 'Tap once per shift, dot the rink for shots. The app handles ice time, plus-minus, and line combinations automatically. AI insights drop in after the final whistle.',
+    body: 'Tap once per shift, dot the rink for shots. The app handles ice time, plus-minus, and line combinations automatically. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
     tone: 'gray',
-    placeholderLabel: 'Game tracking placeholder',
+    placeholderLabel: 'Tracking wheel placeholder',
+    Icon: TargetRinkIcon,
   },
 ]
 
-function StepRow({ step, index }: { step: Step; index: number }) {
-  // On md+, odd-indexed rows (0, 2) put the image on the right: flip order so text comes first.
-  // Even-indexed row (1) uses the natural order so image lands on the left.
-  const imageRight = index % 2 === 0
-
+function StepRow({ step }: { step: Step }) {
+  const { Icon } = step
   return (
-    <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-20">
-      <div className={cn(imageRight && 'md:order-2')}>
+    <div className="grid items-center gap-10 md:grid-cols-12 md:gap-8 lg:gap-12">
+      {/* Icon — circular gradient ring */}
+      <div className="flex justify-center md:col-span-3 md:justify-start">
+        <div className="step-icon-ring flex h-32 w-32 items-center justify-center md:h-36 md:w-36 lg:h-40 lg:w-40">
+          <Icon className="h-14 w-14 text-ink/80 md:h-16 md:w-16 lg:h-[72px] lg:w-[72px]" />
+        </div>
+      </div>
+
+      {/* Text */}
+      <div className="text-center md:col-span-6 md:text-left">
+        <p className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">
+          Step {step.number}
+        </p>
+        <h3 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight text-ink md:text-3xl">
+          {step.title}
+        </h3>
+        <p className="mx-auto mt-4 max-w-prose text-lg text-brand-gray md:mx-0">
+          {step.body}
+        </p>
+      </div>
+
+      {/* UI snippet */}
+      <div className="md:col-span-3">
         <Placeholder
           label={step.placeholderLabel}
           tone={step.tone}
           aspect="4/3"
-          className="w-full"
+          className="ui-screenshot w-full rounded-2xl"
         />
-      </div>
-
-      <div className={cn(imageRight && 'md:order-1')}>
-        <div
-          aria-hidden
-          className="font-heading text-6xl font-extrabold leading-none tracking-tight text-brand-orange/20 md:text-7xl"
-        >
-          {step.number}
-        </div>
-        <h3 className="mt-4 font-heading text-2xl font-bold leading-tight tracking-tight text-ink md:text-3xl">
-          {step.title}
-        </h3>
-        <p className="mt-4 text-lg text-brand-gray">{step.body}</p>
       </div>
     </div>
   )
@@ -84,9 +149,9 @@ export function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-16 flex flex-col gap-16 md:gap-24">
-          {steps.map((step, index) => (
-            <StepRow key={step.number} step={step} index={index} />
+        <div className="mt-16 flex flex-col gap-20 md:mt-20 md:gap-28">
+          {steps.map((step) => (
+            <StepRow key={step.number} step={step} />
           ))}
         </div>
       </Container>
