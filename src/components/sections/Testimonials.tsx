@@ -170,7 +170,13 @@ function MarqueeTrack() {
   )
 }
 
-export function Testimonials() {
+type TestimonialsProps = {
+  subhead?: string
+}
+
+const DEFAULT_SUBHEAD = 'The team trust we have earned, one Saturday morning rink at a time.'
+
+export function Testimonials({ subhead = DEFAULT_SUBHEAD }: TestimonialsProps = {}) {
   const prefersReducedMotion = useReducedMotion()
 
   return (
@@ -183,9 +189,7 @@ export function Testimonials() {
           <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl lg:text-5xl">
             Real coaches. Real benches. Real games.
           </h2>
-          <p className="mt-5 text-lg text-brand-gray">
-            The team trust we have earned, one Saturday morning rink at a time.
-          </p>
+          <p className="mt-5 text-lg text-brand-gray">{subhead}</p>
         </div>
       </Container>
 
