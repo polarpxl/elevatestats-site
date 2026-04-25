@@ -10,7 +10,6 @@ export const links = {
   // Internal marketing site pages
   pricing: '/pricing',
   features: '/features',
-  blog: '/blog',
   support: '/support',
   about: '/about',
   contact: '/contact',
