@@ -1,10 +1,14 @@
 'use client'
 
+import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { Placeholder } from '@/components/ui/Placeholder'
 import { links } from '@/lib/links'
+
+import heroAiInsights from '../../../public/app/hero-ai-insights.webp'
+import heroStatBars from '../../../public/app/hero-stat-bars.webp'
+import heroTrackingWheel from '../../../public/app/hero-tracking-wheel.webp'
 
 type FloatProps = {
   duration: number
@@ -46,7 +50,6 @@ function FloatCard({
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-surface-alt pt-12 pb-20 md:pt-20 md:pb-28 lg:pt-28 lg:pb-36">
-      {/* soft radial glow behind the image cluster */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -86,44 +89,62 @@ export function Hero() {
             <p className="mt-5 text-sm text-brand-gray/80">
               Free forever plan includes 3 pro-level games. No credit card.
             </p>
+            <p className="mt-2 text-sm text-brand-gray/70">
+              iPhone, iPad, web-based. No install.
+            </p>
           </div>
 
           {/* Image cluster column */}
-          <div className="relative mx-auto aspect-square w-full max-w-md md:max-w-none">
-            {/* Primary card: portrait, orange, centre-ish */}
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md md:max-w-none">
+            {/* Phone (dominant): stat-bars screenshot inside an abstract frame */}
             <FloatCard
               float={{ duration: 7, delay: 0, travel: 10 }}
-              className="absolute left-[10%] top-[8%] z-10 w-[60%] drop-shadow-xl"
+              className="absolute left-1/2 top-0 z-10 w-[58%] -translate-x-1/2 md:w-[55%]"
             >
-              <Placeholder
-                label="Stat entry UI placeholder"
-                tone="orange"
-                aspect="4/5"
-              />
+              <div className="rounded-[2.25rem] bg-surface-dark p-[6px] shadow-2xl ring-1 ring-white/10">
+                <div className="relative aspect-[9/19.5] overflow-hidden rounded-[1.85rem] bg-black">
+                  <Image
+                    src={heroStatBars}
+                    alt="Player stat bar chart in the Elevate Hockey Stats app"
+                    fill
+                    sizes="(min-width: 1024px) 280px, (min-width: 768px) 240px, 55vw"
+                    className="object-cover object-top"
+                    preload
+                  />
+                </div>
+              </div>
             </FloatCard>
 
-            {/* Secondary card: small square, blue, top-right */}
+            {/* Loose panel: tracking wheel (square), top-right */}
             <FloatCard
               float={{ duration: 5.5, delay: 0.6, travel: 8 }}
-              className="absolute right-[2%] top-[0%] z-20 w-[38%] drop-shadow-xl"
+              className="absolute right-[-2%] top-[6%] z-20 w-[40%]"
             >
-              <Placeholder
-                label="Live score placeholder"
-                tone="blue"
-                aspect="1/1"
-              />
+              <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
+                <Image
+                  src={heroTrackingWheel}
+                  alt="Shot-tracking wheel showing rink zones"
+                  sizes="(min-width: 1024px) 200px, (min-width: 768px) 170px, 38vw"
+                  className="h-auto w-full"
+                  preload
+                />
+              </div>
             </FloatCard>
 
-            {/* Tertiary card: wide rectangle, gray, bottom-left */}
+            {/* Loose panel: AI insights (landscape), bottom-left */}
             <FloatCard
               float={{ duration: 6.5, delay: 1.1, travel: 12 }}
-              className="absolute left-[0%] bottom-[4%] z-20 w-[52%] drop-shadow-xl"
+              className="absolute left-[-6%] bottom-[6%] z-20 w-[54%]"
             >
-              <Placeholder
-                label="Player card placeholder"
-                tone="gray"
-                aspect="3/2"
-              />
+              <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
+                <Image
+                  src={heroAiInsights}
+                  alt="AI-generated coaching insights card"
+                  sizes="(min-width: 1024px) 280px, (min-width: 768px) 230px, 52vw"
+                  className="h-auto w-full"
+                  preload
+                />
+              </div>
             </FloatCard>
           </div>
         </div>
