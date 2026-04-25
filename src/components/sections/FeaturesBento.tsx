@@ -20,7 +20,7 @@ const features: Feature[] = [
     tone: 'orange',
     placeholderLabel: 'Shot map placeholder',
     placeholderAspect: '16/10',
-    className: 'md:col-span-2 md:row-span-2',
+    className: 'md:col-span-7 md:row-span-2',
   },
   {
     title: 'AI insights after every game',
@@ -28,7 +28,7 @@ const features: Feature[] = [
     tone: 'blue',
     placeholderLabel: 'AI insights placeholder',
     placeholderAspect: '4/3',
-    className: '',
+    className: 'md:col-span-5',
   },
   {
     title: 'Tracks even with no signal',
@@ -36,7 +36,7 @@ const features: Feature[] = [
     tone: 'gray',
     placeholderLabel: 'Offline sync placeholder',
     placeholderAspect: '4/3',
-    className: '',
+    className: 'md:col-span-5',
   },
   {
     title: 'Goalies, done right',
@@ -44,7 +44,7 @@ const features: Feature[] = [
     tone: 'orange',
     placeholderLabel: 'Goalie stats placeholder',
     placeholderAspect: '4/3',
-    className: '',
+    className: 'md:col-span-7',
   },
   {
     title: 'Built for pond to pro',
@@ -52,7 +52,7 @@ const features: Feature[] = [
     tone: 'blue',
     placeholderLabel: 'Age group placeholder',
     placeholderAspect: '16/9',
-    className: 'md:col-span-2',
+    className: 'md:col-span-5',
   },
 ]
 
@@ -96,7 +96,7 @@ export function FeaturesBento() {
           </p>
         </div>
 
-        <div className="mt-12 grid auto-rows-[minmax(0,1fr)] grid-cols-1 gap-4 md:mt-16 md:grid-cols-3 md:gap-6">
+        <div className="mt-12 grid auto-rows-[minmax(0,1fr)] grid-cols-1 gap-4 md:mt-16 md:grid-cols-12 md:gap-6">
           {features.map((feature) => (
             <FeatureTile key={feature.title} feature={feature} />
           ))}
