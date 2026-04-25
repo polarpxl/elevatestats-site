@@ -9,34 +9,54 @@ type FaqEntry = { question: string; answer: string }
 
 const faqs: FaqEntry[] = [
   {
-    question: 'Does PRO auto-renew?',
+    question: 'What counts as a "Pro game" on the free tier?',
     answer:
-      'Yes. PRO is a monthly or yearly subscription that renews automatically. You can cancel anytime from the app settings.',
+      "Only finalized games count toward your 3-game Pro trial. Games you start but don't finalize don't burn a trial game, and games you delete before finalizing don't count either. The counter is per account, so creating a new team won't reset it.",
+  },
+  {
+    question: 'What happens after my 3 Pro games?',
+    answer:
+      "You drop to the Free tier automatically. You can keep tracking unlimited games at the team level forever. You'll lose access to player-level stats, AI insights, opponent analysis, full game history, and CSV import/export until you upgrade. Your data stays put. Nothing is deleted.",
+  },
+  {
+    question: 'Does Pro auto-renew?',
+    answer:
+      'Yes. Monthly Pro renews every month, yearly Pro renews every year, until you cancel. We send a reminder before any yearly renewal.',
   },
   {
     question: 'Can I cancel anytime?',
     answer:
-      "Yes. Cancel from the app and you'll keep PRO features until the end of your billing period.",
+      "Yes, in two taps from your account settings. You'll keep Pro access until the end of your current billing period, then drop to Free. No further charges.",
   },
   {
     question: 'Do you offer refunds?',
     answer:
-      "We don't issue refunds, but the free forever plan and three free PRO games mean you can try everything before you pay.",
+      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get 3 full Pro games to try everything before you pay. If Pro isn't working for you, cancel anytime in two taps and you won't be charged again.",
+  },
+  {
+    question: 'What happens to my data if I cancel?',
+    answer:
+      "Nothing. Your account stays active and all your game data stays in your account. You'll keep seeing team-level stats and your last 5 games. Player stats, AI insights, and full history get hidden until you re-subscribe, at which point everything reappears exactly as it was.",
   },
   {
     question: 'Why is pricing in CAD?',
     answer:
-      "Elevate Sports Labs is a Canadian company. All prices are in Canadian dollars. Your credit card handles the conversion automatically if you're outside Canada.",
+      "We're a Canadian company building for Canadian hockey first. Stripe handles the conversion automatically if your card is in another currency.",
   },
   {
     question: 'Do you have team or league plans?',
     answer:
-      "Not yet. We're focused on nailing the individual coach experience first. If you're running a whole league, reach out, we'd love to hear from you.",
+      "Yes. If you're a club, association, or league looking to roll out Elevate Stats across multiple teams, contact us and we'll put together a plan that fits.",
   },
   {
-    question: 'What counts as a PRO game on the free tier?',
+    question: 'Can I export my data?',
     answer:
-      'Any game you record using PRO features (AI insights, shot maps, advanced stats) counts against your three free PRO games. Basic tracking is always unlimited.',
+      'Pro users can export every game, roster, and stat to CSV. Free users can’t export. If you upgrade, then cancel, you can re-subscribe later to export. Your data is always there waiting.',
+  },
+  {
+    question: 'How do I delete my account?',
+    answer:
+      "Account deletion is available from your account settings. This permanently deletes all your data and can't be undone. Contact us if you need help.",
   },
 ]
 
