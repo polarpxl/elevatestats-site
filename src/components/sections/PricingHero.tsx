@@ -1,10 +1,8 @@
-import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { links } from '@/lib/links'
 
 export function PricingHero() {
   return (
-    <section className="relative overflow-hidden bg-surface-alt pt-20 pb-20 md:pt-32 md:pb-28">
+    <section className="relative overflow-hidden bg-surface-alt pt-20 pb-10 md:pt-32 md:pb-14">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
@@ -28,11 +26,6 @@ export function PricingHero() {
           Includes a <span className="font-semibold text-brand-orange">3-game Pro trial</span>.
           No credit card. No clock.
         </p>
-        <div className="mt-8 flex justify-center">
-          <Button href={links.appSignup} variant="primary" size="lg">
-            Get started free
-          </Button>
-        </div>
       </Container>
     </section>
   )
