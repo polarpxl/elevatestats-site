@@ -133,7 +133,9 @@ export function Nav() {
               <img
                 src="/brand/logo-primary.svg"
                 alt="Elevate Hockey Stats"
-                className="h-8 w-auto md:h-9"
+                width={600}
+                height={273}
+                className="h-auto w-[110px] md:w-[140px]"
               />
             </Link>
 
