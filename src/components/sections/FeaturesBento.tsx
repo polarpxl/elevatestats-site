@@ -20,7 +20,7 @@ const features: Feature[] = [
     tone: 'orange',
     placeholderLabel: 'Shot map placeholder',
     placeholderAspect: '16/10',
-    className: 'md:col-span-7 md:row-span-2',
+    className: 'md:col-span-7',
   },
   {
     title: 'AI insights after every game',
@@ -36,7 +36,7 @@ const features: Feature[] = [
     tone: 'gray',
     placeholderLabel: 'Offline sync placeholder',
     placeholderAspect: '4/3',
-    className: 'md:col-span-5',
+    className: 'md:col-span-4',
   },
   {
     title: 'Goalies, done right',
@@ -44,15 +44,23 @@ const features: Feature[] = [
     tone: 'orange',
     placeholderLabel: 'Goalie stats placeholder',
     placeholderAspect: '4/3',
-    className: 'md:col-span-7',
+    className: 'md:col-span-4',
+  },
+  {
+    title: 'Every player, on the page',
+    body: 'Individual stats, shot maps, performance trends. See how each player is actually doing, not just the team total.',
+    tone: 'blue',
+    placeholderLabel: 'Player stats placeholder',
+    placeholderAspect: '4/3',
+    className: 'md:col-span-4',
   },
   {
     title: 'Built for pond to pro',
     body: 'From U9 house league to Junior A. Same app, same workflow.',
-    tone: 'blue',
+    tone: 'gray',
     placeholderLabel: 'Age group placeholder',
-    placeholderAspect: '16/9',
-    className: 'md:col-span-5',
+    placeholderAspect: '21/9',
+    className: 'md:col-span-12 md:p-10 lg:p-12',
   },
 ]
 
