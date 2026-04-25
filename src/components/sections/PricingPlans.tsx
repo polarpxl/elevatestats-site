@@ -27,9 +27,11 @@ function CheckIcon() {
 function BillingToggle({
   period,
   onChange,
+  savingsLabel,
 }: {
   period: BillingPeriod
   onChange: (p: BillingPeriod) => void
+  savingsLabel: string | null
 }) {
   return (
     <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
@@ -60,15 +62,16 @@ function BillingToggle({
           </button>
         ))}
       </div>
-      <span className="inline-flex items-center rounded-full bg-brand-orange/10 px-2.5 py-1 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange">
-        Save 17%
-      </span>
+      {savingsLabel && (
+        <span className="inline-flex items-center rounded-full bg-brand-orange/10 px-2.5 py-1 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange">
+          {savingsLabel}
+        </span>
+      )}
     </div>
   )
 }
 
 function formatMonthlyEquivalent(priceYearly: number): string {
-  // Exact figure, two-decimal format, so the savings math reads truthfully.
   return (priceYearly / 12).toLocaleString('en-CA', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -76,9 +79,20 @@ function formatMonthlyEquivalent(priceYearly: number): string {
 }
 
 function PriceBlock({ plan, period }: { plan: Plan; period: BillingPeriod }) {
-  const isFree = plan.priceMonthly === 0 && plan.priceYearly === 0
+  if (plan.priceCustomLabel) {
+    return (
+      <div className="mt-6">
+        <span className="font-heading text-5xl font-extrabold text-ink">
+          {plan.priceCustomLabel}
+        </span>
+        {plan.subPriceLine && (
+          <p className="mt-2 text-sm text-brand-gray">{plan.subPriceLine}</p>
+        )}
+      </div>
+    )
+  }
 
-  if (isFree) {
+  if (plan.priceMonthly === 0 && plan.priceYearly === 0) {
     return (
       <div className="mt-6 flex items-baseline gap-2">
         <span className="font-heading text-5xl font-extrabold text-ink">$0</span>
@@ -94,26 +108,36 @@ function PriceBlock({ plan, period }: { plan: Plan; period: BillingPeriod }) {
           <span className="font-heading text-5xl font-extrabold text-ink">
             ${plan.priceMonthly}
           </span>
-          <span className="text-brand-gray">/mo</span>
+          <span className="text-brand-gray">{plan.currency} /mo</span>
         </div>
-        <p className="mt-1 text-sm text-brand-gray">Billed monthly in {plan.currency}.</p>
+        {plan.subPriceLine && (
+          <p className="mt-2 text-sm text-brand-gray">{plan.subPriceLine}</p>
+        )}
       </div>
     )
   }
 
   const monthlyEquivalent = formatMonthlyEquivalent(plan.priceYearly)
-  const savings = 'yearlySavingsPercent' in plan ? plan.yearlySavingsPercent : 0
   return (
     <div className="mt-6">
       <div className="flex items-baseline gap-2">
         <span className="font-heading text-5xl font-extrabold text-ink">
           ${plan.priceYearly}
         </span>
-        <span className="text-brand-gray">/year</span>
+        <span className="text-brand-gray">{plan.currency} /year</span>
       </div>
-      <p className="mt-1 text-sm text-brand-gray">
-        That&rsquo;s ${monthlyEquivalent}/mo billed annually. Save {savings}%.
-      </p>
+      <p className="mt-1 text-sm text-brand-gray">Works out to ${monthlyEquivalent}/mo.</p>
+      {plan.subPriceLine && (
+        <p className="mt-2 text-sm text-brand-gray">{plan.subPriceLine}</p>
+      )}
+    </div>
+  )
+}
+
+function TrialStrip() {
+  return (
+    <div className="mt-5 rounded-full bg-brand-orange/10 px-4 py-2 text-center font-heading text-sm font-semibold text-brand-orange">
+      Includes 3 free Pro games to start
     </div>
   )
 }
@@ -122,16 +146,19 @@ function PlanCard({
   plan,
   period,
   popular = false,
+  orderClass,
 }: {
   plan: Plan
   period: BillingPeriod
   popular?: boolean
+  orderClass: string
 }) {
   return (
     <article
       className={cn(
         'relative flex flex-col rounded-card bg-white p-6 shadow-sm md:p-8',
-        popular ? 'ring-2 ring-brand-orange/40' : 'ring-1 ring-black/5',
+        popular ? 'ring-2 ring-brand-orange/40 md:-translate-y-2' : 'ring-1 ring-black/5',
+        orderClass,
       )}
     >
       {popular && (
@@ -145,7 +172,10 @@ function PlanCard({
 
       <PriceBlock plan={plan} period={period} />
 
-      <ul className="mt-6 flex flex-col gap-3">
+      {plan.showTrialStrip && <TrialStrip />}
+
+      <p className="mt-6 font-heading text-sm font-semibold text-ink">{plan.featuresIntro}</p>
+      <ul className="mt-3 flex flex-col gap-3">
         {plan.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2 text-sm text-ink">
             <CheckIcon />
@@ -168,17 +198,23 @@ function PlanCard({
 
 export function PricingPlans() {
   const [period, setPeriod] = useState<BillingPeriod>('monthly')
+  const savingsLabel =
+    period === 'yearly' && pricing.pro.yearlySavingsAmount
+      ? `Save $${pricing.pro.yearlySavingsAmount}`
+      : null
 
   return (
     <section className="bg-surface-alt pb-20 md:pb-28">
       <Container>
         <div className="flex justify-center">
-          <BillingToggle period={period} onChange={setPeriod} />
+          <BillingToggle period={period} onChange={setPeriod} savingsLabel={savingsLabel} />
         </div>
 
-        <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-6 md:mt-14 md:grid-cols-2">
-          <PlanCard plan={pricing.free} period={period} />
-          <PlanCard plan={pricing.pro} period={period} popular />
+        {/* Mobile order: Pro -> Free -> Teams. Desktop order: Free | Pro | Teams. */}
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 md:mt-14 md:grid-cols-3 md:items-start">
+          <PlanCard plan={pricing.free} period={period} orderClass="order-2 md:order-1" />
+          <PlanCard plan={pricing.pro} period={period} popular orderClass="order-1 md:order-2" />
+          <PlanCard plan={pricing.teams} period={period} orderClass="order-3 md:order-3" />
         </div>
       </Container>
     </section>
