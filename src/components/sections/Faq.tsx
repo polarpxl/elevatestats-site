@@ -9,29 +9,29 @@ type FaqEntry = { question: string; answer: string }
 
 const faqs: FaqEntry[] = [
   {
-    question: 'What counts as a "Pro game" on the free tier?',
+    question: 'What counts as a "PRO game" on the free tier?',
     answer:
-      "Only finalized games count toward your 3-game Pro trial. Games you start but don't finalize don't burn a trial game, and games you delete before finalizing don't count either. The counter is per account, so creating a new team won't reset it.",
+      "Only finalized games count toward your 3-game PRO trial. Games you start but don't finalize don't burn a trial game, and games you delete before finalizing don't count either. The counter is per account, so creating a new team won't reset it.",
   },
   {
-    question: 'What happens after my 3 Pro games?',
+    question: 'What happens after my 3 PRO games?',
     answer:
       "You drop to the Free tier automatically. You can keep tracking unlimited games at the team level forever. You'll lose access to player-level stats, AI insights, opponent analysis, full game history, and CSV import/export until you upgrade. Your data stays put. Nothing is deleted.",
   },
   {
-    question: 'Does Pro auto-renew?',
+    question: 'Does PRO auto-renew?',
     answer:
-      'Yes. Monthly Pro renews every month, yearly Pro renews every year, until you cancel. We send a reminder before any yearly renewal.',
+      'Yes. Monthly PRO renews every month, yearly PRO renews every year, until you cancel. We send a reminder before any yearly renewal.',
   },
   {
     question: 'Can I cancel anytime?',
     answer:
-      "Yes, in two taps from your account settings. You'll keep Pro access until the end of your current billing period, then drop to Free. No further charges.",
+      "Yes, in two taps from your account settings. You'll keep PRO access until the end of your current billing period, then drop to Free. No further charges.",
   },
   {
     question: 'Do you offer refunds?',
     answer:
-      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get 3 full Pro games to try everything before you pay. If Pro isn't working for you, cancel anytime in two taps and you won't be charged again.",
+      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get 3 full PRO games to try everything before you pay. If PRO isn't working for you, cancel anytime in two taps and you won't be charged again.",
   },
   {
     question: 'What happens to my data if I cancel?',
@@ -51,7 +51,7 @@ const faqs: FaqEntry[] = [
   {
     question: 'Can I export my data?',
     answer:
-      'Pro users can export every game, roster, and stat to CSV. Free users can’t export. If you upgrade, then cancel, you can re-subscribe later to export. Your data is always there waiting.',
+      'PRO users can export every game, roster, and stat to CSV. Free users can’t export. If you upgrade, then cancel, you can re-subscribe later to export. Your data is always there waiting.',
   },
   {
     question: 'How do I delete my account?',

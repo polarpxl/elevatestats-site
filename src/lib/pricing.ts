@@ -41,7 +41,7 @@ const free: Plan = {
 
 const pro: Plan = {
   key: 'pro',
-  name: 'Pro',
+  name: 'PRO',
   tagline: 'The complete coaching tool',
   priceMonthly: 14,
   priceYearly: 109,
@@ -57,7 +57,7 @@ const pro: Plan = {
     'Full game history',
   ],
   subPriceLine: 'Cancel anytime. Billed in CAD.',
-  ctaLabel: 'Upgrade to Pro',
+  ctaLabel: 'Upgrade to PRO',
   ctaHref: links.appSignupPro,
 }
 
@@ -71,7 +71,7 @@ const teams: Plan = {
   currency: 'CAD',
   featuresIntro: "What's included:",
   features: [
-    'Everything in Pro for every coach',
+    'Everything in PRO for every coach',
     'Centralized billing',
     'Onboarding support',
     'Priority email support',

@@ -137,7 +137,7 @@ function PriceBlock({ plan, period }: { plan: Plan; period: BillingPeriod }) {
 function TrialStrip() {
   return (
     <div className="mt-5 rounded-full bg-brand-orange/10 px-4 py-2 text-center font-heading text-sm font-semibold text-brand-orange">
-      Includes 3 free Pro games to start
+      Includes 3 free PRO games to start
     </div>
   )
 }
@@ -156,8 +156,8 @@ function PlanCard({
   return (
     <article
       className={cn(
-        'relative flex h-full flex-col rounded-card bg-white p-6 shadow-sm md:p-8',
-        popular ? 'ring-2 ring-brand-orange/40' : 'ring-1 ring-black/5',
+        'relative flex h-full flex-col rounded-card p-6 md:p-8',
+        popular ? 'ui-tile' : 'bg-white shadow-sm ring-1 ring-black/5',
         orderClass,
       )}
     >
@@ -208,7 +208,7 @@ export function PricingPlans() {
           <BillingToggle period={period} onChange={setPeriod} />
         </div>
 
-        {/* Mobile order: Pro -> Free -> Teams. Desktop order: Free | Pro | Teams. */}
+        {/* Mobile order: PRO -> Free -> Teams. Desktop order: Free | PRO | Teams. */}
         <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 md:mt-14 md:grid-cols-3">
           <PlanCard plan={pricing.free} period={period} orderClass="order-2 md:order-1" />
           <PlanCard plan={pricing.pro} period={period} popular orderClass="order-1 md:order-2" />

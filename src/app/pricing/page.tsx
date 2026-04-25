@@ -11,7 +11,7 @@ import { links } from '@/lib/links'
 export const metadata: Metadata = {
   title: 'Pricing — Elevate Hockey Stats',
   description:
-    "Start free with 3 Pro games. No credit card. Upgrade to Pro for $14/mo when you're ready to go deeper.",
+    "Start free with 3 PRO games. No credit card. Upgrade to PRO for $14/mo when you're ready to go deeper.",
 }
 
 export default function PricingPage() {
@@ -27,7 +27,7 @@ export default function PricingPage() {
       </main>
       <FooterCta
         headline="Start free. Upgrade anytime."
-        subhead="3 Pro games. No card. No clock. Cancel in two taps."
+        subhead="3 PRO games. No card. No clock. Cancel in two taps."
         primaryCtaLabel="Get started free"
         primaryCtaHref={links.appSignup}
         secondaryLabel="Questions? Contact us"

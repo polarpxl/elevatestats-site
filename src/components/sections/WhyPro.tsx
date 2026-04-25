@@ -75,13 +75,13 @@ const rows: Row[] = [
   {
     eyebrow: "Know who's doing the work",
     headline: 'Every shot, goal, and assist tied to a player.',
-    body: 'On Free, every event belongs to your team. On Pro, every event belongs to a player. See who’s getting chances from the slot, who’s shooting from the perimeter, who’s actually driving your offence.',
+    body: 'On Free, every event belongs to your team. On PRO, every event belongs to a player. See who’s getting chances from the slot, who’s shooting from the perimeter, who’s actually driving your offence.',
     Icon: PlayerIcon,
   },
   {
     eyebrow: 'Coaching tips after every game',
     headline: 'AI breakdowns that catch what you missed.',
-    body: 'After every finalized game, Pro generates 3 to 4 coaching insights tailored to your team. Defensive patterns, scoring trends, special teams gaps. The kind of read that used to take a Sunday morning of video.',
+    body: 'After every finalized game, PRO generates 3 to 4 coaching insights tailored to your team. Defensive patterns, scoring trends, special teams gaps. The kind of read that used to take a Sunday morning of video.',
     Icon: SparkleIcon,
   },
   {
@@ -119,10 +119,10 @@ export function WhyPro() {
             Why upgrade
           </p>
           <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl lg:text-5xl">
-            The Pro difference.
+            The PRO difference.
           </h2>
           <p className="mt-5 text-lg text-brand-gray">
-            Free covers game day. Pro tells you the story the data is telling.
+            Free covers game day. PRO tells you the story the data is telling.
           </p>
         </div>
 

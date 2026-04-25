@@ -20,10 +20,10 @@ export function PricingHero() {
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-brand-gray md:text-xl md:leading-relaxed">
           Start free. Upgrade when the season heats up. Every plan unlocks unlimited tracking,
-          with Pro adding the depth coaches need to see what&rsquo;s actually moving the needle.
+          with PRO adding the depth coaches need to see what&rsquo;s actually moving the needle.
         </p>
         <p className="mx-auto mt-6 max-w-xl text-sm text-brand-gray md:text-base">
-          Includes a <span className="font-semibold text-brand-orange">3-game Pro trial</span>.
+          Includes a <span className="font-semibold text-brand-orange">3-game PRO trial</span>.
           No credit card. No clock.
         </p>
       </Container>
