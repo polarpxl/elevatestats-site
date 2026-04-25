@@ -27,47 +27,46 @@ function CheckIcon() {
 function BillingToggle({
   period,
   onChange,
-  savingsLabel,
 }: {
   period: BillingPeriod
   onChange: (p: BillingPeriod) => void
-  savingsLabel: string | null
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
-      <div
-        role="group"
-        aria-label="Billing period"
-        className="relative inline-flex rounded-full bg-white p-1 ring-1 ring-black/10"
-      >
-        <motion.span
-          aria-hidden
-          className="absolute inset-y-1 w-[calc(50%-0.25rem)] rounded-full bg-brand-orange"
-          animate={{ x: period === 'monthly' ? 0 : '100%' }}
-          transition={{ type: 'spring', stiffness: 500, damping: 40 }}
-          style={{ left: '0.25rem' }}
-        />
-        {(['monthly', 'yearly'] as const).map((p) => (
-          <button
-            key={p}
-            type="button"
-            aria-pressed={period === p}
-            onClick={() => onChange(p)}
-            className={cn(
-              'relative z-10 h-10 w-28 rounded-full font-heading text-sm font-semibold transition-colors',
-              period === p ? 'text-white' : 'text-ink',
-            )}
-          >
-            {p === 'monthly' ? 'Monthly' : 'Yearly'}
-          </button>
-        ))}
-      </div>
-      {savingsLabel && (
-        <span className="inline-flex items-center rounded-full bg-brand-orange/10 px-2.5 py-1 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-brand-orange">
-          {savingsLabel}
-        </span>
-      )}
+    <div
+      role="group"
+      aria-label="Billing period"
+      className="relative inline-flex rounded-full bg-white p-1 ring-1 ring-black/10"
+    >
+      <motion.span
+        aria-hidden
+        className="absolute inset-y-1 w-[calc(50%-0.25rem)] rounded-full bg-brand-orange"
+        animate={{ x: period === 'monthly' ? 0 : '100%' }}
+        transition={{ type: 'spring', stiffness: 500, damping: 40 }}
+        style={{ left: '0.25rem' }}
+      />
+      {(['monthly', 'yearly'] as const).map((p) => (
+        <button
+          key={p}
+          type="button"
+          aria-pressed={period === p}
+          onClick={() => onChange(p)}
+          className={cn(
+            'relative z-10 h-10 w-28 rounded-full font-heading text-sm font-semibold transition-colors',
+            period === p ? 'text-white' : 'text-ink',
+          )}
+        >
+          {p === 'monthly' ? 'Monthly' : 'Yearly'}
+        </button>
+      ))}
     </div>
+  )
+}
+
+function SavingsPill({ amount }: { amount: number }) {
+  return (
+    <span className="inline-flex shrink-0 items-center rounded-full bg-brand-orange/10 px-2.5 py-1 font-heading text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-brand-orange">
+      Save ${amount}
+    </span>
   )
 }
 
@@ -120,11 +119,12 @@ function PriceBlock({ plan, period }: { plan: Plan; period: BillingPeriod }) {
   const monthlyEquivalent = formatMonthlyEquivalent(plan.priceYearly)
   return (
     <div className="mt-6">
-      <div className="flex items-baseline gap-2">
+      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-2">
         <span className="font-heading text-5xl font-extrabold text-ink">
           ${plan.priceYearly}
         </span>
         <span className="text-brand-gray">{plan.currency} /year</span>
+        {plan.yearlySavingsAmount && <SavingsPill amount={plan.yearlySavingsAmount} />}
       </div>
       <p className="mt-1 text-sm text-brand-gray">Works out to ${monthlyEquivalent}/mo.</p>
       {plan.subPriceLine && (
@@ -156,8 +156,8 @@ function PlanCard({
   return (
     <article
       className={cn(
-        'relative flex flex-col rounded-card bg-white p-6 shadow-sm md:p-8',
-        popular ? 'ring-2 ring-brand-orange/40 md:-translate-y-2' : 'ring-1 ring-black/5',
+        'relative flex h-full flex-col rounded-card bg-white p-6 shadow-sm md:p-8',
+        popular ? 'ring-2 ring-brand-orange/40' : 'ring-1 ring-black/5',
         orderClass,
       )}
     >
@@ -184,34 +184,32 @@ function PlanCard({
         ))}
       </ul>
 
-      <Button
-        href={plan.ctaHref}
-        variant={popular ? 'primary' : 'secondary'}
-        size="lg"
-        className="mt-8 w-full"
-      >
-        {plan.ctaLabel}
-      </Button>
+      <div className="mt-auto pt-8">
+        <Button
+          href={plan.ctaHref}
+          variant={popular ? 'primary' : 'secondary'}
+          size="lg"
+          className="w-full"
+        >
+          {plan.ctaLabel}
+        </Button>
+      </div>
     </article>
   )
 }
 
 export function PricingPlans() {
   const [period, setPeriod] = useState<BillingPeriod>('monthly')
-  const savingsLabel =
-    period === 'yearly' && pricing.pro.yearlySavingsAmount
-      ? `Save $${pricing.pro.yearlySavingsAmount}`
-      : null
 
   return (
     <section className="bg-surface-alt pb-20 md:pb-28">
       <Container>
         <div className="flex justify-center">
-          <BillingToggle period={period} onChange={setPeriod} savingsLabel={savingsLabel} />
+          <BillingToggle period={period} onChange={setPeriod} />
         </div>
 
         {/* Mobile order: Pro -> Free -> Teams. Desktop order: Free | Pro | Teams. */}
-        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 md:mt-14 md:grid-cols-3 md:items-start">
+        <div className="mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-6 md:mt-14 md:grid-cols-3">
           <PlanCard plan={pricing.free} period={period} orderClass="order-2 md:order-1" />
           <PlanCard plan={pricing.pro} period={period} popular orderClass="order-1 md:order-2" />
           <PlanCard plan={pricing.teams} period={period} orderClass="order-3 md:order-3" />
