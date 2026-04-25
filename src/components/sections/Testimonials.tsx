@@ -78,7 +78,7 @@ const avatarTones: Record<AvatarTone, string> = {
   gray: 'bg-brand-gray/15 text-brand-gray',
 }
 
-const LOOP_DURATION_SECONDS = 28
+const LOOP_DURATION_SECONDS = 42
 const COPY_COUNT = testimonials.length
 
 function TestimonialCard({ t }: { t: Testimonial }) {
