@@ -23,25 +23,51 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    quote: 'Cut our post-game reporting time in half. Parents actually read these now.',
-    author: 'Jen M.',
-    role: 'U13 head coach',
-    initials: 'JM',
+    quote:
+      "I used to track shifts on a Post-it. Now I can see who's been out too long without taking my eyes off the ice.",
+    author: 'Mark D.',
+    role: 'U11 head coach',
+    initials: 'MD',
     tone: 'orange',
   },
   {
-    quote: 'Switched from a spreadsheet the day we tried it. No going back.',
-    author: 'Mike T.',
-    role: 'Team manager',
-    initials: 'MT',
+    quote:
+      "First time I've actually understood my son's stats. Not just the goals, but where he's getting his shots from and how he's trending.",
+    author: 'Sarah K.',
+    role: 'Hockey parent',
+    initials: 'SK',
     tone: 'blue',
   },
   {
     quote:
-      "Finally, real ice-time data for my kid's team. It's changing how we build lines.",
+      "The AI picked up on a defensive pattern I'd missed for three games. That kind of read used to take me a Sunday morning of video.",
+    author: 'Tom R.',
+    role: 'U15 AAA head coach',
+    initials: 'TR',
+    tone: 'gray',
+  },
+  {
+    quote:
+      'My head coach handed me his phone five minutes before puck drop. I tracked the whole game without him explaining anything.',
     author: 'Dev P.',
     role: 'Assistant coach',
     initials: 'DP',
+    tone: 'orange',
+  },
+  {
+    quote:
+      'Used to email parents a screenshot from a spreadsheet. Now they get a real recap and they actually open it.',
+    author: 'Jen M.',
+    role: 'U13 team manager',
+    initials: 'JM',
+    tone: 'blue',
+  },
+  {
+    quote:
+      "Three games into our tournament, the rink WiFi died. Everything synced when we got back to the hotel. Didn't lose a thing.",
+    author: 'Mike T.',
+    role: 'U18 head coach',
+    initials: 'MT',
     tone: 'gray',
   },
 ]
