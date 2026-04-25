@@ -92,7 +92,7 @@ function FeatureTile({ feature }: { feature: Feature }) {
             src={feature.image}
             alt={feature.imageAlt ?? ''}
             sizes={feature.imageSizes}
-            className="h-auto w-full rounded-card ring-1 ring-inset ring-black/10"
+            className="ui-screenshot h-auto w-full rounded-2xl"
           />
         ) : (
           <Placeholder
