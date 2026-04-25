@@ -15,24 +15,24 @@ type Step = {
 const steps: Step[] = [
   {
     number: '01',
-    title: 'Set up your team in under a minute.',
-    body: 'Import a roster or add players manually. No accounts needed for players.',
+    title: 'Sign up, free.',
+    body: 'Three free Pro games. No credit card. Just an email.',
     tone: 'blue',
-    placeholderLabel: 'Team setup placeholder',
+    placeholderLabel: 'Sign up placeholder',
   },
   {
     number: '02',
-    title: 'Tap through the game on the bench.',
-    body: 'One finger. Big buttons. No menus in the way.',
+    title: 'Add your team.',
+    body: 'Import a roster from a CSV or add players manually. No accounts needed for players or parents.',
     tone: 'orange',
-    placeholderLabel: 'Bench view placeholder',
+    placeholderLabel: 'Team setup placeholder',
   },
   {
     number: '03',
-    title: 'Share a pro-quality report after the final whistle.',
-    body: 'One link. Every parent, every player, every assistant coach.',
+    title: 'Track your first game.',
+    body: 'Tap once per shift, dot the rink for shots. The app handles ice time, plus-minus, and line combinations automatically. AI insights drop in after the final whistle.',
     tone: 'gray',
-    placeholderLabel: 'Game report placeholder',
+    placeholderLabel: 'Game tracking placeholder',
   },
 ]
 
@@ -80,8 +80,7 @@ export function HowItWorks() {
             Three taps from whistle to wrap-up.
           </h2>
           <p className="mt-5 text-lg text-brand-gray">
-            From signup to shareable report, the whole flow is built around what you are already
-            doing on game day.
+            From signup to your first game, here&apos;s the path.
           </p>
         </div>
 
