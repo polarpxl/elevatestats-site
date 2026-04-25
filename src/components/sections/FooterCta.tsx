@@ -243,7 +243,7 @@ function Footer() {
           <LinkColumn heading="Legal" items={legalLinks} />
         </div>
 
-        <div className="safe-bottom mt-16 flex flex-col items-start gap-2 border-t border-white/10 pt-6 pb-24 text-sm text-white/60 md:flex-row md:items-center md:justify-between md:pb-28">
+        <div className="safe-bottom mt-16 flex flex-col items-start gap-2 border-t border-white/10 pt-6 pb-20 text-sm text-white/60 md:flex-row md:items-center md:justify-between md:pb-24">
           <p>Made in Canada.</p>
           <p>&copy; 2026 Elevate Sports Labs Inc.</p>
         </div>
