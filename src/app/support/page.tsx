@@ -19,7 +19,7 @@ export default function SupportPage() {
   return (
     <>
       <Nav />
-      <main className="pt-16 md:pt-20">
+      <main>
         <SupportHero />
 
         <section className="bg-white py-16 md:py-24">

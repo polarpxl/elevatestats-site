@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en-CA"
       className={`${poppins.variable} ${jakarta.variable} antialiased`}
     >
-      <body className="min-h-dvh">{children}</body>
+      <body className="min-h-dvh pt-16 md:pt-20">{children}</body>
     </html>
   )
 }

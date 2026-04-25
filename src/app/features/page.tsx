@@ -16,7 +16,7 @@ export default function FeaturesPage() {
   return (
     <>
       <Nav />
-      <main className="pt-16 md:pt-20">
+      <main>
         <FeaturesHero />
         {featureCategories.map((category) => (
           <CategorySection key={category.id} category={category} />

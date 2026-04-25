@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="pt-16 md:pt-20">
+      <main>
         <Hero />
         <FeaturesBento />
         <HowItWorks />

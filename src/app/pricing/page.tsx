@@ -17,7 +17,7 @@ export default function PricingPage() {
   return (
     <>
       <Nav />
-      <main className="pt-16 md:pt-20">
+      <main>
         <PricingHero />
         <PricingPlans />
         <WhyPro />
