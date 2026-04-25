@@ -23,13 +23,6 @@ const legalLinks: FooterLink[] = [
   { label: 'Terms', href: links.terms, internal: true },
 ]
 
-// Placeholder social links; wire up real URLs later
-const socialLinks: FooterLink[] = [
-  { label: 'Twitter', href: '#', internal: false },
-  { label: 'YouTube', href: '#', internal: false },
-  { label: 'Instagram', href: '#', internal: false },
-]
-
 function FooterLinkItem({ link }: { link: FooterLink }) {
   const className = 'text-white/70 transition-colors hover:text-white'
   if (link.internal) {
@@ -165,9 +158,6 @@ function Footer() {
             <p className="mt-5 max-w-xs text-sm text-white/70">
               Pro-level hockey stats, without the pro-level workload.
             </p>
-            <p className="mt-6 text-xs text-white/50">
-              &copy; 2026 Elevate Sports Labs Inc.
-            </p>
           </div>
 
           <LinkColumn heading="Product" items={productLinks} />
@@ -175,15 +165,9 @@ function Footer() {
           <LinkColumn heading="Legal" items={legalLinks} />
         </div>
 
-        <div className="safe-bottom mt-16 flex flex-col items-start gap-4 border-t border-white/10 pt-6 pb-8 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+        <div className="safe-bottom mt-16 flex flex-col items-start gap-2 border-t border-white/10 pt-6 pb-12 text-sm text-white/60 md:flex-row md:items-center md:justify-between md:pb-14">
           <p>Made in Canada.</p>
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            {socialLinks.map((link) => (
-              <li key={link.label}>
-                <FooterLinkItem link={link} />
-              </li>
-            ))}
-          </ul>
+          <p>&copy; 2026 Elevate Sports Labs Inc.</p>
         </div>
       </Container>
     </footer>
