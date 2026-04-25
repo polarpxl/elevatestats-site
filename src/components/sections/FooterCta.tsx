@@ -7,27 +7,20 @@ import { links } from '@/lib/links'
 type FooterLink = { label: string; href: string; internal: boolean }
 
 const productLinks: FooterLink[] = [
-  { label: 'Features', href: links.features, internal: true },
+  { label: 'Home', href: '/', internal: true },
   { label: 'Pricing', href: links.pricing, internal: true },
-  // TODO: point at /changelog when the page ships
-  { label: 'Changelog', href: '#', internal: true },
-  // TODO: point at /roadmap when the page ships
-  { label: 'Roadmap', href: '#', internal: true },
+  { label: 'Features', href: links.features, internal: true },
+  { label: 'Support', href: links.support, internal: true },
 ]
 
 const companyLinks: FooterLink[] = [
-  // TODO: point at /about when the page ships
-  { label: 'About', href: '#', internal: true },
-  { label: 'Blog', href: links.blog, internal: true },
-  // TODO: point at /contact when the page ships
-  { label: 'Contact', href: '#', internal: true },
+  { label: 'About', href: links.about, internal: true },
+  { label: 'Contact', href: links.contact, internal: true },
 ]
 
 const legalLinks: FooterLink[] = [
-  // TODO: point at /privacy when the page ships
-  { label: 'Privacy', href: '#', internal: true },
-  // TODO: point at /terms when the page ships
-  { label: 'Terms', href: '#', internal: true },
+  { label: 'Privacy', href: links.privacy, internal: true },
+  { label: 'Terms', href: links.terms, internal: true },
 ]
 
 // Placeholder social links; wire up real URLs later

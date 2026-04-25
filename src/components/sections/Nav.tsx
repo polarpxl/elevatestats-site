@@ -15,7 +15,6 @@ const navLinks: NavLink[] = [
   { label: 'How it works', href: '#how-it-works', internal: true },
   { label: 'Pricing', href: links.pricing, internal: true },
   { label: 'Support', href: links.support, internal: true },
-  { label: 'Blog', href: links.blog, internal: true },
 ]
 
 function MenuIcon({ className }: { className?: string }) {
