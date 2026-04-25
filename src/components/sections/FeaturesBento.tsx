@@ -1,6 +1,9 @@
+import Image, { type StaticImageData } from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { Placeholder } from '@/components/ui/Placeholder'
 import { cn } from '@/lib/cn'
+
+import featureShotMapping from '../../../public/app/feature-shot-mapping.webp'
 
 type Tone = 'orange' | 'blue' | 'gray'
 
@@ -11,6 +14,9 @@ type Feature = {
   placeholderLabel: string
   placeholderAspect: string
   className: string
+  image?: StaticImageData
+  imageAlt?: string
+  imageSizes?: string
 }
 
 const features: Feature[] = [
@@ -21,6 +27,9 @@ const features: Feature[] = [
     placeholderLabel: 'Shot map placeholder',
     placeholderAspect: '16/10',
     className: 'md:col-span-7',
+    image: featureShotMapping,
+    imageAlt: 'Shot map showing colour-coded shot locations on a hockey rink',
+    imageSizes: '(min-width: 1024px) 580px, (min-width: 768px) 440px, 100vw',
   },
   {
     title: 'AI insights after every game',
@@ -78,12 +87,21 @@ function FeatureTile({ feature }: { feature: Feature }) {
       <span aria-hidden className="brand-underline mt-3" />
       <p className="mt-4 text-brand-gray">{feature.body}</p>
       <div className="mt-7 flex-1">
-        <Placeholder
-          label={feature.placeholderLabel}
-          tone={feature.tone}
-          aspect={feature.placeholderAspect}
-          className="h-full w-full"
-        />
+        {feature.image ? (
+          <Image
+            src={feature.image}
+            alt={feature.imageAlt ?? ''}
+            sizes={feature.imageSizes}
+            className="h-auto w-full rounded-card ring-1 ring-inset ring-black/10"
+          />
+        ) : (
+          <Placeholder
+            label={feature.placeholderLabel}
+            tone={feature.tone}
+            aspect={feature.placeholderAspect}
+            className="h-full w-full"
+          />
+        )}
       </div>
     </article>
   )
