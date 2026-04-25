@@ -9,7 +9,7 @@ export function CtaPanel() {
   return (
     <section className="bg-surface-alt py-20 md:py-28">
       <Container>
-        <div className="relative rounded-[2rem] bg-surface-dark p-8 text-white ring-1 ring-white/10 shadow-xl md:p-14">
+        <div className="relative rounded-[2rem] bg-surface-dark px-8 py-5 text-white ring-1 ring-white/10 shadow-xl md:px-14 md:py-8">
           {/* glow: warm in the bottom-right, cool in the top-left for depth.
               Wrapped so it stays clipped to the panel even though the panel
               itself no longer hides overflow (the phone breaks out the top). */}
