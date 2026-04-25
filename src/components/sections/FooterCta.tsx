@@ -98,7 +98,7 @@ function GradientCta({
       className="relative overflow-hidden py-20 md:py-28"
       style={{
         background:
-          'linear-gradient(135deg, #FF6600 0%, #FF3D7F 55%, #00BFFF 100%)',
+          'linear-gradient(135deg, var(--color-brand-orange) 0%, var(--color-brand-pink) 55%, var(--color-brand-blue) 100%)',
       }}
     >
       <div

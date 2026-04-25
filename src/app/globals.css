@@ -2,6 +2,7 @@
 
 @theme {
   --color-brand-orange: #FF6600;
+  --color-brand-pink: #FF3D7F;
   --color-brand-blue: #00BFFF;
   --color-brand-gray: #4D4D4D;
 
@@ -30,12 +31,20 @@ body {
 .safe-top { padding-top: env(safe-area-inset-top); }
 .safe-bottom { margin-bottom: env(safe-area-inset-bottom); }
 
-/* Polished UI tile: hairline border, top-edge highlight, layered shadows.
-   Tweak here to update every floating UI panel at once. */
+/* Floating UI tile: 2px brand-gradient border + soft drop shadow.
+   Tweak here to update every floating UI panel at once.
+   Technique: transparent border + double background (padding-box white,
+   border-box gradient). Avoids border-image, which clips poorly on
+   rounded corners. */
 .ui-tile {
-  background: rgba(255, 255, 255, 0.65);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.18);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-brand-orange) 78%, transparent),
+      color-mix(in srgb, var(--color-brand-pink) 78%, transparent) 55%,
+      color-mix(in srgb, var(--color-brand-blue) 78%, transparent)
+    ) border-box;
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.12);
 }
