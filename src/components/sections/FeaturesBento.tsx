@@ -1,7 +1,9 @@
 import Image, { type StaticImageData } from 'next/image'
+import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { Placeholder } from '@/components/ui/Placeholder'
 import { cn } from '@/lib/cn'
+import { links } from '@/lib/links'
 
 import featureShotMapping from '../../../public/app/feature-shot-mapping.webp'
 import featureAiInsights from '../../../public/app/feature-ai-insights.webp'
@@ -95,10 +97,10 @@ const features: Feature[] = [
     tone: 'gray',
     placeholderLabel: 'Landscape rink placeholder',
     placeholderAspect: '21/9',
-    className: 'md:col-span-12 md:p-10 lg:p-12',
+    className: 'md:col-span-7 md:p-10 lg:p-12',
     image: featureLandscape,
     imageAlt: 'Full-rink landscape view of in-game shot tracking',
-    imageSizes: '(min-width: 1024px) 660px, (min-width: 768px) 510px, 68vw',
+    imageSizes: '(min-width: 1024px) 350px, (min-width: 768px) 280px, 68vw',
     imagePadX: 'px-[16%]',
   },
 ]
@@ -162,6 +164,23 @@ export function FeaturesBento() {
           {features.map((feature) => (
             <FeatureTile key={feature.title} feature={feature} />
           ))}
+
+          <div className="flex flex-col justify-center px-2 text-center md:col-span-5 md:px-6 md:text-left lg:px-10">
+            <h3 className="font-heading text-2xl font-bold tracking-tight text-ink md:text-3xl">
+              More where this came from.
+            </h3>
+            <Link
+              href={links.features}
+              className="group mt-4 inline-flex items-center gap-2 self-center font-heading text-base font-semibold text-brand-orange md:self-start"
+            >
+              <span className="group-hover:underline underline-offset-4">
+                See the full feature list
+              </span>
+              <span aria-hidden className="transition-transform group-hover:translate-x-1">
+                &rarr;
+              </span>
+            </Link>
+          </div>
         </div>
       </Container>
     </section>
