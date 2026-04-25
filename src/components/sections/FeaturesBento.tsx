@@ -4,6 +4,11 @@ import { Placeholder } from '@/components/ui/Placeholder'
 import { cn } from '@/lib/cn'
 
 import featureShotMapping from '../../../public/app/feature-shot-mapping.webp'
+import featureAiInsights from '../../../public/app/feature-ai-insights.webp'
+import featureOffline from '../../../public/app/feature-offline.webp'
+import featureGoalies from '../../../public/app/feature-goalies.webp'
+import featurePlayerProfile from '../../../public/app/feature-player-profile.webp'
+import featureLandscape from '../../../public/app/feature-landscape.webp'
 
 type Tone = 'orange' | 'blue' | 'gray'
 
@@ -29,7 +34,7 @@ const features: Feature[] = [
     className: 'md:col-span-7',
     image: featureShotMapping,
     imageAlt: 'Shot map showing colour-coded shot locations on a hockey rink',
-    imageSizes: '(min-width: 1024px) 580px, (min-width: 768px) 440px, 100vw',
+    imageSizes: '(min-width: 1024px) 480px, (min-width: 768px) 380px, 84vw',
   },
   {
     title: 'AI insights after every game',
@@ -38,6 +43,9 @@ const features: Feature[] = [
     placeholderLabel: 'AI insights placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-5',
+    image: featureAiInsights,
+    imageAlt: 'Post-game AI coaching insights card',
+    imageSizes: '(min-width: 1024px) 340px, (min-width: 768px) 270px, 84vw',
   },
   {
     title: 'Tracks even with no signal',
@@ -46,6 +54,9 @@ const features: Feature[] = [
     placeholderLabel: 'Offline sync placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
+    image: featureOffline,
+    imageAlt: 'Offline sync indicator with queued game data',
+    imageSizes: '(min-width: 1024px) 270px, (min-width: 768px) 210px, 84vw',
   },
   {
     title: 'Goalies, done right',
@@ -54,6 +65,9 @@ const features: Feature[] = [
     placeholderLabel: 'Goalie stats placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
+    image: featureGoalies,
+    imageAlt: 'Goalie save percentage and GAA stats card',
+    imageSizes: '(min-width: 1024px) 270px, (min-width: 768px) 210px, 84vw',
   },
   {
     title: 'Every player, on the page',
@@ -62,6 +76,9 @@ const features: Feature[] = [
     placeholderLabel: 'Player stats placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
+    image: featurePlayerProfile,
+    imageAlt: 'Individual player profile with stats and shot trends',
+    imageSizes: '(min-width: 1024px) 270px, (min-width: 768px) 210px, 84vw',
   },
   {
     title: 'The whole rink, in landscape',
@@ -70,6 +87,9 @@ const features: Feature[] = [
     placeholderLabel: 'Landscape rink placeholder',
     placeholderAspect: '21/9',
     className: 'md:col-span-12 md:p-10 lg:p-12',
+    image: featureLandscape,
+    imageAlt: 'Full-rink landscape view of in-game shot tracking',
+    imageSizes: '(min-width: 1024px) 830px, (min-width: 768px) 640px, 84vw',
   },
 ]
 
