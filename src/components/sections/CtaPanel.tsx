@@ -24,7 +24,7 @@ export function CtaPanel() {
             />
           </div>
 
-          <div className="relative grid items-center gap-10 text-center md:grid-cols-2 md:gap-12 md:text-left">
+          <div className="relative grid items-center gap-10 text-center md:grid-cols-[1.22fr_1fr] md:gap-8 md:text-left">
             <div>
               <h2 className="font-heading text-3xl font-extrabold leading-[1.05] tracking-tight md:text-4xl lg:text-5xl">
                 The rink is waiting.
@@ -52,7 +52,7 @@ export function CtaPanel() {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-start">
               <div className="w-[60%] max-w-[260px] md:-mt-28 md:w-[70%] md:max-w-[280px] lg:-mt-36 lg:w-[64%]">
                 <GradientPhoneFrame
                   src={heroStatBars}
