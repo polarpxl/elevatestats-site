@@ -16,7 +16,7 @@ export function PricingHero() {
           Pick your plan.
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-lg text-brand-gray md:text-xl">
-          Start on the free plan forever. Upgrade to PRO when the season heats up.
+          Start free. Upgrade when the season heats up.
         </p>
       </Container>
     </section>
