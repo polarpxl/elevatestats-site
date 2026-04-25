@@ -68,7 +68,7 @@ function FeatureTile({ feature }: { feature: Feature }) {
   return (
     <article
       className={cn(
-        'flex flex-col rounded-card bg-surface-alt p-7 shadow-md ring-1 ring-black/5 md:p-9',
+        'flex flex-col rounded-card bg-[#FAFAFA] p-7 shadow-md md:p-9',
         feature.className,
       )}
     >

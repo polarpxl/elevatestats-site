@@ -35,8 +35,8 @@ body {
    orange→pink→blue. Single source of truth for this signature element. */
 .brand-underline {
   display: block;
-  width: 30px;
-  height: 3px;
+  width: 68px;
+  height: 4px;
   border-radius: 9999px;
   background: linear-gradient(
     90deg,
