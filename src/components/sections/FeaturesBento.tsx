@@ -100,8 +100,8 @@ const features: Feature[] = [
     className: 'md:col-span-7 md:p-10 lg:p-12',
     image: featureLandscape,
     imageAlt: 'Full-rink landscape view of in-game shot tracking',
-    imageSizes: '(min-width: 1024px) 350px, (min-width: 768px) 280px, 68vw',
-    imagePadX: 'px-[16%]',
+    imageSizes: '(min-width: 1024px) 450px, (min-width: 768px) 360px, 88vw',
+    imagePadX: 'px-[6%]',
   },
 ]
 
