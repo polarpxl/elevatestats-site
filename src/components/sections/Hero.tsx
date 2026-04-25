@@ -67,7 +67,7 @@ export function Hero() {
               For coaches and stat trackers
             </span>
 
-            <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-5xl lg:text-6xl">
+            <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-5xl lg:relative lg:z-10 lg:w-[125%] lg:text-6xl">
               <span className="whitespace-nowrap">Pro-level</span> hockey stats, without the{' '}
               <span className="whitespace-nowrap">pro-level</span> workload.
             </h1>
