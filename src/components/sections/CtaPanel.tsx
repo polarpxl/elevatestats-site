@@ -52,7 +52,7 @@ export function CtaPanel() {
               </div>
             </div>
 
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center">
               <div className="w-[60%] max-w-[260px] md:-mt-28 md:w-[70%] md:max-w-[280px] lg:-mt-36 lg:w-[64%]">
                 <GradientPhoneFrame
                   src={ctaPhone}
