@@ -12,7 +12,7 @@ type NavLink = { label: string; href: string; internal: boolean }
 
 const navLinks: NavLink[] = [
   { label: 'Features', href: links.features, internal: true },
-  { label: 'How it works', href: '#how-it-works', internal: true },
+  { label: 'How it works', href: '/#how-it-works', internal: true },
   { label: 'Pricing', href: links.pricing, internal: true },
   { label: 'Support', href: links.support, internal: true },
 ]
