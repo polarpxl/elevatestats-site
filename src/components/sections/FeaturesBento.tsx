@@ -68,15 +68,16 @@ function FeatureTile({ feature }: { feature: Feature }) {
   return (
     <article
       className={cn(
-        'flex flex-col rounded-card bg-white p-6 ring-1 ring-black/5 shadow-sm md:p-8',
+        'flex flex-col rounded-card bg-surface-alt p-7 shadow-md ring-1 ring-black/5 md:p-9',
         feature.className,
       )}
     >
       <h3 className="font-heading text-xl font-semibold tracking-tight text-ink">
         {feature.title}
       </h3>
-      <p className="mt-3 text-brand-gray">{feature.body}</p>
-      <div className="mt-6 flex-1">
+      <span aria-hidden className="brand-underline mt-3" />
+      <p className="mt-4 text-brand-gray">{feature.body}</p>
+      <div className="mt-7 flex-1">
         <Placeholder
           label={feature.placeholderLabel}
           tone={feature.tone}

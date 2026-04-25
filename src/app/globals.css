@@ -31,6 +31,21 @@ body {
 .safe-top { padding-top: env(safe-area-inset-top); }
 .safe-bottom { margin-bottom: env(safe-area-inset-bottom); }
 
+/* Brand gradient underline accent — small horizontal bar in the brand
+   orange→pink→blue. Single source of truth for this signature element. */
+.brand-underline {
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-orange),
+    var(--color-brand-pink) 55%,
+    var(--color-brand-blue)
+  );
+}
+
 /* Floating UI tile: 2px brand-gradient border + soft drop shadow.
    Tweak here to update every floating UI panel at once.
    Technique: transparent border + double background (padding-box white,
