@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
-import rehypeSlug from 'rehype-slug'
 import { ArticleFeedback } from '@/components/sections/ArticleFeedback'
 import { ArticleHeader } from '@/components/sections/ArticleHeader'
 import { ArticleRelated } from '@/components/sections/ArticleRelated'
@@ -10,7 +9,7 @@ import { ArticleToc } from '@/components/sections/ArticleToc'
 import { FooterCta } from '@/components/sections/FooterCta'
 import { Nav } from '@/components/sections/Nav'
 import { ReadingProgress } from '@/components/sections/ReadingProgress'
-import { mdxComponents } from '@/components/mdx/mdx-components'
+import { mdxComponents, mdxOptions } from '@/components/mdx/mdx-components'
 import { Container } from '@/components/ui/Container'
 import { links } from '@/lib/links'
 import {
@@ -34,12 +33,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${article.title} — Elevate Hockey Stats Support`,
     description: article.description,
   }
-}
-
-const mdxOptions = {
-  mdxOptions: {
-    rehypePlugins: [rehypeSlug],
-  },
 }
 
 export default async function SupportArticlePage({ params }: PageProps) {

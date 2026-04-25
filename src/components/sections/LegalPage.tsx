@@ -1,6 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import rehypeSlug from 'rehype-slug'
-import { mdxComponents } from '@/components/mdx/mdx-components'
+import { mdxComponents, mdxOptions } from '@/components/mdx/mdx-components'
 import { FooterCta } from '@/components/sections/FooterCta'
 import { Nav } from '@/components/sections/Nav'
 import { Container } from '@/components/ui/Container'
@@ -15,12 +14,6 @@ function formatDate(iso: string): string {
     month: 'long',
     day: 'numeric',
   })
-}
-
-const mdxOptions = {
-  mdxOptions: {
-    rehypePlugins: [rehypeSlug],
-  },
 }
 
 export function LegalPage({ doc }: { doc: LegalDoc }) {
