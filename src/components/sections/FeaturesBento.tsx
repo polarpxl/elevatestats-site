@@ -16,7 +16,7 @@ type Feature = {
 const features: Feature[] = [
   {
     title: 'Tap-to-track shot mapping',
-    body: "Goals, shots, misses, blocks. Tap the rink, dot drops, stats follow. Faster than your scorekeeper's clipboard.",
+    body: "Goals, shots, misses, blocks. Tap the rink, dot drops, stats follow. Colour-coded by position so the shot map tells you who's shooting from where.",
     tone: 'orange',
     placeholderLabel: 'Shot map placeholder',
     placeholderAspect: '16/10',
@@ -55,10 +55,10 @@ const features: Feature[] = [
     className: 'md:col-span-4',
   },
   {
-    title: 'Built for pond to pro',
-    body: 'From U9 house league to Junior A. Same app, same workflow.',
+    title: 'The whole rink, in landscape',
+    body: 'Rotate to landscape for the full-rink view. Works on phone or tablet, more room to read the play.',
     tone: 'gray',
-    placeholderLabel: 'Age group placeholder',
+    placeholderLabel: 'Landscape rink placeholder',
     placeholderAspect: '21/9',
     className: 'md:col-span-12 md:p-10 lg:p-12',
   },
