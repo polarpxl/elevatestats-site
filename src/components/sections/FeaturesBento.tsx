@@ -86,7 +86,7 @@ function FeatureTile({ feature }: { feature: Feature }) {
       </h3>
       <span aria-hidden className="brand-underline mt-3" />
       <p className="mt-4 text-brand-gray">{feature.body}</p>
-      <div className="mt-7 flex-1">
+      <div className="mt-7 flex-1 px-[8%]">
         {feature.image ? (
           <Image
             src={feature.image}
