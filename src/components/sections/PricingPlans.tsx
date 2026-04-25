@@ -202,7 +202,7 @@ export function PricingPlans() {
   const [period, setPeriod] = useState<BillingPeriod>('monthly')
 
   return (
-    <section className="bg-surface-alt pb-20 md:pb-28">
+    <section className="bg-surface-alt pt-4 pb-20 md:pt-8 md:pb-28">
       <Container>
         <div className="flex justify-center">
           <BillingToggle period={period} onChange={setPeriod} />

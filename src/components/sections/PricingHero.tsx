@@ -1,4 +1,6 @@
+import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
+import { links } from '@/lib/links'
 
 export function PricingHero() {
   return (
@@ -22,6 +24,15 @@ export function PricingHero() {
           Start free. Upgrade when the season heats up. Every plan unlocks unlimited tracking,
           with Pro adding the depth coaches need to see what&rsquo;s actually moving the needle.
         </p>
+        <p className="mx-auto mt-6 max-w-xl text-sm text-brand-gray md:text-base">
+          Includes a <span className="font-semibold text-brand-orange">3-game Pro trial</span>.
+          No credit card. No clock.
+        </p>
+        <div className="mt-8 flex justify-center">
+          <Button href={links.appSignup} variant="primary" size="lg">
+            Get started free
+          </Button>
+        </div>
       </Container>
     </section>
   )
