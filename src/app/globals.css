@@ -37,7 +37,7 @@ body {
    border-box gradient). Avoids border-image, which clips poorly on
    rounded corners. */
 .ui-tile {
-  border: 2px solid transparent;
+  border: 4px solid transparent;
   background:
     linear-gradient(#fff, #fff) padding-box,
     linear-gradient(
