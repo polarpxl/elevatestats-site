@@ -60,7 +60,7 @@ export function Hero() {
       />
 
       <Container className="relative">
-        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-8 lg:gap-16">
+        <div className="grid items-center gap-14 md:grid-cols-2 md:gap-8 lg:items-start lg:gap-16">
           {/* Copy column */}
           <div className="text-center md:text-left">
             <span className="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1 font-heading text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">
