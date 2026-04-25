@@ -4,9 +4,9 @@ export const APP_URL = 'https://elevatestats.vercel.app'
 // for entries with a non-empty URL, so no code change is needed when these
 // get wired up — just fill in the strings here.
 const social: Record<'twitter' | 'youtube' | 'instagram', string> = {
-  twitter: '',
-  youtube: '',
-  instagram: '',
+  twitter: '#',
+  youtube: '#',
+  instagram: '#',
 }
 
 export const links = {
