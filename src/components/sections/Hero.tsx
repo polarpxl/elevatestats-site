@@ -120,7 +120,7 @@ export function Hero() {
               float={{ duration: 5.5, delay: 0.6, travel: 8 }}
               className="absolute right-[-2%] top-[6%] z-20 w-[40%]"
             >
-              <div className="ui-tile overflow-hidden rounded-2xl bg-white">
+              <div className="ui-tile overflow-hidden rounded-2xl">
                 <Image
                   src={heroTrackingWheel}
                   alt="Shot-tracking wheel showing rink zones"
@@ -136,7 +136,7 @@ export function Hero() {
               float={{ duration: 6.5, delay: 1.1, travel: 12 }}
               className="absolute left-[-6%] bottom-[6%] z-20 w-[54%]"
             >
-              <div className="ui-tile overflow-hidden rounded-2xl bg-white">
+              <div className="ui-tile overflow-hidden rounded-2xl">
                 <Image
                   src={heroAiInsights}
                   alt="AI-generated coaching insights card"
