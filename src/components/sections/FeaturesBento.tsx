@@ -22,6 +22,10 @@ type Feature = {
   image?: StaticImageData
   imageAlt?: string
   imageSizes?: string
+  /** Tailwind class controlling horizontal padding around the image
+      slot. Wider cards take more, narrower cards less, so the rendered
+      screenshot feels comparably sized across the grid. */
+  imagePadX?: string
 }
 
 const features: Feature[] = [
@@ -34,7 +38,8 @@ const features: Feature[] = [
     className: 'md:col-span-7',
     image: featureShotMapping,
     imageAlt: 'Shot map showing colour-coded shot locations on a hockey rink',
-    imageSizes: '(min-width: 1024px) 480px, (min-width: 768px) 380px, 84vw',
+    imageSizes: '(min-width: 1024px) 410px, (min-width: 768px) 320px, 76vw',
+    imagePadX: 'px-[12%]',
   },
   {
     title: 'AI insights after every game',
@@ -45,7 +50,8 @@ const features: Feature[] = [
     className: 'md:col-span-5',
     image: featureAiInsights,
     imageAlt: 'Post-game AI coaching insights card',
-    imageSizes: '(min-width: 1024px) 340px, (min-width: 768px) 270px, 84vw',
+    imageSizes: '(min-width: 1024px) 285px, (min-width: 768px) 225px, 80vw',
+    imagePadX: 'px-[10%]',
   },
   {
     title: 'Tracks even with no signal',
@@ -56,7 +62,8 @@ const features: Feature[] = [
     className: 'md:col-span-4',
     image: featureOffline,
     imageAlt: 'Offline sync indicator with queued game data',
-    imageSizes: '(min-width: 1024px) 270px, (min-width: 768px) 210px, 84vw',
+    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
+    imagePadX: 'px-[6%]',
   },
   {
     title: 'Goalies, done right',
@@ -67,7 +74,8 @@ const features: Feature[] = [
     className: 'md:col-span-4',
     image: featureGoalies,
     imageAlt: 'Goalie save percentage and GAA stats card',
-    imageSizes: '(min-width: 1024px) 270px, (min-width: 768px) 210px, 84vw',
+    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
+    imagePadX: 'px-[6%]',
   },
   {
     title: 'Every player, on the page',
@@ -78,7 +86,8 @@ const features: Feature[] = [
     className: 'md:col-span-4',
     image: featurePlayerProfile,
     imageAlt: 'Individual player profile with stats and shot trends',
-    imageSizes: '(min-width: 1024px) 270px, (min-width: 768px) 210px, 84vw',
+    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
+    imagePadX: 'px-[6%]',
   },
   {
     title: 'The whole rink, in landscape',
@@ -89,7 +98,8 @@ const features: Feature[] = [
     className: 'md:col-span-12 md:p-10 lg:p-12',
     image: featureLandscape,
     imageAlt: 'Full-rink landscape view of in-game shot tracking',
-    imageSizes: '(min-width: 1024px) 830px, (min-width: 768px) 640px, 84vw',
+    imageSizes: '(min-width: 1024px) 660px, (min-width: 768px) 510px, 68vw',
+    imagePadX: 'px-[16%]',
   },
 ]
 
@@ -106,7 +116,12 @@ function FeatureTile({ feature }: { feature: Feature }) {
       </h3>
       <span aria-hidden className="brand-underline mt-3" />
       <p className="mt-4 text-brand-gray">{feature.body}</p>
-      <div className="mt-7 flex-1 px-[8%]">
+      <div
+        className={cn(
+          'mt-7 flex flex-1 items-center',
+          feature.imagePadX ?? 'px-[8%]',
+        )}
+      >
         {feature.image ? (
           <Image
             src={feature.image}
