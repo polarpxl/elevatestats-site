@@ -1,59 +1,101 @@
-import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
-import { Placeholder } from '@/components/ui/Placeholder'
-import { links } from '@/lib/links'
 
-type Tone = 'orange' | 'blue' | 'gray'
+type IconProps = { className?: string }
+
+function WhistleIcon({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M3 11c0-2.8 2.2-5 5-5h6.5l4.5-2 2.5 1v9l-2.5 1-4.5-2H8c-2.8 0-5-1.2-5-2z" />
+      <circle cx="6.5" cy="11.5" r="0.9" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+function HockeyStickIcon({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <path d="M19 3l-12 12" />
+      <path d="M7 15l-3 3h5" />
+      <ellipse cx="15" cy="20" rx="3" ry="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+
+function FamilyIcon({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      <circle cx="5.5" cy="7.5" r="2.4" />
+      <path d="M1.8 18c0-2.6 1.7-4.5 3.7-4.5s3.7 1.9 3.7 4.5" />
+      <circle cx="18.5" cy="7.5" r="2.4" />
+      <path d="M14.8 18c0-2.6 1.7-4.5 3.7-4.5s3.7 1.9 3.7 4.5" />
+      <circle cx="12" cy="13" r="1.8" />
+      <path d="M9.6 20c0-1.7 1.1-3.2 2.4-3.2s2.4 1.5 2.4 3.2" />
+    </svg>
+  )
+}
 
 type UseCase = {
   title: string
   body: string
-  tone: Tone
-  placeholderLabel: string
+  Icon: (props: IconProps) => React.ReactElement
 }
 
 const useCases: UseCase[] = [
   {
-    title: 'Head coaches',
-    body: 'See your bench in real time and adjust lines without losing track.',
-    tone: 'orange',
-    placeholderLabel: 'Bench view placeholder',
+    title: 'Coaches',
+    body: "See your bench in real time. Spot the line that's working, the player who's hot, the matchup to watch. Make in-game adjustments without flipping through a notebook.",
+    Icon: WhistleIcon,
   },
   {
-    title: 'Assistant coaches and parent trackers',
-    body: 'No training required. If you can tap a phone, you can track a game.',
-    tone: 'blue',
-    placeholderLabel: 'Quick-tap placeholder',
+    title: 'Players',
+    body: "See where you're shooting from, where your goals are coming from, and how you're trending game-to-game. The data parents and coaches see, you see too.",
+    Icon: HockeyStickIcon,
   },
   {
-    title: 'Team managers',
-    body: 'Share polished post-game reports with families in one click.',
-    tone: 'gray',
-    placeholderLabel: 'Share report placeholder',
+    title: 'Parents',
+    body: "Follow your kid's season without standing at the boards trying to count shots. Stats are there when the game ends, win or lose.",
+    Icon: FamilyIcon,
   },
 ]
 
 function UseCaseCard({ useCase }: { useCase: UseCase }) {
+  const { Icon } = useCase
   return (
     <article className="flex flex-col rounded-card bg-white p-6 ring-1 ring-black/5 shadow-sm md:p-8">
-      <Placeholder
-        label={useCase.placeholderLabel}
-        tone={useCase.tone}
-        aspect="4/3"
-        className="w-full"
-      />
+      <div className="step-icon-ring flex h-28 w-28 items-center justify-center md:h-32 md:w-32">
+        <Icon className="h-12 w-12 text-ink/80 md:h-14 md:w-14" />
+      </div>
       <h3 className="mt-6 font-heading text-xl font-semibold tracking-tight text-ink">
         {useCase.title}
       </h3>
       <p className="mt-3 text-brand-gray">{useCase.body}</p>
-      {/* TODO: link to matching anchor on /features once that page exists */}
-      <Link
-        href={links.features}
-        className="mt-6 inline-flex items-center gap-1 font-heading text-sm font-semibold text-brand-orange transition-colors hover:text-[#E65C00]"
-      >
-        Learn more
-        <span aria-hidden>&rarr;</span>
-      </Link>
     </article>
   )
 }
@@ -67,11 +109,10 @@ export function UseCases() {
             Who it&apos;s for
           </p>
           <h2 className="mt-4 font-heading text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl lg:text-5xl">
-            Whoever&apos;s on the bench, we&apos;ve got you.
+            Coaches track. Players grow. Parents see.
           </h2>
           <p className="mt-5 text-lg text-brand-gray">
-            From head coaches running the show to parent trackers filling in on a Tuesday night,
-            the same clean workflow fits everyone.
+            One app. Three perspectives. Everyone gets the data that matters to them.
           </p>
         </div>
 
