@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { FooterCta } from '@/components/sections/FooterCta'
 import { Nav } from '@/components/sections/Nav'
 import { SupportCategoryBlock } from '@/components/sections/SupportCategoryBlock'
-import { SupportContactForm } from '@/components/sections/SupportContactForm'
+import { MarketingContactForm } from '@/components/sections/MarketingContactForm'
 import { SupportHero } from '@/components/sections/SupportHero'
 import { Container } from '@/components/ui/Container'
 import { links } from '@/lib/links'
@@ -50,7 +50,7 @@ export default function SupportPage() {
                   We usually respond within one business day.
                 </p>
               </div>
-              <SupportContactForm />
+              <MarketingContactForm idPrefix="support-contact" />
             </div>
           </Container>
         </section>

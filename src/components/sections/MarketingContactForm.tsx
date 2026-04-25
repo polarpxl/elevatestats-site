@@ -20,14 +20,31 @@ function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNo
 const inputClass =
   'w-full rounded-xl bg-white px-4 py-3 text-base text-ink ring-1 ring-black/10 placeholder:text-brand-gray/60 transition-shadow focus:outline-none focus:ring-2 focus:ring-brand-orange'
 
-export function SupportContactForm() {
+const idPrefixCounter = { current: 0 }
+
+// TODO: wire to Resend (a marketing-site-scoped API key will be added in a future
+// session — Darrin already has a Resend account for the main app).
+export function MarketingContactForm({
+  successCopy = "We'll be in touch within one business day.",
+  idPrefix,
+}: {
+  successCopy?: string
+  idPrefix?: string
+}) {
+  // Stable per-instance id prefix so name/email/etc. ids don't collide if the
+  // component is rendered twice on a single page (we don't do that today, but
+  // it's cheap insurance).
+  const [prefix] = useState(() => {
+    if (idPrefix) return idPrefix
+    idPrefixCounter.current += 1
+    return `mcf-${idPrefixCounter.current}`
+  })
   const [status, setStatus] = useState<Status>('idle')
   const [form, setForm] = useState(initialForm)
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setStatus('sending')
-    // TODO: Replace this entire form block with AIDbase embed when ready
     window.setTimeout(() => setStatus('sent'), 600)
   }
 
@@ -49,9 +66,7 @@ export function SupportContactForm() {
             <h3 className="font-heading text-xl font-bold text-ink">
               Thanks, {form.name.split(' ')[0] || 'there'}.
             </h3>
-            <p className="mt-2 text-brand-gray">
-              We&rsquo;ll be in touch within one business day.
-            </p>
+            <p className="mt-2 text-brand-gray">{successCopy}</p>
             <button
               type="button"
               onClick={reset}
@@ -75,9 +90,9 @@ export function SupportContactForm() {
     >
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
-          <Label htmlFor="support-name">Name</Label>
+          <Label htmlFor={`${prefix}-name`}>Name</Label>
           <input
-            id="support-name"
+            id={`${prefix}-name`}
             name="name"
             type="text"
             required
@@ -88,9 +103,9 @@ export function SupportContactForm() {
           />
         </div>
         <div>
-          <Label htmlFor="support-email">Email</Label>
+          <Label htmlFor={`${prefix}-email`}>Email</Label>
           <input
-            id="support-email"
+            id={`${prefix}-email`}
             name="email"
             type="email"
             required
@@ -102,9 +117,9 @@ export function SupportContactForm() {
         </div>
       </div>
       <div className="mt-4">
-        <Label htmlFor="support-subject">Subject</Label>
+        <Label htmlFor={`${prefix}-subject`}>Subject</Label>
         <input
-          id="support-subject"
+          id={`${prefix}-subject`}
           name="subject"
           type="text"
           required
@@ -114,9 +129,9 @@ export function SupportContactForm() {
         />
       </div>
       <div className="mt-4">
-        <Label htmlFor="support-message">Message</Label>
+        <Label htmlFor={`${prefix}-message`}>Message</Label>
         <textarea
-          id="support-message"
+          id={`${prefix}-message`}
           name="message"
           required
           rows={5}
