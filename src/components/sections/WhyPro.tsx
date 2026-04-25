@@ -64,47 +64,55 @@ function VaultIcon({ className }: IconProps) {
   )
 }
 
-type Row = {
+type Card = {
   eyebrow: string
   headline: string
   body: string
   Icon: (props: IconProps) => ReactElement
+  gradient: 'a' | 'b' | 'c'
 }
 
-const rows: Row[] = [
+const cards: Card[] = [
   {
     eyebrow: "Know who's doing the work",
-    headline: 'Every shot, goal, and assist tied to a player.',
-    body: 'On Free, every event belongs to your team. On PRO, every event belongs to a player. See who’s getting chances from the slot, who’s shooting from the perimeter, who’s actually driving your offence.',
+    headline: 'Every shot tied to a player.',
+    body: 'On Free, every event belongs to your team. On PRO, every event belongs to a player. See who’s driving your offence and who’s still finding their game.',
     Icon: PlayerIcon,
+    gradient: 'a',
   },
   {
     eyebrow: 'Coaching tips after every game',
     headline: 'AI breakdowns that catch what you missed.',
-    body: 'After every finalized game, PRO generates 3 to 4 coaching insights tailored to your team. Defensive patterns, scoring trends, special teams gaps. The kind of read that used to take a Sunday morning of video.',
+    body: 'After every finalized game, PRO generates 3 to 4 coaching insights tailored to your team. Patterns you’d otherwise miss, surfaced automatically.',
     Icon: SparkleIcon,
+    gradient: 'b',
   },
   {
     eyebrow: 'Never lose what you tracked',
-    headline: 'Cancel anytime. Your data stays put.',
-    body: 'Drop to Free, come back next season, your stats are exactly where you left them. We never delete game data. The plan just controls what’s visible. Upgrade later and everything reappears, including AI insights from past games.',
+    headline: 'Cancel anytime. Your data stays.',
+    body: 'Drop to Free, come back next season, your stats are exactly where you left them. Upgrade later and everything reappears, including AI insights from past games.',
     Icon: VaultIcon,
+    gradient: 'c',
   },
 ]
 
-function VisualPlaceholder({ Icon, flipped }: { Icon: Row['Icon']; flipped: boolean }) {
+const gradients: Record<Card['gradient'], string> = {
+  a: 'bg-gradient-to-tr from-brand-orange/20 via-brand-pink/15 to-brand-blue/20',
+  b: 'bg-gradient-to-br from-brand-blue/20 via-brand-pink/15 to-brand-orange/20',
+  c: 'bg-gradient-to-tr from-brand-pink/20 via-brand-orange/15 to-brand-blue/20',
+}
+
+function VisualPlaceholder({ Icon, gradient }: { Icon: Card['Icon']; gradient: Card['gradient'] }) {
   return (
     <div
       aria-hidden
       className={cn(
         'relative aspect-[4/3] w-full overflow-hidden rounded-card ring-1 ring-black/5',
-        flipped
-          ? 'bg-gradient-to-br from-brand-blue/15 via-brand-pink/10 to-brand-orange/15'
-          : 'bg-gradient-to-tr from-brand-orange/15 via-brand-pink/10 to-brand-blue/15',
+        gradients[gradient],
       )}
     >
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <Icon className="h-24 w-24 text-ink/70 md:h-28 md:w-28" />
+        <Icon className="h-1/2 w-1/2 text-ink/70" />
       </div>
     </div>
   )
@@ -126,29 +134,22 @@ export function WhyPro() {
           </p>
         </div>
 
-        <div className="mt-16 flex flex-col gap-16 md:gap-24">
-          {rows.map((row, i) => {
-            const flipped = i % 2 === 1
-            return (
-              <div
-                key={row.headline}
-                className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12"
-              >
-                <div className={cn(flipped && 'md:order-2')}>
-                  <p className="font-heading text-sm font-semibold uppercase tracking-[0.2em] text-brand-orange">
-                    {row.eyebrow}
-                  </p>
-                  <h3 className="mt-3 font-heading text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-3xl">
-                    {row.headline}
-                  </h3>
-                  <p className="mt-4 text-lg text-brand-gray">{row.body}</p>
-                </div>
-                <div className={cn(flipped && 'md:order-1')}>
-                  <VisualPlaceholder Icon={row.Icon} flipped={flipped} />
-                </div>
-              </div>
-            )
-          })}
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3">
+          {cards.map((card) => (
+            <article
+              key={card.headline}
+              className="flex flex-col rounded-card bg-surface-alt p-6 ring-1 ring-black/5 md:p-7"
+            >
+              <VisualPlaceholder Icon={card.Icon} gradient={card.gradient} />
+              <p className="mt-6 font-heading text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">
+                {card.eyebrow}
+              </p>
+              <h3 className="mt-3 font-heading text-xl font-extrabold leading-tight tracking-tight text-ink md:text-2xl">
+                {card.headline}
+              </h3>
+              <p className="mt-3 text-brand-gray">{card.body}</p>
+            </article>
+          ))}
         </div>
       </Container>
     </section>
