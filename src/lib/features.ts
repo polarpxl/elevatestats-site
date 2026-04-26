@@ -8,6 +8,7 @@ export type IconName =
   | 'map-pin'
   | 'layers'
   | 'download'
+  | 'cloud-download'
   | 'upload'
   | 'phone'
   | 'wifi-off'
@@ -222,7 +223,9 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Pre-game data prefetch',
         description:
-          "Rosters, opponents, and schedules cached before the game starts so you’re ready even if signal dies.",
+          "Rosters, opponents, and schedules cached before puck drop, so you’re ready to track even if signal dies the moment you walk into the rink.",
+        hero: true,
+        icon: 'cloud-download',
       },
       {
         title: 'Duplicate-safe event logging',

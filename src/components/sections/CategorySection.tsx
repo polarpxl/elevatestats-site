@@ -47,6 +47,15 @@ function DownloadIcon({ className }: IconProps) {
     </svg>
   )
 }
+function CloudDownloadIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M7 18a4.5 4.5 0 01-.5-8.97A6 6 0 0118 9.5a4 4 0 01-.5 7.97" />
+      <path d="M12 12v7" />
+      <path d="M9 16l3 3 3-3" />
+    </svg>
+  )
+}
 function UploadIcon({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -114,6 +123,7 @@ const iconMap: Record<IconName, ComponentType<IconProps>> = {
   'map-pin': MapPinIcon,
   layers: LayersIcon,
   download: DownloadIcon,
+  'cloud-download': CloudDownloadIcon,
   upload: UploadIcon,
   phone: PhoneIcon,
   'wifi-off': WifiOffIcon,
