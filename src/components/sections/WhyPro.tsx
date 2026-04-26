@@ -44,7 +44,7 @@ function SparkleIcon({ className }: IconProps) {
   )
 }
 
-function VaultIcon({ className }: IconProps) {
+function TargetIcon({ className }: IconProps) {
   return (
     <svg
       className={className}
@@ -56,10 +56,10 @@ function VaultIcon({ className }: IconProps) {
       strokeLinejoin="round"
       aria-hidden
     >
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <circle cx="13" cy="12" r="3.2" />
-      <path d="M13 8.8v.8M13 14.4v.8M16.2 12h.8M9 12h.8" />
-      <path d="M5 19v1.5M19 19v1.5" />
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5.5" />
+      <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+      <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3" />
     </svg>
   )
 }
@@ -88,10 +88,10 @@ const cards: Card[] = [
     gradient: 'b',
   },
   {
-    eyebrow: 'Never lose what you tracked',
-    headline: 'Cancel anytime. Your data stays.',
-    body: 'Drop to Free, come back next season, your stats are exactly where you left them. Upgrade later and everything reappears, including AI insights from past games.',
-    Icon: VaultIcon,
+    eyebrow: 'Know your opponent',
+    headline: 'Shot maps and stats for every team you face.',
+    body: "Pull up any opponent and see exactly where they shoot, how you've matched up against them, and what's worked. Head-to-head records, shot charts, game-by-game breakdowns.",
+    Icon: TargetIcon,
     gradient: 'c',
   },
 ]
