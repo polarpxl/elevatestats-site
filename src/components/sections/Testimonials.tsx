@@ -8,10 +8,8 @@ import {
   useTransform,
 } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { Avatar, type AvatarTone } from '@/components/ui/Avatar'
 import { Container } from '@/components/ui/Container'
-import { cn } from '@/lib/cn'
-
-type AvatarTone = 'orange' | 'blue' | 'gray'
 
 type Testimonial = {
   quote: string
@@ -72,12 +70,6 @@ const testimonials: Testimonial[] = [
   },
 ]
 
-const avatarTones: Record<AvatarTone, string> = {
-  orange: 'bg-brand-orange/15 text-brand-orange',
-  blue: 'bg-brand-blue/15 text-brand-blue',
-  gray: 'bg-brand-gray/15 text-brand-gray',
-}
-
 const LOOP_DURATION_SECONDS = 42
 const COPY_COUNT = testimonials.length
 
@@ -88,15 +80,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
         &ldquo;{t.quote}&rdquo;
       </blockquote>
       <figcaption className="mt-auto flex items-center gap-3">
-        <span
-          aria-hidden
-          className={cn(
-            'inline-flex h-11 w-11 items-center justify-center rounded-full font-heading text-sm font-semibold',
-            avatarTones[t.tone],
-          )}
-        >
-          {t.initials}
-        </span>
+        <Avatar initials={t.initials} tone={t.tone} size="sm" />
         <span className="flex flex-col leading-tight">
           <span className="font-heading text-sm font-semibold text-ink">{t.author}</span>
           <span className="text-sm text-brand-gray">{t.role}</span>
