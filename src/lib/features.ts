@@ -64,17 +64,18 @@ export const featureCategories: FeatureCategory[] = [
           'Select scorer, assists, and involved players from your roster in two taps.',
         hero: true,
         icon: 'layers',
+        pro: true,
       },
       {
         title: 'Quick Tracking mode',
         description:
-          "Team-vs-opponent toggle for fast entry when you don’t need player detail. The default on Free.",
+          "Team-vs-opponent toggle for fast entry when you don’t need player detail. PRO can switch into full tracking with per-player attribution; Free stays in Quick mode.",
         hero: true,
         icon: 'clock',
       },
       {
         title: 'Penalty tracking',
-        description: 'Log penalties with player attribution.',
+        description: 'Log penalties as they happen during the game.',
       },
       {
         title: 'Goalie selection and mid-game switches',
@@ -96,7 +97,7 @@ export const featureCategories: FeatureCategory[] = [
       },
       {
         title: 'Game finalization',
-        description: 'Close out a game, trigger AI Insights, lock in final stats.',
+        description: 'Close out a game and lock in final stats. PRO games also generate AI Coaching Insights.',
       },
     ],
   },
@@ -147,7 +148,6 @@ export const featureCategories: FeatureCategory[] = [
         title: 'Team-level stats',
         description:
           'Goals, shots, missed, blocked, shooting percentage, and special teams, filterable by game type.',
-        pro: true,
       },
       {
         title: 'Roster Analysis',
@@ -165,7 +165,7 @@ export const featureCategories: FeatureCategory[] = [
       },
       {
         title: 'Game detail pages',
-        description: 'A full post-game breakdown for any individual game.',
+        description: 'A full post-game breakdown for any individual game. Free includes detail pages for your last 5 games; PRO covers your entire history.',
         pro: true,
       },
       {
