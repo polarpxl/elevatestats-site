@@ -5,7 +5,7 @@ import { links } from '@/lib/links'
 
 export function AboutFounder() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-20 md:py-28">
       <Container>
         <div className="mx-auto max-w-3xl">
           <div className="flex flex-col items-center gap-6 rounded-card bg-surface-alt p-7 ring-1 ring-black/5 md:flex-row md:items-start md:gap-8 md:p-10">

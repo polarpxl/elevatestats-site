@@ -2,7 +2,7 @@ import { Container } from '@/components/ui/Container'
 
 export function AboutStory() {
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-20 md:py-28">
       <Container>
         <div className="mx-auto max-w-3xl">
           <h2 className="font-heading text-3xl font-extrabold leading-tight tracking-tight text-ink md:text-4xl">
