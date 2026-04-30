@@ -3,19 +3,52 @@ title: Reading the shot map
 description: The dots on the rink tell a story. Here is how to read it.
 category: analytics-insights
 order: 2
-updated: 2026-04-24
+updated: 2026-04-30
 ---
 
-The shot map plots every shot event (goal, shot on net, miss, block) at the spot on the rink where you logged it. Colour tells you the outcome, and size tells you the frequency when dots overlap.
+The shot map plots every shot event at the spot on the rink where you tracked it. Each dot is a single event, and the icon tells you what happened.
 
 ## How it works
 
-Each dot is a single event. Goals are filled orange, shots on net are filled blue, missed shots are hollow, blocked shots have a diagonal slash. You can filter by player, by game, or by game type. Team shot maps show everything for the team across the filter.
+The rink is split between your team's end and the opponent's end, labelled with team abbreviations (your team on the bottom, the opponent on top). When you tap to log an event during live tracking, the app uses which end of the ice you tapped to figure out who the event belongs to. Goals tracked in the opponent's end are your team's goals, blocks tracked in your end are your team's defensive plays, and so on.
+
+That logic carries through to the shot map. Solid-filled icons are your team's events. Outlined icons (same shape, same colour, just not filled in) are the opponent's events.
+
+If multiple events happened in the same spot, the icons stack on top of each other. The most important event sits on top, with goals taking priority, then shots, then misses, then blocks.
+
+## What each icon means
+
+- **Goal** (blue bell) - the puck went in the net
+- **Shot** (orange thumbs up) - the puck hit the net but didn't score
+- **Miss** (orange thumbs down) - the puck went wide of the net
+- **Block** (orange shield) - a shot was blocked before reaching the net. In your team's end, that means your player blocked the opponent's shot (a defensive play). In the opponent's end, it means the opponent blocked your team's shot.
+
+## Where to find shot maps
+
+Shot maps appear in three places:
+
+- **Player profiles** show every shot a specific player took across every game they played in.
+- **Game detail pages** show every shot from a single game, both teams.
+- **Opponent detail pages** show every shot across every game you've played against that opponent.
+
+You're also looking at the shot map in real time during live game tracking, just without the historical layering.
 
 ## Step-by-step
 
-1. Open a team, player, or game detail page.
-2. Tap the Shot map tile.
-3. Use the filters at the top to narrow by player, date range, or opponent.
-4. Tap any dot to see the game, time, and player attached to that event.
+To view a shot map for a player:
 
+1. From your team, tap Analyze.
+2. Scroll to Roster Analysis and tap any player row.
+3. Scroll down to the Ice Surface section.
+
+To view a shot map for a game:
+
+1. From your team, tap Analyze.
+2. Open All Games.
+3. Tap any game to see the shot map.
+
+To view a shot map for an opponent:
+
+1. From your team, tap Analyze.
+2. Open the Opponents section.
+3. Tap any opponent to see their shot map.
