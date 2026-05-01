@@ -3,19 +3,54 @@ title: Working offline and how sync works
 description: Track the whole game with no signal. Everything reconciles automatically when you are back online.
 category: tracking-games
 order: 3
-updated: 2026-04-24
+updated: 2026-04-30
 ---
 
-Rinks have terrible signal. Elevate is built to assume that. Every event you log lands in an on-device queue first, then syncs to the cloud in the background when the phone can reach it.
+Rinks are notorious for spotty Wi-Fi and weak cell signal. Elevate Hockey Stats is built so you can finish tracking a game even if your connection drops mid-period.
 
-## How it works
+## What works offline
 
-Before a game starts, Elevate prefetches your roster, the opponent card, and the game schedule. Once those are cached, you can put the phone in airplane mode and the tracking screen still works exactly the same. When you come back online, the queue flushes automatically. Every event has a unique ID, so reconnecting mid-sync does not double-count anything.
+Offline mode covers one thing: live tracking of a game that's already been set up.
 
-## Step-by-step
+Once you're on the live tracking screen with the rink and scoreboards visible, the app can keep working without an internet connection. That includes:
 
-1. Open the game on the rink before you drop off the network.
-2. Track normally. The cloud icon in the corner tells you if you are online.
-3. Finalize the game when it is over. If sync has not finished, the app keeps the queue until it does.
-4. Open the app later, on WiFi or cellular, to see the finalized stats and AI Insights.
+- Logging goals, shots, misses, blocks, and penalties
+- Switching between periods
+- Toggling power play
+- Adjusting game settings (Quick mode, starting goalie)
+- Editing or deleting events you've already tracked
+- Finalizing the game at the end
 
+Everything you tap during the game gets stored locally on your phone. When your connection comes back, the app syncs it all up to your account automatically.
+
+## What requires a connection
+
+Pretty much everything outside the live tracking screen needs internet:
+
+- Signing in
+- Creating or editing your team
+- Adding, editing, or archiving players
+- Setting up a new game (the schedule, opponent, time, period length, starting goalie pick)
+- Viewing your home dashboard, game history, player profiles, or shot maps
+- Generating AI Insights after finalizing a game
+- Anything in Settings or Billing
+
+That's why the game has to be set up while you have a connection. Set it up at home, in the parking lot, or wherever you've got Wi-Fi or solid cell signal, then you can drop into the rink and track the game even if the connection vanishes.
+
+## How to tell if you're offline
+
+There are two visual cues on the live tracking screen:
+
+- **Status dot in the top header.** Green means connected. Yellow means offline. The dot updates in real time as your connection comes and goes.
+- **"Ready for offline tracking" toast** appears at the top of the screen when you first enter live tracking, confirming that the game data is cached locally and you're good to go even if the signal drops.
+
+## How sync works when you reconnect
+
+Sync is automatic. As soon as your phone gets internet again, the app pushes everything you tracked offline up to your account. No manual refresh, no sync button, no waiting around.
+
+If you finalize a game while offline, the game stays on your phone until you reconnect. Once you do, it syncs and shows up in your game history with all its events intact.
+
+## A few things worth knowing
+
+- Set up your game while you've still got internet. Once you're in live tracking, the offline cache kicks in.
+- If your phone dies or you close the app mid-game with unsynced events, open the app again with internet and check your game history to confirm everything synced. If something looks off, contact support.
