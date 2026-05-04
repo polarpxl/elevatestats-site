@@ -29,22 +29,7 @@ export default function NotFound() {
           </Container>
 
           {/* Off-side rink line: full-bleed sibling of Container */}
-          <div className="relative mt-4 md:mt-6">
-            <div className="h-1.5 w-full bg-brand-blue md:h-2" />
-            {/* Skid marks crossing the line, slightly left of center */}
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 40 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              className="absolute left-[28%] -top-1 h-4 w-10 text-ink/40 md:-top-1.5 md:h-5 md:w-12"
-            >
-              <line x1="6" y1="2" x2="14" y2="14" />
-              <line x1="22" y1="2" x2="30" y2="14" />
-            </svg>
-          </div>
+          <div className="mt-4 h-5 w-full bg-brand-blue md:mt-6 md:h-6" />
 
           <Container>
             <div className="text-center">
