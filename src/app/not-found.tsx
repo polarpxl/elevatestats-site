@@ -15,7 +15,7 @@ export default function NotFound() {
     <>
       <Nav />
       <main>
-        <section className="bg-surface-alt py-20 md:py-28 lg:py-32">
+        <section className="bg-surface-alt py-8 md:py-12 lg:py-16">
           <Container>
             <div className="text-center">
               <span className="sr-only">Error 404 — page not found.</span>
@@ -29,7 +29,7 @@ export default function NotFound() {
           </Container>
 
           {/* Off-side rink line: full-bleed sibling of Container */}
-          <div className="mt-4 h-5 w-full bg-brand-blue md:mt-6 md:h-6" />
+          <div className="mt-4 h-15 w-full bg-brand-blue md:mt-6 md:h-18" />
 
           <Container>
             <div className="text-center">
