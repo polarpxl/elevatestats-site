@@ -1,14 +1,14 @@
+import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
-import { Placeholder } from '@/components/ui/Placeholder'
 import { links } from '@/lib/links'
 
 export function FeaturesHero() {
   return (
-    <section className="relative overflow-hidden bg-surface-alt pt-12 pb-20 md:pt-20 md:pb-24 lg:pt-28">
+    <section className="relative bg-surface-alt pt-12 pb-20 md:pt-20 md:pb-24 lg:pt-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
         style={{
           background:
             'radial-gradient(50% 60% at 50% 0%, rgba(255, 102, 0, 0.16), transparent 70%)',
@@ -37,12 +37,14 @@ export function FeaturesHero() {
           </Button>
         </div>
 
-        <div className="mx-auto mt-12 max-w-5xl md:mt-16">
-          <Placeholder
-            label="Features overview placeholder"
-            tone="orange"
-            aspect="16/9"
-            className="w-full"
+        <div className="relative mx-auto mt-12 aspect-[4096/2437] max-w-5xl mb-[-14%] sm:mb-[-16%] md:mt-16 md:mb-[-19%]">
+          <Image
+            src="/app/EHS-Feature-Hero.webp"
+            alt="Elevate Stats app screens showing the game summary, shot map, and live tracking views on phone mockups."
+            fill
+            priority
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="object-contain"
           />
         </div>
       </Container>
