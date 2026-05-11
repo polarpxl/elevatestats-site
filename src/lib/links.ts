@@ -10,7 +10,6 @@ const social: Record<'twitter' | 'youtube' | 'instagram', string> = {
 }
 
 export const links = {
-  // External app (will move to a custom domain later)
   appHome: APP_URL,
   appLogin: `${APP_URL}/login`,
   appSignup: `${APP_URL}/signup`,
