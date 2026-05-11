@@ -18,7 +18,6 @@ export default function FeaturesPage() {
       <Nav />
       <main>
         <FeaturesHero />
-        <div aria-hidden className="h-[28vw] bg-white md:max-h-[300px]" />
         {featureCategories.map((category) => (
           <CategorySection key={category.id} category={category} />
         ))}

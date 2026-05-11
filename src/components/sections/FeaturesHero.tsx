@@ -5,10 +5,10 @@ import { links } from '@/lib/links'
 
 export function FeaturesHero() {
   return (
-    <section className="relative bg-surface-alt pt-12 md:pt-20 lg:pt-28">
+    <section className="relative overflow-hidden bg-surface-alt pt-12 md:pt-20 lg:pt-28">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 overflow-hidden"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
             'radial-gradient(50% 60% at 50% 0%, rgba(255, 102, 0, 0.16), transparent 70%)',
@@ -37,7 +37,7 @@ export function FeaturesHero() {
           </Button>
         </div>
 
-        <div className="relative mx-auto mt-12 aspect-[4096/2437] max-w-5xl mb-[-30%] md:mt-16">
+        <div className="relative mx-auto mt-12 aspect-[4096/2437] max-w-5xl md:mt-16">
           <Image
             src="/app/EHS-Feature-Hero.webp"
             alt="Elevate Stats app screens showing the game summary, shot map, and live tracking views on phone mockups."
