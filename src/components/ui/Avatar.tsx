@@ -43,7 +43,13 @@ export function Avatar({
           className,
         )}
       >
-        <Image src={src} alt={alt ?? ''} fill sizes={`${s.px}px`} className="object-cover" />
+        <Image
+          src={src}
+          alt={alt ?? `${initials} avatar`}
+          fill
+          sizes={`${s.px}px`}
+          className="object-cover"
+        />
       </span>
     )
   }

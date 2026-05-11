@@ -9,10 +9,16 @@ import { links } from '@/lib/links'
 import { supportCategories } from '@/lib/support'
 import { getArticlesByCategory } from '@/lib/support-articles'
 
+const title = 'Support — Elevate Hockey Stats'
+const description =
+  'Guides, answers, and how-tos for Elevate Hockey Stats. Browse by topic or drop us a line.'
+
 export const metadata: Metadata = {
-  title: 'Support — Elevate Hockey Stats',
-  description:
-    'Guides, answers, and how-tos for Elevate Hockey Stats. Browse by topic or drop us a line.',
+  title,
+  description,
+  alternates: { canonical: '/support' },
+  openGraph: { title, description, url: '/support' },
+  twitter: { title, description },
 }
 
 export default function SupportPage() {

@@ -6,6 +6,7 @@ import { getLegalDoc } from '@/lib/legal'
 export const metadata: Metadata = {
   title: 'Privacy Policy — Elevate Hockey Stats',
   description: 'How Elevate Hockey Stats handles your data.',
+  alternates: { canonical: '/privacy' },
 }
 
 export default function PrivacyRoute() {

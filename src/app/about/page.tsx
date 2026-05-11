@@ -6,10 +6,16 @@ import { AboutStory } from '@/components/sections/AboutStory'
 import { FooterCta } from '@/components/sections/FooterCta'
 import { Nav } from '@/components/sections/Nav'
 
+const title = 'About — Elevate Hockey Stats'
+const description =
+  'Built for amateur hockey, by people who have coached it. Pro-level analytics for the rinks where it matters most.'
+
 export const metadata: Metadata = {
-  title: 'About — Elevate Hockey Stats',
-  description:
-    'Built for amateur hockey, by people who have coached it. Pro-level analytics for the rinks where it matters most.',
+  title,
+  description,
+  alternates: { canonical: '/about' },
+  openGraph: { title, description, url: '/about' },
+  twitter: { title, description },
 }
 
 export default function AboutPage() {

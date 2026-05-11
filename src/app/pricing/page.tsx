@@ -8,10 +8,16 @@ import { Testimonials } from '@/components/sections/Testimonials'
 import { WhyPro } from '@/components/sections/WhyPro'
 import { links } from '@/lib/links'
 
+const title = 'Pricing — Elevate Hockey Stats'
+const description =
+  "Start free with 3 PRO games. No credit card. Upgrade to PRO for $14/mo when you're ready to go deeper."
+
 export const metadata: Metadata = {
-  title: 'Pricing — Elevate Hockey Stats',
-  description:
-    "Start free with 3 PRO games. No credit card. Upgrade to PRO for $14/mo when you're ready to go deeper.",
+  title,
+  description,
+  alternates: { canonical: '/pricing' },
+  openGraph: { title, description, url: '/pricing' },
+  twitter: { title, description },
 }
 
 export default function PricingPage() {

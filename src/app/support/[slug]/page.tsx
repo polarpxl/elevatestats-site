@@ -29,9 +29,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params
   const article = getArticleBySlug(slug)
   if (!article) return { title: 'Article not found — Elevate Hockey Stats Support' }
+  const title = `${article.title} — Elevate Hockey Stats Support`
+  const canonical = `/support/${slug}`
   return {
-    title: `${article.title} — Elevate Hockey Stats Support`,
+    title,
     description: article.description,
+    alternates: { canonical },
+    openGraph: {
+      type: 'article',
+      title,
+      description: article.description,
+      url: canonical,
+    },
+    twitter: { title, description: article.description },
   }
 }
 

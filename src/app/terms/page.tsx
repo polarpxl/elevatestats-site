@@ -6,6 +6,7 @@ import { getLegalDoc } from '@/lib/legal'
 export const metadata: Metadata = {
   title: 'Terms of Service — Elevate Hockey Stats',
   description: 'The rules of the road for using Elevate Hockey Stats.',
+  alternates: { canonical: '/terms' },
 }
 
 export default function TermsRoute() {

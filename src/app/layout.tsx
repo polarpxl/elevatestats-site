@@ -23,9 +23,34 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://elevatestats.app'),
+  applicationName: 'Elevate Stats',
   title: 'Elevate Hockey Stats — Pro-level stats for amateur hockey',
   description:
     'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Elevate Stats',
+    locale: 'en_CA',
+    title: 'Elevate Hockey Stats — Pro-level stats for amateur hockey',
+    description:
+      'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Elevate Hockey Stats — Smarter Insights. Better Coaching. Stronger Players.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Elevate Hockey Stats — Pro-level stats for amateur hockey',
+    description:
+      'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+    images: ['/opengraph-image.png'],
+  },
 }
 
 export const viewport: Viewport = {

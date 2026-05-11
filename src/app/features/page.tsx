@@ -6,10 +6,16 @@ import { Nav } from '@/components/sections/Nav'
 import { featureCategories } from '@/lib/features'
 import { links } from '@/lib/links'
 
+const title = 'Features — Elevate Hockey Stats'
+const description =
+  'Live game tracking, team and season analytics, and a rink-ready PWA. Everything you need on the bench, and after.'
+
 export const metadata: Metadata = {
-  title: 'Features — Elevate Hockey Stats',
-  description:
-    'Live game tracking, team and season analytics, and a rink-ready PWA. Everything you need on the bench, and after.',
+  title,
+  description,
+  alternates: { canonical: '/features' },
+  openGraph: { title, description, url: '/features' },
+  twitter: { title, description },
 }
 
 export default function FeaturesPage() {
