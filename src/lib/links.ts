@@ -1,4 +1,4 @@
-export const APP_URL = 'https://elevatestats.vercel.app'
+export const APP_URL = 'https://app.elevatestats.app'
 
 // Social URLs left empty until accounts are live. Footer renders icons only
 // for entries with a non-empty URL, so no code change is needed when these
