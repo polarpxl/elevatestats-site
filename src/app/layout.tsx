@@ -1,6 +1,12 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Poppins, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+
+// Set NEXT_PUBLIC_GTM_ID in .env.local for local dev, and in Vercel →
+// Project → Settings → Environment Variables (Production / Preview / Development)
+// for deploys. Without it, the GTM snippet below is skipped entirely.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -35,7 +41,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en-CA"
       className={`${poppins.variable} ${jakarta.variable} antialiased`}
     >
-      <body className="min-h-dvh pt-16 md:pt-20">{children}</body>
+      <head>
+        {GTM_ID ? (
+          <Script id="gtm-init" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`}
+          </Script>
+        ) : null}
+      </head>
+      <body className="min-h-dvh pt-16 md:pt-20">
+        {GTM_ID ? (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+        ) : null}
+        {children}
+      </body>
     </html>
   )
 }
