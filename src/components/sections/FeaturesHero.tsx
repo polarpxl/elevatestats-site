@@ -5,7 +5,7 @@ import { links } from '@/lib/links'
 
 export function FeaturesHero() {
   return (
-    <section className="relative bg-surface-alt pt-12 pb-20 md:pt-20 md:pb-24 lg:pt-28">
+    <section className="relative bg-surface-alt pt-12 md:pt-20 lg:pt-28">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -37,7 +37,7 @@ export function FeaturesHero() {
           </Button>
         </div>
 
-        <div className="relative mx-auto mt-12 aspect-[4096/2437] max-w-5xl mb-[-14%] sm:mb-[-16%] md:mt-16 md:mb-[-19%]">
+        <div className="relative mx-auto mt-12 aspect-[4096/2437] max-w-5xl mb-[-30%] md:mt-16">
           <Image
             src="/app/EHS-Feature-Hero.webp"
             alt="Elevate Stats app screens showing the game summary, shot map, and live tracking views on phone mockups."
