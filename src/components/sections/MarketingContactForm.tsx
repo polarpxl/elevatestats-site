@@ -2,7 +2,8 @@
 
 import { useActionState, useState } from 'react'
 import { useFormStatus } from 'react-dom'
-import { initialState, submitForm, type SubmitFormState } from '@/app/actions/submit-form'
+import { submitForm } from '@/app/actions/submit-form'
+import { initialFormState, type SubmitFormState } from '@/lib/schemas/form'
 
 type FormType = 'contact' | 'support'
 
@@ -77,7 +78,7 @@ export function MarketingContactForm({
       setSubmittedName(formData.get('name')?.toString() ?? '')
       return submitForm(prev, formData)
     },
-    initialState,
+    initialFormState,
   )
 
   const resolvedSuccessCopy =

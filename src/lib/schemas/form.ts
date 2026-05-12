@@ -21,3 +21,12 @@ export const formSchema = z
 
 export type FormInput = z.infer<typeof formSchema>
 export type FormFieldErrors = Partial<Record<keyof FormInput, string[]>>
+
+export type SubmitFormState =
+  | { status: 'idle' }
+  | { status: 'success' }
+  | { status: 'error'; error: 'validation'; fieldErrors: FormFieldErrors }
+  | { status: 'error'; error: 'rate_limit' }
+  | { status: 'error'; error: 'send_failed' }
+
+export const initialFormState: SubmitFormState = { status: 'idle' }

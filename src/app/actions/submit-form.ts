@@ -4,7 +4,7 @@ import { headers } from 'next/headers'
 import { z } from 'zod'
 import resend from '@/lib/resend'
 import { checkRateLimit } from '@/lib/rate-limit'
-import { formSchema, type FormFieldErrors } from '@/lib/schemas/form'
+import { formSchema, type FormFieldErrors, type SubmitFormState } from '@/lib/schemas/form'
 import {
   contactAutoReplyEmail,
   contactNotificationEmail,
@@ -14,15 +14,6 @@ import {
 
 const FROM_NOTIFICATION = 'Elevate Stats <no-reply@elevatesportslabs.com>'
 const FROM_AUTO_REPLY = 'Elevate Stats Team <no-reply@elevatesportslabs.com>'
-
-export type SubmitFormState =
-  | { status: 'idle' }
-  | { status: 'success' }
-  | { status: 'error'; error: 'validation'; fieldErrors: FormFieldErrors }
-  | { status: 'error'; error: 'rate_limit' }
-  | { status: 'error'; error: 'send_failed' }
-
-export const initialState: SubmitFormState = { status: 'idle' }
 
 async function getClientIp(): Promise<string> {
   const h = await headers()
