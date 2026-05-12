@@ -12,8 +12,8 @@ import {
   supportNotificationEmail,
 } from '@/lib/emails/templates'
 
-const FROM_NOTIFICATION = 'Elevate Stats <no-reply@elevatesportslabs.com>'
-const FROM_AUTO_REPLY = 'Elevate Stats Team <no-reply@elevatesportslabs.com>'
+const FROM_NOTIFICATION = 'Elevate Stats <hello@elevatesportslabs.com>'
+const FROM_AUTO_REPLY = 'Elevate Stats Team <hello@elevatesportslabs.com>'
 
 async function getClientIp(): Promise<string> {
   const h = await headers()
