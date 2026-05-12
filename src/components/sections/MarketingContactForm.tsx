@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useActionState, useState } from 'react'
+import { useFormStatus } from 'react-dom'
+import { initialState, submitForm, type SubmitFormState } from '@/app/actions/submit-form'
 
-type Status = 'idle' | 'sending' | 'sent'
-
-const initialForm = { name: '', email: '', subject: '', message: '' }
+type FormType = 'contact' | 'support'
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
@@ -22,72 +22,132 @@ const inputClass =
 
 const idPrefixCounter = { current: 0 }
 
-// TODO: wire to Resend (a marketing-site-scoped API key will be added in a future
-// session — Darrin already has a Resend account for the main app).
+function FieldError({ messages }: { messages?: string[] }) {
+  if (!messages || messages.length === 0) return null
+  return (
+    <p className="mt-2 text-sm text-red-600" role="alert">
+      {messages[0]}
+    </p>
+  )
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus()
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="inline-flex h-13 w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-7 font-heading text-base font-semibold text-white transition-colors hover:bg-[#E65C00] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange disabled:opacity-60 sm:w-auto"
+    >
+      {pending ? 'Sending…' : 'Send message'}
+    </button>
+  )
+}
+
+function getFormError(state: SubmitFormState, formType: FormType): string | null {
+  if (state.status !== 'error') return null
+  if (state.error === 'rate_limit') {
+    return "You've sent a few messages recently. Please try again in a few minutes."
+  }
+  if (state.error === 'send_failed') {
+    const fallback =
+      formType === 'support' ? 'support@elevatesportslabs.com' : 'hello@elevatesportslabs.com'
+    return `Something went wrong on our end. Please try again, or email us directly at ${fallback}.`
+  }
+  return null
+}
+
 export function MarketingContactForm({
-  successCopy = "We'll be in touch within one business day.",
+  formType = 'contact',
+  successCopy,
   idPrefix,
 }: {
+  formType?: FormType
   successCopy?: string
   idPrefix?: string
 }) {
-  // Stable per-instance id prefix so name/email/etc. ids don't collide if the
-  // component is rendered twice on a single page (we don't do that today, but
-  // it's cheap insurance).
   const [prefix] = useState(() => {
     if (idPrefix) return idPrefix
     idPrefixCounter.current += 1
     return `mcf-${idPrefixCounter.current}`
   })
-  const [status, setStatus] = useState<Status>('idle')
-  const [form, setForm] = useState(initialForm)
+  const [submittedName, setSubmittedName] = useState<string>('')
+  const [state, formAction] = useActionState<SubmitFormState, FormData>(
+    async (prev, formData) => {
+      setSubmittedName(formData.get('name')?.toString() ?? '')
+      return submitForm(prev, formData)
+    },
+    initialState,
+  )
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setStatus('sending')
-    window.setTimeout(() => setStatus('sent'), 600)
-  }
+  const resolvedSuccessCopy =
+    successCopy ??
+    (formType === 'support'
+      ? 'Thanks for reaching out. Someone from our team will get back to you within one business day, often sooner.'
+      : "Thanks for reaching out. We'll get back to you within one to two business days.")
 
-  function reset() {
-    setForm(initialForm)
-    setStatus('idle')
-  }
-
-  if (status === 'sent') {
+  if (state.status === 'success') {
+    const firstName = submittedName.split(' ')[0] || 'there'
     return (
-      <div className="rounded-card bg-white p-8 ring-1 ring-black/5 shadow-sm">
+      <div className="rounded-card bg-white p-8 shadow-sm ring-1 ring-black/5">
         <div className="flex items-start gap-3">
           <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+              aria-hidden
+            >
               <path d="M5 12.5l4.5 4.5L19 7" />
             </svg>
           </span>
           <div>
-            <h3 className="font-heading text-xl font-bold text-ink">
-              Thanks, {form.name.split(' ')[0] || 'there'}.
-            </h3>
-            <p className="mt-2 text-brand-gray">{successCopy}</p>
-            <button
-              type="button"
-              onClick={reset}
-              className="mt-4 inline-flex items-center gap-1 font-heading text-sm font-semibold text-brand-orange transition-colors hover:text-[#E65C00]"
-            >
-              Send another message
-              <span aria-hidden>&rarr;</span>
-            </button>
+            <h3 className="font-heading text-xl font-bold text-ink">Thanks, {firstName}.</h3>
+            <p className="mt-2 text-brand-gray">{resolvedSuccessCopy}</p>
           </div>
         </div>
       </div>
     )
   }
 
-  const sending = status === 'sending'
+  const fieldErrors = state.status === 'error' && state.error === 'validation' ? state.fieldErrors : {}
+  const formError = getFormError(state, formType)
 
   return (
     <form
-      onSubmit={handleSubmit}
-      className="rounded-card bg-white p-6 ring-1 ring-black/5 shadow-sm md:p-8"
+      action={formAction}
+      className="rounded-card bg-white p-6 shadow-sm ring-1 ring-black/5 md:p-8"
+      noValidate
     >
+      <input type="hidden" name="formType" value={formType} />
+      <div
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          left: '-10000px',
+          top: 'auto',
+          width: '1px',
+          height: '1px',
+          overflow: 'hidden',
+        }}
+      >
+        <label htmlFor={`${prefix}-website`}>
+          Leave this field empty
+          <input
+            id={`${prefix}-website`}
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            defaultValue=""
+          />
+        </label>
+      </div>
+
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
           <Label htmlFor={`${prefix}-name`}>Name</Label>
@@ -97,10 +157,9 @@ export function MarketingContactForm({
             type="text"
             required
             autoComplete="name"
-            value={form.name}
-            onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
             className={inputClass}
           />
+          <FieldError messages={fieldErrors.name} />
         </div>
         <div>
           <Label htmlFor={`${prefix}-email`}>Email</Label>
@@ -110,23 +169,23 @@ export function MarketingContactForm({
             type="email"
             required
             autoComplete="email"
-            value={form.email}
-            onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
             className={inputClass}
           />
+          <FieldError messages={fieldErrors.email} />
         </div>
       </div>
       <div className="mt-4">
-        <Label htmlFor={`${prefix}-subject`}>Subject</Label>
+        <Label htmlFor={`${prefix}-subject`}>
+          Subject{formType === 'contact' ? <span className="ml-1 text-brand-gray/70">(optional)</span> : null}
+        </Label>
         <input
           id={`${prefix}-subject`}
           name="subject"
           type="text"
-          required
-          value={form.subject}
-          onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
+          required={formType === 'support'}
           className={inputClass}
         />
+        <FieldError messages={fieldErrors.subject} />
       </div>
       <div className="mt-4">
         <Label htmlFor={`${prefix}-message`}>Message</Label>
@@ -135,19 +194,19 @@ export function MarketingContactForm({
           name="message"
           required
           rows={5}
-          value={form.message}
-          onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
           className={`${inputClass} resize-y`}
         />
+        <FieldError messages={fieldErrors.message} />
       </div>
+
+      {formError ? (
+        <p className="mt-4 text-sm text-red-600" role="alert">
+          {formError}
+        </p>
+      ) : null}
+
       <div className="mt-6">
-        <button
-          type="submit"
-          disabled={sending}
-          className="inline-flex h-13 items-center justify-center gap-2 rounded-full bg-brand-orange px-7 font-heading text-base font-semibold text-white transition-colors hover:bg-[#E65C00] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange disabled:opacity-60 w-full sm:w-auto"
-        >
-          {sending ? 'Sending…' : 'Send message'}
-        </button>
+        <SubmitButton />
       </div>
     </form>
   )

@@ -27,10 +27,7 @@ export default function ContactPage() {
           <Container>
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
               <ContactInfoBlock />
-              <MarketingContactForm
-                idPrefix="contact-page"
-                successCopy="We'll be in touch within 1-2 business days."
-              />
+              <MarketingContactForm formType="contact" idPrefix="contact-page" />
             </div>
           </Container>
         </section>

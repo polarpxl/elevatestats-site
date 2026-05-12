@@ -56,7 +56,7 @@ export default function SupportPage() {
                   We usually respond within one business day.
                 </p>
               </div>
-              <MarketingContactForm idPrefix="support-contact" />
+              <MarketingContactForm formType="support" idPrefix="support-contact" />
             </div>
           </Container>
         </section>
