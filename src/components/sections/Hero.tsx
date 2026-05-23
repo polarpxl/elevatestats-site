@@ -64,7 +64,7 @@ export function Hero() {
           {/* Copy column */}
           <div className="text-center md:text-left">
             <span className="inline-flex items-center rounded-full bg-brand-orange/10 px-3 py-1 font-heading text-xs font-semibold uppercase tracking-[0.16em] text-brand-orange">
-              For coaches and stat trackers
+              For hockey coaches and stat trackers
             </span>
 
             <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-ink md:text-5xl lg:relative lg:z-10 lg:w-[125%] lg:text-6xl">
