@@ -135,7 +135,7 @@ export function Nav() {
                 alt="Elevate Hockey Stats"
                 width={500}
                 height={195}
-                className="h-auto w-[110px] md:w-[140px]"
+                className="h-auto w-[116px] -translate-y-[4px] md:w-[147px]"
               />
             </Link>
 
