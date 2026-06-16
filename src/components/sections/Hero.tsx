@@ -5,10 +5,29 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { links } from '@/lib/links'
+import ShotMapBackground from '@/components/sections/ShotMapBackground'
 
 import heroAiInsights from '../../../public/app/hero-ai-insights.webp'
 import heroStatBars from '../../../public/app/hero-stat-bars.webp'
 import heroTrackingWheel from '../../../public/app/hero-tracking-wheel.webp'
+
+// Scrim gradients layered between the animated rink canvas and the live hero
+// copy. Stops are keyed to the hero surface (--color-surface-alt, #F7F7F8 =
+// rgb(247,247,248)) so the fade reads as distance haze, not a grey film.
+// 1. Brand colour wash — warms the ice, adds depth.
+const GLOW =
+  'radial-gradient(55% 50% at 78% 42%, rgba(255,102,0,0.16), transparent 70%),' +
+  'radial-gradient(40% 40% at 20% 80%, rgba(0,191,255,0.10), transparent 70%)'
+// 2. Left-to-right scrim — protects the headline column on the left.
+const LEFT_SCRIM =
+  'linear-gradient(100deg, rgba(247,247,248,0.92) 0%, rgba(247,247,248,0.74) 30%,' +
+  ' rgba(247,247,248,0.42) 50%, rgba(247,247,248,0.14) 66%, rgba(247,247,248,0) 80%)'
+// 3. Top/bottom scrim — soft veil under the menu, distance-fade up top,
+//    grounding fade at the bottom.
+const TOP_BOTTOM_SCRIM =
+  'linear-gradient(180deg, rgba(247,247,248,0.18) 0%, rgba(247,247,248,0.1) 13%,' +
+  ' rgba(247,247,248,0.04) 30%, rgba(247,247,248,0) 50%, rgba(247,247,248,0) 80%,' +
+  ' rgba(247,247,248,0.72) 100%)'
 
 type FloatProps = {
   duration: number
@@ -49,17 +68,38 @@ function FloatCard({
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-surface-alt pt-12 pb-20 md:pt-20 md:pb-28 lg:pt-28 lg:pb-36">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            'radial-gradient(55% 50% at 78% 42%, rgba(255, 102, 0, 0.16), transparent 70%), radial-gradient(40% 40% at 20% 80%, rgba(0, 191, 255, 0.10), transparent 70%)',
-        }}
+    <section className="relative -mt-16 overflow-hidden bg-surface-alt pt-28 pb-16 md:-mt-20 md:pt-40 md:pb-20 lg:pt-48 lg:pb-24">
+      {/* Bleed the section up behind the fixed glass header (body adds pt-16/20
+          to clear it). The extra top padding here keeps the copy in place while
+          the animated rink fills the strip behind the frosted header bar. */}
+      {/* 1. Animated "living shot-map" rink (z-0).
+          On mobile, shift it down behind the phone cluster (clear of the copy);
+          on desktop, raise it so a sliver tucks up under the glass header. */}
+      <ShotMapBackground
+        rinkTilt="Tilted"
+        motionIntensity="Medium"
+        className="[--shot-map-shift:42%] md:[--shot-map-shift:0%]"
       />
 
-      <Container className="relative">
+      {/* 2. Scrim layers (z-10) — warm the ice, then protect copy legibility */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10"
+        style={{ background: GLOW }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10"
+        style={{ background: LEFT_SCRIM }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-10"
+        style={{ background: TOP_BOTTOM_SCRIM }}
+      />
+
+      {/* 3. Existing live-text hero (z-20) — sits on top, untouched */}
+      <Container className="relative z-20">
         <div className="grid items-center gap-14 md:grid-cols-2 md:gap-8 lg:items-start lg:gap-16">
           {/* Copy column */}
           <div className="text-center md:text-left">

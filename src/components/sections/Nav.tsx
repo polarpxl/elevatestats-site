@@ -122,7 +122,7 @@ export function Nav() {
           'fixed inset-x-0 top-0 z-50 safe-top backdrop-blur-md transition-colors',
           scrolled
             ? 'bg-white/85 border-b border-black/10'
-            : 'bg-white/70 border-b border-black/5',
+            : 'bg-white/45 border-b border-black/5',
         )}
       >
         <Container>
