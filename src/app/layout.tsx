@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   applicationName: 'Elevate Stats',
   title: 'Elevate Hockey Stats — Pro-level stats for amateur hockey',
   description:
-    'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+    'Elevate is the simplest hockey stat-tracking app for amateur coaches — capture, share, and learn from pro-quality game stats. Free to start.',
   openGraph: {
     type: 'website',
     siteName: 'Elevate Stats',
     locale: 'en_CA',
     title: 'Elevate Hockey Stats — Pro-level stats for amateur hockey',
     description:
-      'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+      'Elevate is the simplest hockey stat-tracking app for amateur coaches — capture, share, and learn from pro-quality game stats. Free to start.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Elevate Hockey Stats — Pro-level stats for amateur hockey',
     description:
-      'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+      'Elevate is the simplest hockey stat-tracking app for amateur coaches — capture, share, and learn from pro-quality game stats. Free to start.',
     images: ['/opengraph-image.png'],
   },
 }
