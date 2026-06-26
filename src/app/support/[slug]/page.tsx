@@ -12,12 +12,15 @@ import { ReadingProgress } from '@/components/sections/ReadingProgress'
 import { mdxComponents, mdxOptions } from '@/components/mdx/mdx-components'
 import { Container } from '@/components/ui/Container'
 import { links } from '@/lib/links'
+import { supportCategories } from '@/lib/support'
 import {
   extractHeadings,
   getAllSlugs,
   getArticleBySlug,
   getArticlesByCategory,
 } from '@/lib/support-articles'
+
+const SITE_URL = 'https://elevatestats.app'
 
 type PageProps = { params: Promise<{ slug: string }> }
 
@@ -55,8 +58,54 @@ export default async function SupportArticlePage({ params }: PageProps) {
     .filter((a) => a.slug !== article.slug)
     .slice(0, 3)
 
+  const category = supportCategories.find((c) => c.id === article.category)
+  const articleUrl = `${SITE_URL}/support/${slug}`
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.updated,
+    dateModified: article.updated,
+    inLanguage: 'en-CA',
+    author: { '@type': 'Organization', name: 'Elevate Stats' },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Elevate Stats',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.png` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Support', item: `${SITE_URL}/support` },
+      ...(category
+        ? [{ '@type': 'ListItem', position: 3, name: category.name, item: `${SITE_URL}/support#${category.id}` }]
+        : []),
+      {
+        '@type': 'ListItem',
+        position: category ? 4 : 3,
+        name: article.title,
+        item: articleUrl,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <ReadingProgress targetId="article-body" />
       <Nav />
       <main>

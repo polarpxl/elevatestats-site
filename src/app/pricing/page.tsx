@@ -6,6 +6,7 @@ import { PricingHero } from '@/components/sections/PricingHero'
 import { PricingPlans } from '@/components/sections/PricingPlans'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { WhyPro } from '@/components/sections/WhyPro'
+import { faqs } from '@/lib/faqs'
 import { links } from '@/lib/links'
 
 const title = 'Pricing — Elevate Hockey Stats'
@@ -20,9 +21,26 @@ export const metadata: Metadata = {
   twitter: { title, description },
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+}
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Nav />
       <main>
         <PricingHero />

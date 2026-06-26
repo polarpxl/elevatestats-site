@@ -25,10 +25,26 @@ const softwareApplicationSchema = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
   name: 'Elevate Hockey Stats',
+  url: 'https://elevatestats.app',
   applicationCategory: 'SportsApplication',
   operatingSystem: 'Web, iOS, Android',
   description:
     'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',
+  screenshot: [
+    'https://elevatestats.app/app/feature-shot-mapping.webp',
+    'https://elevatestats.app/app/feature-player-profile.webp',
+    'https://elevatestats.app/app/feature-ai-insights.webp',
+  ],
+  featureList: [
+    'Live game tracking on a rink visual',
+    'Player and goalie stats',
+    'Shot maps and zone analysis',
+    'AI coaching insights after every game',
+    'Opponent analysis',
+    'Full season analytics',
+    'Works offline at the rink',
+    'CSV import and export',
+  ],
   offers: [
     {
       '@type': 'Offer',
