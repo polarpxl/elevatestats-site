@@ -131,7 +131,7 @@ export function Nav() {
               {/* Plain <img> for a 1KB SVG logo — sidesteps next/image's dangerouslyAllowSVG requirement */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/logo-primary.svg"
+                src="/brand/logo-primary.svg?v=2"
                 alt="Elevate Hockey Stats"
                 width={600}
                 height={273}
