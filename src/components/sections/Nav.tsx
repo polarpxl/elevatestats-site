@@ -122,7 +122,7 @@ export function Nav() {
           // The logo's knocked-out HOCKEY lettering pulls the backdrop through,
           // so the unscrolled veil stays white enough (75%) to keep it legible
           // over the dark hero photo while the blur preserves the glass feel.
-          'fixed inset-x-0 top-0 z-50 safe-top backdrop-blur-md transition-colors',
+          'fixed inset-x-0 top-0 z-50 safe-top backdrop-blur-lg transition-colors',
           scrolled
             ? 'bg-white/85 border-b border-black/10'
             : 'bg-white/75 border-b border-black/5',
