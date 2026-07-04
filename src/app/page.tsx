@@ -6,6 +6,7 @@ import { HashScrollOnMount } from '@/components/sections/HashScrollOnMount'
 import { Hero } from '@/components/sections/Hero'
 import { HowItWorks } from '@/components/sections/HowItWorks'
 import { Nav } from '@/components/sections/Nav'
+import { StatBand } from '@/components/sections/StatBand'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { UseCases } from '@/components/sections/UseCases'
 
@@ -88,6 +89,7 @@ export default function Home() {
         <FeaturesBento />
         <HowItWorks />
         <UseCases />
+        <StatBand />
         <Testimonials />
         <CtaPanel />
       </main>
