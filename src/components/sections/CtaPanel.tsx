@@ -22,6 +22,10 @@ export function CtaPanel() {
                   'radial-gradient(50% 60% at 85% 85%, rgba(255, 102, 0, 0.30), transparent 70%), radial-gradient(40% 50% at 10% 0%, rgba(0, 191, 255, 0.18), transparent 70%)',
               }}
             />
+            {/* Quiet arrow-pattern corner fade (design system v2) — the one
+                permitted use on the site. Inline position because the class
+                comes from unlayered elevate-treatments.css. */}
+            <div aria-hidden className="arrow-pattern arrow-pattern--corner" style={{ opacity: 0.1 }} />
           </div>
 
           <div className="relative grid items-center gap-10 text-center md:grid-cols-[1.22fr_1fr] md:gap-8 md:text-left">
