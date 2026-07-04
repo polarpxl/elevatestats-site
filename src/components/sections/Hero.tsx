@@ -46,6 +46,7 @@ export function Hero() {
           alt=""
           fill
           preload
+          loading="eager"
           sizes="100vw"
           className="object-cover"
         />
@@ -57,7 +58,14 @@ export function Hero() {
         className="duotone duotone--stats"
         style={{ position: 'absolute', inset: 0, clipPath: ARROW_LEAN_CLIP }}
       >
-        <Image src={sticksTunnel} alt="" fill sizes="100vw" className="object-cover" />
+        <Image
+          src={sticksTunnel}
+          alt=""
+          fill
+          loading="eager"
+          sizes="100vw"
+          className="object-cover"
+        />
       </div>
 
       {/* 3. Orange glow stripes on the lean */}
