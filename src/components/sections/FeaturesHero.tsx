@@ -42,7 +42,8 @@ export function FeaturesHero() {
             src="/app/EHS-Feature-Hero.webp"
             alt="Elevate Stats app screens showing the game summary, shot map, and live tracking views on phone mockups."
             fill
-            priority
+            preload
+            loading="eager"
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-contain"
           />
