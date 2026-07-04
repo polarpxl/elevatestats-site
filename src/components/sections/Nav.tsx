@@ -131,10 +131,10 @@ export function Nav() {
               {/* Plain <img> for a 1KB SVG logo — sidesteps next/image's dangerouslyAllowSVG requirement */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/logo-primary.svg?v=2"
+                src="/brand/logo-primary.svg?v=3"
                 alt="Elevate Hockey Stats"
-                width={600}
-                height={273}
+                width={500}
+                height={195}
                 className="h-auto w-[116px] -translate-y-[4px] md:w-[147px]"
               />
             </Link>
