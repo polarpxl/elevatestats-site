@@ -23,9 +23,16 @@ export function getSupabaseBrowserClient(): SupabaseClient {
 
   client = createClient(url, anonKey, {
     auth: {
-      // PKCE + detectSessionInUrl lets the client complete the Google OAuth
-      // round-trip (?code=...) when the provider redirects back to /parents.
-      flowType: 'pkce',
+      // Implicit flow (NOT pkce) to match the app's own auth. The email
+      // confirmation then arrives as a plain token that redirects to the app
+      // with the session in the URL hash (#access_token=...), which the app
+      // picks up exactly like a native app signup. PKCE would instead send a
+      // ?code that can only be exchanged on the domain/browser that started the
+      // signup — which breaks cross-domain (marketing -> app) confirmation and
+      // cross-browser email clicks (common on mobile/Facebook traffic).
+      // detectSessionInUrl also lets the Google OAuth return to /parents pick up
+      // its hash-token session before we forward it into the app.
+      flowType: 'implicit',
       detectSessionInUrl: true,
       persistSession: true,
       autoRefreshToken: true,
