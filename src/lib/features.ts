@@ -187,6 +187,63 @@ export const featureCategories: FeatureCategory[] = [
     ],
   },
   {
+    id: 'share-the-bench',
+    theme: 'light',
+    eyebrow: 'Share the Bench',
+    heading: 'Coach the game. Let someone else count it.',
+    lede:
+      "Invite a parent or team manager to track stats for you. They get exactly what they need to run the clipboard, and nothing they don’t.",
+    cta: { label: 'Invite your stats keeper today', href: links.appSignup },
+    features: [
+      {
+        title: 'Stats keeper invites',
+        description:
+          'Create an invite in two taps and share it straight from your phone. Your stats keeper signs up free and lands right on your team, ready to track.',
+        hero: true,
+        icon: 'upload',
+      },
+      {
+        title: 'Track-only access',
+        description:
+          'Stats keepers can create and track games, full stop. Your roster, team settings, and account stay yours alone.',
+        hero: true,
+        icon: 'shield',
+      },
+      {
+        title: 'One tracker per game, always',
+        description:
+          'If two people open the same game, one tracks and one watches. No duplicate stats, no stepping on each other, ever.',
+        hero: true,
+        icon: 'check',
+      },
+      {
+        title: 'Seamless handoffs',
+        description:
+          'Phone dying in the third period? Anyone on the team can take over tracking mid-game, and every stat stays accounted for.',
+        hero: true,
+        icon: 'phone',
+      },
+      {
+        title: 'Watch mode',
+        description: 'Not tracking? Follow along in a live read-only view of the game.',
+      },
+      {
+        title: 'Offline-safe takeovers',
+        description:
+          "If a stats keeper loses signal mid-game, their stats are held for your review instead of colliding with the new tracker’s. You choose what counts.",
+      },
+      {
+        title: 'Works with your plan',
+        description:
+          'Stats keepers track at your team’s level. On PRO, they log player-level detail; on Free, Quick Tracking. Their own account never matters.',
+      },
+      {
+        title: 'Revoke anytime',
+        description: "Remove a stats keeper’s access in one tap from your team page.",
+      },
+    ],
+  },
+  {
     id: 'built-for-the-rink',
     theme: 'dark',
     eyebrow: 'Built for the Rink',
@@ -230,6 +287,11 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Duplicate-safe event logging',
         description: 'Reconnect mid-sync and nothing double-counts.',
+      },
+      {
+        title: 'Conflict-proof tracking',
+        description:
+          'Two devices can never silently double-count a game. If tracking ever overlaps, you review and decide, not the app.',
       },
     ],
   },
