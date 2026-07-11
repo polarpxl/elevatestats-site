@@ -193,7 +193,7 @@ export const featureCategories: FeatureCategory[] = [
     heading: 'Coach the game. Let someone else count it.',
     lede:
       "Invite a parent or team manager to track stats for you. They get exactly what they need to run the clipboard, and nothing they don’t.",
-    cta: { label: 'Invite your stats keeper today', href: links.appHome },
+    cta: { label: 'Invite your stats keeper today', href: links.appSignup },
     features: [
       {
         title: 'Stats keeper invites',

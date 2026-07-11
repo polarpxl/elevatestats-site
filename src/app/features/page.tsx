@@ -8,7 +8,7 @@ import { links } from '@/lib/links'
 
 const title = 'Features — Elevate Hockey Stats'
 const description =
-  'Live game tracking, team and season analytics, and an app that installs on any phone. Everything you need on the bench, and after.'
+  'Live game tracking, team and season analytics, an app that installs on any phone, and stats keeper invites so you never track alone. Everything you need on the bench, and after.'
 
 export const metadata: Metadata = {
   title,
