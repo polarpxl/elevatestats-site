@@ -60,23 +60,16 @@ function resolveUtms(): Utms {
 }
 
 /**
- * Fire the Meta Pixel CompleteRegistration event. Fired both directly (fbq) and
- * via the GTM dataLayer, so it works whether the Pixel is loaded inline or
- * through Google Tag Manager. A parallel GA4-style `sign_up` event carries the
- * UTMs for campaign attribution.
+ * Fire the CompleteRegistration conversion via the GTM dataLayer only — the GTM
+ * container (GTM-PJ5KKTJZ) loads the Meta Pixel and forwards the event, so a
+ * direct fbq() call here would double-count the conversion. A parallel
+ * GA4-style `sign_up` event carries the UTMs for campaign attribution.
  */
 function trackRegistration(method: 'email' | 'google', utms: Utms) {
   if (typeof window === 'undefined') return
   const w = window as unknown as {
-    fbq?: (...args: unknown[]) => void
     dataLayer?: Record<string, unknown>[]
   }
-
-  try {
-    if (typeof w.fbq === 'function') {
-      w.fbq('track', 'CompleteRegistration', { method, ...utms })
-    }
-  } catch {}
 
   w.dataLayer = w.dataLayer || []
   w.dataLayer.push({ event: 'CompleteRegistration', method, ...utms })
