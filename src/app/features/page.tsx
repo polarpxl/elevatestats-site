@@ -30,7 +30,7 @@ export default function FeaturesPage() {
       </main>
       <FooterCta
         headline="Ready to elevate your team?"
-        subhead="Three free PRO games. No card. No clock."
+        subhead="Free forever. Unlimited team tracking, plus 3 PRO games. No card."
         primaryCtaLabel="Start tracking free"
         primaryCtaHref={links.appHome}
         secondaryLabel="See pricing"

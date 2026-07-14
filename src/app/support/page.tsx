@@ -63,7 +63,7 @@ export default function SupportPage() {
       </main>
       <FooterCta
         headline="Ready to get back to coaching?"
-        subhead="Three free PRO games. No card. No clock."
+        subhead="Free forever. Unlimited team tracking, plus 3 PRO games. No card."
         primaryCtaLabel="Start free"
         primaryCtaHref={links.appHome}
         secondaryLabel="See pricing"

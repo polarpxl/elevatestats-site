@@ -78,7 +78,7 @@ const steps: Step[] = [
   {
     number: '01',
     title: 'Sign up, free.',
-    body: 'Three free Pro games. No credit card, no account required for players or parents. Just an email to get started.',
+    body: 'Team tracking is free forever, and your first 3 games include every PRO feature. No credit card, no account required for players or parents. Just an email to get started.',
     image: howitworksSignup,
     imageAlt: 'Email signup form for Elevate Stats',
     imageSizes: STEP_SIZES,
