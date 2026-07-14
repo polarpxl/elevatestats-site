@@ -69,10 +69,11 @@ export default async function SupportArticlePage({ params }: PageProps) {
     datePublished: article.updated,
     dateModified: article.updated,
     inLanguage: 'en-CA',
-    author: { '@type': 'Organization', name: 'Elevate Stats' },
+    author: { '@type': 'Organization', '@id': 'https://elevatesportslabs.com/#organization', name: 'Elevate Sports Labs Inc.' },
     publisher: {
       '@type': 'Organization',
-      name: 'Elevate Stats',
+      '@id': 'https://elevatesportslabs.com/#organization',
+      name: 'Elevate Sports Labs Inc.',
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
@@ -100,11 +101,11 @@ export default async function SupportArticlePage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
       />
       <ReadingProgress targetId="article-body" />
       <Nav />
