@@ -100,9 +100,13 @@ function PriceBlock({ plan, period }: { plan: Plan; period: BillingPeriod }) {
     )
   }
 
-  if (period === 'monthly') {
-    return (
-      <div className="mt-6">
+  const monthlyEquivalent = formatMonthlyEquivalent(plan.priceYearly)
+  return (
+    <>
+      <div
+        className={cn('mt-6', period !== 'monthly' && 'hidden')}
+        aria-hidden={period !== 'monthly'}
+      >
         <div className="flex items-baseline gap-2">
           <span className="font-heading text-5xl font-extrabold text-ink">
             ${plan.priceMonthly}
@@ -113,24 +117,23 @@ function PriceBlock({ plan, period }: { plan: Plan; period: BillingPeriod }) {
           <p className="mt-2 text-sm text-brand-gray">{plan.subPriceLine}</p>
         )}
       </div>
-    )
-  }
-
-  const monthlyEquivalent = formatMonthlyEquivalent(plan.priceYearly)
-  return (
-    <div className="mt-6">
-      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-2">
-        <span className="font-heading text-5xl font-extrabold text-ink">
-          ${plan.priceYearly}
-        </span>
-        <span className="text-brand-gray">{plan.currency} /year</span>
-        {plan.yearlySavingsAmount && <SavingsPill amount={plan.yearlySavingsAmount} />}
+      <div
+        className={cn('mt-6', period !== 'yearly' && 'hidden')}
+        aria-hidden={period !== 'yearly'}
+      >
+        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-2">
+          <span className="font-heading text-5xl font-extrabold text-ink">
+            ${plan.priceYearly}
+          </span>
+          <span className="text-brand-gray">{plan.currency} /year</span>
+          {plan.yearlySavingsAmount && <SavingsPill amount={plan.yearlySavingsAmount} />}
+        </div>
+        <p className="mt-1 text-sm text-brand-gray">Works out to ${monthlyEquivalent}/mo.</p>
+        {plan.subPriceLine && (
+          <p className="mt-2 text-sm text-brand-gray">{plan.subPriceLine}</p>
+        )}
       </div>
-      <p className="mt-1 text-sm text-brand-gray">Works out to ${monthlyEquivalent}/mo.</p>
-      {plan.subPriceLine && (
-        <p className="mt-2 text-sm text-brand-gray">{plan.subPriceLine}</p>
-      )}
-    </div>
+    </>
   )
 }
 
