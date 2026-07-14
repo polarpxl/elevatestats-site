@@ -60,7 +60,7 @@ export function CtaPanel() {
               <div className="w-[60%] max-w-[260px] md:-mt-28 md:w-[70%] md:max-w-[280px] lg:-mt-36 lg:w-[64%]">
                 <GradientPhoneFrame
                   src={ctaPhone}
-                  alt="Elevate Hockey Stats app on a phone"
+                  alt="Elevate Stats app on a phone"
                   sizes="(min-width: 1024px) 280px, (min-width: 768px) 240px, 60vw"
                 />
               </div>

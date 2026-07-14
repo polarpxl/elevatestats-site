@@ -80,7 +80,7 @@ const steps: Step[] = [
     title: 'Sign up, free.',
     body: 'Three free Pro games. No credit card, no account required for players or parents. Just an email to get started.',
     image: howitworksSignup,
-    imageAlt: 'Email signup form for Elevate Hockey Stats',
+    imageAlt: 'Email signup form for Elevate Stats',
     imageSizes: STEP_SIZES,
     Icon: EnvelopeIcon,
   },

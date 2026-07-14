@@ -6,7 +6,7 @@ import { Nav } from '@/components/sections/Nav'
 import { featureCategories } from '@/lib/features'
 import { links } from '@/lib/links'
 
-const title = 'Features — Elevate Hockey Stats'
+const title = 'Features | Elevate Stats'
 const description =
   'Live game tracking, team and season analytics, an app that installs on any phone, and stats keeper invites so you never track alone. Everything you need on the bench, and after.'
 

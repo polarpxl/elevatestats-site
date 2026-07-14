@@ -31,8 +31,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
   const article = getArticleBySlug(slug)
-  if (!article) return { title: 'Article not found — Elevate Hockey Stats Support' }
-  const title = `${article.title} — Elevate Hockey Stats Support`
+  if (!article) return { title: 'Article not found | Elevate Stats Support' }
+  const title = `${article.title} | Elevate Stats Support`
   const canonical = `/support/${slug}`
   return {
     title,

@@ -6,7 +6,7 @@ import { Nav } from '@/components/sections/Nav'
 import { Container } from '@/components/ui/Container'
 import { links } from '@/lib/links'
 
-const title = 'Contact — Elevate Hockey Stats'
+const title = 'Contact | Elevate Stats'
 const description =
   "Have a question, partnership idea, or feedback? Drop us a line and we'll get back to you."
 

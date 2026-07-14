@@ -9,9 +9,9 @@ import { links } from '@/lib/links'
 import { supportCategories } from '@/lib/support'
 import { getArticlesByCategory } from '@/lib/support-articles'
 
-const title = 'Support — Elevate Hockey Stats'
+const title = 'Support | Elevate Stats'
 const description =
-  'Guides, answers, and how-tos for Elevate Hockey Stats. Browse by topic or drop us a line.'
+  'Guides, answers, and how-tos for Elevate Stats. Browse by topic or drop us a line.'
 
 export const metadata: Metadata = {
   title,

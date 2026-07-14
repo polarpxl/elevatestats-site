@@ -2,7 +2,7 @@ export const supportCategories = [
   {
     id: 'getting-started',
     name: 'Getting started',
-    description: 'First steps to set up Elevate Hockey Stats and track your first game.',
+    description: 'First steps to set up Elevate Stats and track your first game.',
   },
   {
     id: 'tracking-games',

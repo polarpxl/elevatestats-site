@@ -41,7 +41,7 @@ export function AboutFounder() {
           </div>
           <p className="mx-auto mt-6 max-w-2xl px-2 text-center text-xs leading-relaxed text-brand-gray/80 md:text-sm">
             Elevate Sports Labs Inc. Incorporated in Ontario, Canada. Parent of the Elevate Sports
-            Stats division. Elevate Hockey Stats is our first product.
+            Stats division. Elevate Stats is our first product.
           </p>
         </div>
       </Container>

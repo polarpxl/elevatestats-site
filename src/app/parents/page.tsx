@@ -24,7 +24,7 @@ const footerLinks = [
 // exit is a lost conversion. The only exceptions are the legally-required
 // Privacy/Terms links in the footer.
 export const metadata: Metadata = {
-  title: 'Know how your player is doing, every game | Elevate Hockey Stats',
+  title: 'Know how your player is doing, every game | Elevate Stats',
   description:
     'See how your player is doing, every game. Track shots, goals, and trends from the stands, plus shot maps and AI game insights. First 3 games free, no credit card.',
   alternates: { canonical: '/parents' },
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Elevate Hockey Stats — pro-level stats for parents',
+        alt: 'Elevate Stats: pro-level stats for parents',
       },
     ],
   },
@@ -142,7 +142,7 @@ export default function StartPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/brand/logo-primary-wht.svg"
-              alt="Elevate Hockey Stats"
+              alt="Elevate Stats"
               width={528}
               height={192}
               className="h-auto w-[221px] md:w-[255px]"
@@ -230,7 +230,7 @@ export default function StartPage() {
                     <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2.1rem] bg-black">
                       <Image
                         src={phonePlayerStats}
-                        alt="A player’s profile and shot map in the Elevate Hockey Stats app"
+                        alt="A player’s profile and shot map in the Elevate Stats app"
                         fill
                         sizes="(min-width: 640px) 240px, 55vw"
                         className="object-cover object-top"

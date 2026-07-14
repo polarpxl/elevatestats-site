@@ -3,7 +3,7 @@
 /**
  * ShotMapBackground
  * -----------------
- * Animated "living shot-map" canvas for the Elevate Hockey Stats hero.
+ * Animated "living shot-map" canvas for the Elevate Stats hero.
  *
  * A faint, regulation-proportioned hockey rink (drawn to NHL 200ft x 85ft specs)
  * sits behind the hero. Orange/blue shot dots plot themselves one at a time —

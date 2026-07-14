@@ -19,7 +19,7 @@ export function SupportHero() {
           How can we help?
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-lg text-brand-gray md:text-xl">
-          Guides, answers, and how-tos for Elevate Hockey Stats.
+          Guides, answers, and how-tos for Elevate Stats.
         </p>
       </Container>
     </section>

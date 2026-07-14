@@ -6,7 +6,7 @@ import { AboutStory } from '@/components/sections/AboutStory'
 import { FooterCta } from '@/components/sections/FooterCta'
 import { Nav } from '@/components/sections/Nav'
 
-const title = 'About — Elevate Hockey Stats'
+const title = 'About | Elevate Stats'
 const description =
   'Built for amateur hockey, by people who have coached it. Pro-level analytics for the rinks where it matters most.'
 

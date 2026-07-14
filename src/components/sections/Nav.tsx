@@ -130,12 +130,12 @@ export function Nav() {
       >
         <Container>
           <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-            <Link href="/" className="flex items-center" aria-label="Elevate Hockey Stats home">
+            <Link href="/" className="flex items-center" aria-label="Elevate Stats home">
               {/* Plain <img> for a 1KB SVG logo — sidesteps next/image's dangerouslyAllowSVG requirement */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/brand/logo-primary.svg?v=3"
-                alt="Elevate Hockey Stats"
+                alt="Elevate Stats"
                 width={500}
                 height={195}
                 className="h-auto w-[116px] -translate-y-[4px] md:w-[147px]"

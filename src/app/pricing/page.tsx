@@ -9,7 +9,7 @@ import { WhyPro } from '@/components/sections/WhyPro'
 import { faqs } from '@/lib/faqs'
 import { links } from '@/lib/links'
 
-const title = 'Pricing — Elevate Hockey Stats'
+const title = 'Pricing | Elevate Stats'
 const description =
   "Start free with 3 PRO games. No credit card. Upgrade to PRO for $14/mo when you're ready to go deeper."
 
