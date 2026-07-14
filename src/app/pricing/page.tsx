@@ -11,7 +11,7 @@ import { links } from '@/lib/links'
 
 const title = 'Pricing | Elevate Stats'
 const description =
-  "Start free with 3 PRO games. No credit card. Upgrade to PRO for $14/mo when you're ready to go deeper."
+  "Free unlimited team tracking, plus a 3-game PRO trial. No credit card. Upgrade to PRO for $14 CAD/month when you're ready to go deeper."
 
 export const metadata: Metadata = {
   title,

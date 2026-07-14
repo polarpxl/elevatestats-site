@@ -26,7 +26,7 @@ const footerLinks = [
 export const metadata: Metadata = {
   title: 'Know how your player is doing, every game | Elevate Stats',
   description:
-    'See how your player is doing, every game. Track shots, goals, and trends from the stands, plus shot maps and AI game insights. First 3 games free, no credit card.',
+    'See how your player is doing, every game. Track shots, goals, and trends from the stands, plus shot maps and AI game insights. Free to track, with 3 games of every PRO feature included. No credit card.',
   alternates: { canonical: '/parents' },
   // Paid-traffic landing page: intentionally kept out of organic search so it
   // doesn't compete with the main marketing pages. Flip to index:true only if
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     url: '/parents',
     title: 'Track your player’s hockey stats, free',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals, and trends from the stands, with shot maps and AI insights. First 3 games free, no credit card.',
+      'Pro-level hockey stats for parents. Track shots, goals, and trends from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Track your player’s hockey stats, free',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals, and trends from the stands, with shot maps and AI insights. First 3 games free, no credit card.',
+      'Pro-level hockey stats for parents. Track shots, goals, and trends from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card.',
     images: ['/opengraph-image.png'],
   },
 }
@@ -245,8 +245,8 @@ export default function StartPage() {
                   </h2>
                   <p className="mt-3 text-brand-gray">
                     No clipboards, no guessing whether the good game was actually a good game.
-                    Elevate shows you your kid’s season the way pro teams see theirs, and your
-                    first 3 games are on us.
+                    Elevate Stats shows you your kid’s season the way pro teams see theirs. Tracking
+                    is free forever, and your first 3 games include every PRO feature.
                   </p>
                   <p className="mt-5 font-heading text-sm font-semibold uppercase tracking-wide text-brand-gray/70">
                     Built by hockey parents and coaches · Your data stays private
