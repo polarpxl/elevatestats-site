@@ -116,8 +116,8 @@ export function Hero() {
             </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-lg text-white/80 md:mx-0 md:text-xl">
-              Elevate Hockey Stats helps amateur coaches capture, share, and learn from every
-              shift, right from the bench.
+              Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share,
+              and learn from every shift, right from the bench, even when the rink has no signal.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:items-start md:justify-start">
@@ -130,7 +130,7 @@ export function Hero() {
             </div>
 
             <p className="mt-5 text-sm text-white/70">
-              Free forever plan includes 3 pro-level games. No credit card.
+              Free forever. Unlimited team tracking, plus 3 games of PRO features. No credit card.
             </p>
             <p className="mt-2 text-sm text-white/60">
               iPhone, iPad, web-based. No install.
@@ -149,7 +149,7 @@ export function Hero() {
                 <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2.1rem] bg-black">
                   <Image
                     src={heroStatBars}
-                    alt="Player stat bar chart in the Elevate Hockey Stats app"
+                    alt="Player stat bar chart in the Elevate Stats app"
                     fill
                     sizes="(min-width: 1024px) 280px, (min-width: 768px) 240px, 55vw"
                     className="object-cover object-top"

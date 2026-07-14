@@ -2,6 +2,51 @@ export type FaqEntry = { question: string; answer: string }
 
 export const faqs: readonly FaqEntry[] = [
   {
+    question: 'What is Elevate Stats?',
+    answer:
+      'Elevate Stats is a hockey stats tracking app for amateur coaches. You track shots, goals, and game events from the bench on your phone or tablet, and get shot maps, player and goalie stats, and AI coaching insights after every game.',
+  },
+  {
+    question: 'Is there a free hockey stats tracking app?',
+    answer:
+      'Yes. Elevate Stats has a Free tier with unlimited team-level game tracking, forever. Every new account also gets 3 full games of PRO features to try, with no credit card required.',
+  },
+  {
+    question: 'How do I track shots on goal for a minor hockey team?',
+    answer:
+      'Open Elevate Stats during the game and tap the rink where the shot happened. Each tap records the shot location, and PRO attributes it to a player. After the game you get a shot map and shooting stats automatically.',
+  },
+  {
+    question: 'Does Elevate Stats work for minor hockey, beer league, and youth teams?',
+    answer:
+      'Yes. It is built specifically for amateur hockey: minor and youth teams, junior, and adult recreational leagues. It is designed to be usable by one person on a cold bench with gloves on.',
+  },
+  {
+    question: 'Does it work at rinks with no cell signal?',
+    answer:
+      'Yes. Tracking works fully offline and syncs automatically when your connection returns.',
+  },
+  {
+    question: 'Do I need to install an app from the App Store?',
+    answer:
+      'No. Elevate Stats is a web app that runs in your browser at app.elevatestats.app, and you can add it to your home screen so it opens like a regular app.',
+  },
+  {
+    question: 'What does Elevate Stats cost?',
+    answer:
+      'The Free tier is $0, forever. PRO is $14 CAD per month or $109 CAD per year (which saves $59 a year). Clubs, associations, and leagues can contact us for volume pricing.',
+  },
+  {
+    question: "Can parents see their player's stats?",
+    answer:
+      "Yes. Coaches can share stats, and parents can also track games themselves from the stands to follow their player's progress across a season.",
+  },
+  {
+    question: 'How is Elevate Stats different from a paper game sheet or a spreadsheet?',
+    answer:
+      'A paper sheet captures totals. Elevate Stats captures where and when every event happened, then turns that into shot maps, trends, and AI insights with no manual data entry after the game.',
+  },
+  {
     question: 'What counts as a "PRO game" on the free tier?',
     answer:
       "Only finalized games count toward your 3-game PRO trial. Games you start but don't finalize don't burn a trial game, and games you delete before finalizing don't count either. The counter is per account, so creating a new team won't reset it.",

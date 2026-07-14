@@ -31,8 +31,8 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
   const article = getArticleBySlug(slug)
-  if (!article) return { title: 'Article not found — Elevate Hockey Stats Support' }
-  const title = `${article.title} — Elevate Hockey Stats Support`
+  if (!article) return { title: 'Article not found | Elevate Stats Support' }
+  const title = `${article.title} | Elevate Stats Support`
   const canonical = `/support/${slug}`
   return {
     title,
@@ -69,10 +69,11 @@ export default async function SupportArticlePage({ params }: PageProps) {
     datePublished: article.updated,
     dateModified: article.updated,
     inLanguage: 'en-CA',
-    author: { '@type': 'Organization', name: 'Elevate Stats' },
+    author: { '@type': 'Organization', '@id': 'https://elevatesportslabs.com/#organization', name: 'Elevate Sports Labs Inc.' },
     publisher: {
       '@type': 'Organization',
-      name: 'Elevate Stats',
+      '@id': 'https://elevatesportslabs.com/#organization',
+      name: 'Elevate Sports Labs Inc.',
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.png` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': articleUrl },
@@ -100,11 +101,11 @@ export default async function SupportArticlePage({ params }: PageProps) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema).replace(/</g, '\\u003c') }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c') }}
       />
       <ReadingProgress targetId="article-body" />
       <Nav />
@@ -140,7 +141,7 @@ export default async function SupportArticlePage({ params }: PageProps) {
       </main>
       <FooterCta
         headline="Ready to get back to coaching?"
-        subhead="Three free PRO games. No card. No clock."
+        subhead="Free forever. Unlimited team tracking, plus 3 PRO games. No card."
         primaryCtaLabel="Start free"
         primaryCtaHref={links.appHome}
         secondaryLabel="See pricing"

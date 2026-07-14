@@ -6,7 +6,7 @@ import { Nav } from '@/components/sections/Nav'
 import { links } from '@/lib/links'
 
 export const metadata: Metadata = {
-  title: 'Page not found — Elevate Hockey Stats',
+  title: 'Page not found | Elevate Stats',
   description: "That page isn't here. Head home or check support.",
 }
 

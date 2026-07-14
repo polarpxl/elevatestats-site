@@ -1,6 +1,6 @@
 'use client'
 
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useId, useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { cn } from '@/lib/cn'
@@ -52,20 +52,16 @@ function FaqRow({
           )}
         />
       </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            id={panelId}
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="overflow-hidden"
-          >
-            <p className="pb-5 pr-8 text-brand-gray">{entry.answer}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        id={panelId}
+        initial={false}
+        animate={{ height: open ? 'auto' : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.2, ease: 'easeOut' }}
+        className="overflow-hidden"
+        aria-hidden={!open}
+      >
+        <p className="pb-5 pr-8 text-brand-gray">{entry.answer}</p>
+      </motion.div>
     </div>
   )
 }

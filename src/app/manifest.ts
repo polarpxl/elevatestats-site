@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Elevate Hockey Stats',
+    name: 'Elevate Stats',
     short_name: 'Elevate',
     description:
       'The simplest way for amateur hockey coaches and stat trackers to capture, share, and learn from pro-quality game stats.',

@@ -209,7 +209,7 @@ function SocialLinks() {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Elevate Hockey Stats on ${label}`}
+            aria-label={`Elevate Stats on ${label}`}
             className="inline-flex text-white/70 transition-colors hover:text-white"
           >
             <Icon className="h-6 w-6" />
@@ -230,7 +230,7 @@ function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/brand/brandmark.png"
-              alt="Elevate Hockey Stats"
+              alt="Elevate Stats"
               className="h-12 w-auto"
             />
             <p className="mt-5 max-w-xs text-sm text-white/70">

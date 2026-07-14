@@ -9,9 +9,9 @@ import { links } from '@/lib/links'
 import { supportCategories } from '@/lib/support'
 import { getArticlesByCategory } from '@/lib/support-articles'
 
-const title = 'Support — Elevate Hockey Stats'
+const title = 'Support | Elevate Stats'
 const description =
-  'Guides, answers, and how-tos for Elevate Hockey Stats. Browse by topic or drop us a line.'
+  'Guides, answers, and how-tos for Elevate Stats. Browse by topic or drop us a line.'
 
 export const metadata: Metadata = {
   title,
@@ -63,7 +63,7 @@ export default function SupportPage() {
       </main>
       <FooterCta
         headline="Ready to get back to coaching?"
-        subhead="Three free PRO games. No card. No clock."
+        subhead="Free forever. Unlimited team tracking, plus 3 PRO games. No card."
         primaryCtaLabel="Start free"
         primaryCtaHref={links.appHome}
         secondaryLabel="See pricing"

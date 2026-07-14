@@ -1,0 +1,39 @@
+# Elevate Stats
+
+> Elevate Stats is a hockey stats tracking app for amateur coaches. Capture,
+> share, and learn from every shift, right from the bench, even when the rink
+> has no signal. Elevate Stats is made by Elevate Sports Labs Inc., a Canadian
+> company.
+
+Pricing: the Free tier includes unlimited team-level game tracking, forever.
+PRO is $14 CAD per month or $109 CAD per year and adds player and goalie
+stats, AI coaching insights, opponent analysis and shot maps, full season
+analytics, CSV import and export, and full game history. Every new account
+gets 3 full games of PRO features free, with no credit card required. Custom
+plans are available for clubs, associations, and leagues.
+
+The app runs at https://app.elevatestats.app (a progressive web app, no
+app store install required).
+
+## Main pages
+
+- [Features](https://elevatestats.app/features): live game tracking, analytics, sharing, and offline capability, explained in full
+- [Pricing](https://elevatestats.app/pricing): Free vs PRO comparison, billing FAQ
+- [About](https://elevatestats.app/about): the company and founder
+- [Support](https://elevatestats.app/support): all help articles
+
+## Key support articles
+
+- [Free vs PRO explained](https://elevatestats.app/support/free-vs-pro-explained): exactly what each tier includes
+- [Track your first game](https://elevatestats.app/support/track-your-first-game): how game tracking works
+- [Understanding player stats](https://elevatestats.app/support/understanding-player-stats): every stat defined
+- [Reading the shot map](https://elevatestats.app/support/reading-the-shot-map): how to interpret shot maps
+- [Quick mode vs full tracking](https://elevatestats.app/support/quick-mode-vs-full-tracking): the two tracking modes
+- [What AI insights look at](https://elevatestats.app/support/what-ai-insights-look-at): how the AI analysis works
+- [Working offline and how sync works](https://elevatestats.app/support/working-offline-and-how-sync-works): offline behaviour
+
+## Company
+
+- Product: Elevate Stats (https://elevatestats.app)
+- Company: Elevate Sports Labs Inc., incorporated in Ontario, Canada (https://elevatesportslabs.com)
+- Contact: hello@elevatesportslabs.com
