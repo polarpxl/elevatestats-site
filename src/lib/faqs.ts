@@ -7,9 +7,9 @@ export const faqs: readonly FaqEntry[] = [
       'Elevate Stats is a hockey stats tracking app for amateur coaches. You track shots, goals, and game events from the bench on your phone or tablet, and get shot maps, player and goalie stats, and AI coaching insights after every game.',
   },
   {
-    question: 'Is Elevate Stats free?',
+    question: 'Is there a free hockey stats tracking app?',
     answer:
-      'Yes. The Free tier includes unlimited team-level game tracking, forever. Every new account also gets 3 full games of PRO features to try, with no credit card required.',
+      'Yes. Elevate Stats has a Free tier with unlimited team-level game tracking, forever. Every new account also gets 3 full games of PRO features to try, with no credit card required.',
   },
   {
     question: 'How do I track shots on goal for a minor hockey team?',
