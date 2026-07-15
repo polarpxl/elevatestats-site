@@ -3,10 +3,11 @@ export const APP_URL = 'https://app.elevatestats.app'
 // Social URLs left empty until accounts are live. Footer renders icons only
 // for entries with a non-empty URL, so no code change is needed when these
 // get wired up — just fill in the strings here.
-const social: Record<'twitter' | 'youtube' | 'instagram', string> = {
+const social: Record<'twitter' | 'youtube' | 'facebook' | 'instagram', string> = {
   twitter: '',
   youtube: '',
-  instagram: '',
+  facebook: 'https://www.facebook.com/elevatesportslabs',
+  instagram: 'https://instagram.com/elevatesportslabs',
 }
 
 export const links = {
