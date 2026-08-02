@@ -338,6 +338,9 @@ export function StartSignup() {
         <p className="mt-1 text-sm text-brand-gray">
           Create your free account. Your first 3 games include every PRO feature.
         </p>
+        <p className="mt-2 text-sm font-semibold text-brand-gray">
+          Free forever plan · No credit card required
+        </p>
       </div>
       <button
         type="button"
@@ -427,10 +430,6 @@ export function StartSignup() {
           {submitting ? 'Creating your account…' : 'Create my free account'}
         </button>
       </form>
-
-      <p className="mt-4 text-center text-sm text-brand-gray/80">
-        Free forever plan · No credit card required
-      </p>
     </div>
   )
 }

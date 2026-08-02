@@ -73,9 +73,13 @@ const testimonials: Testimonial[] = [
 const LOOP_DURATION_SECONDS = 42
 const COPY_COUNT = testimonials.length
 
-function TestimonialCard({ t }: { t: Testimonial }) {
+function TestimonialCard({ t, fluid = false }: { t: Testimonial; fluid?: boolean }) {
   return (
-    <figure className="flex w-[320px] shrink-0 flex-col gap-4 rounded-card bg-white p-6 ring-1 ring-black/5 shadow-sm md:w-[380px]">
+    <figure
+      className={`flex flex-col gap-4 rounded-card bg-white p-6 ring-1 ring-black/5 shadow-sm ${
+        fluid ? 'w-full' : 'w-[320px] shrink-0 md:w-[380px]'
+      }`}
+    >
       <blockquote className="text-base leading-relaxed text-ink">
         &ldquo;{t.quote}&rdquo;
       </blockquote>
@@ -156,12 +160,52 @@ function MarqueeTrack() {
 
 type TestimonialsProps = {
   subhead?: string
+  /** false renders a static row — no marquee, no autoplay, no motion. */
+  autoplay?: boolean
+  /** Render only the cards, without the section wrapper and heading, so the
+      quotes can sit inside an existing content column. */
+  embedded?: boolean
+  /** Show only these authors, in this order. Defaults to all six. */
+  authors?: string[]
 }
 
 const DEFAULT_SUBHEAD = 'The team trust we have earned, one Saturday morning rink at a time.'
 
-export function Testimonials({ subhead = DEFAULT_SUBHEAD }: TestimonialsProps = {}) {
+export function Testimonials({
+  subhead = DEFAULT_SUBHEAD,
+  autoplay = true,
+  embedded = false,
+  authors,
+}: TestimonialsProps = {}) {
   const prefersReducedMotion = useReducedMotion()
+
+  const selected = authors
+    ? authors.flatMap((a) => testimonials.filter((t) => t.author === a))
+    : testimonials
+
+  // Static row: stacked on mobile, side by side from md up. No motion at all,
+  // so there is nothing to pause and nothing to respect reduced-motion for.
+  if (!autoplay) {
+    const cards = (
+      <div
+        role="region"
+        aria-label="Testimonials"
+        className="flex flex-col gap-6 md:flex-row md:items-stretch"
+      >
+        {selected.map((t) => (
+          <TestimonialCard key={t.author} t={t} fluid />
+        ))}
+      </div>
+    )
+
+    if (embedded) return cards
+
+    return (
+      <section className="bg-brand-blue/5 py-20 md:py-28">
+        <Container>{cards}</Container>
+      </section>
+    )
+  }
 
   return (
     <section className="overflow-x-hidden bg-brand-blue/5 py-20 md:py-28">

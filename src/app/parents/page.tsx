@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { PoweredBy } from '@/components/ui/PoweredBy'
 import { StartSignup } from '@/components/start/StartSignup'
+import { Testimonials } from '@/components/sections/Testimonials'
 import { MobileCtaBar } from '@/components/start/MobileCtaBar'
 import { links } from '@/lib/links'
 
@@ -165,9 +166,9 @@ export default function StartPage() {
               </h1>
 
               <p className="mx-auto mt-4 max-w-xl text-base text-white/80 md:mt-5 md:text-lg lg:mx-0">
-                Track shots, goals, and trends from the stands, right on your phone. Your first 3
-                games unlock everything, including your player’s personal shot map and AI game
-                insights. Free.
+                Track shots, goals, and trends from the stands, right on your phone. Free all
+                season, no credit card. Your first 3 games also unlock every PRO feature, including
+                personal shot maps and AI game insights.
               </p>
 
               {/* Reinforcing checklist — hidden on the smallest screens so the form
@@ -228,6 +229,10 @@ export default function StartPage() {
                   ))}
                 </ul>
               </div>
+
+              {/* Social proof — static on purpose. Auto-advancing quotes pull
+                  attention away from the form on a paid landing page. */}
+              <Testimonials autoplay={false} embedded authors={['Sarah K.', 'Tom R.']} />
 
               {/* Screenshot + trust */}
               <div className="grid items-center gap-8 sm:grid-cols-2">
