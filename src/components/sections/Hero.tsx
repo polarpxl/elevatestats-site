@@ -9,7 +9,7 @@ import { links } from '@/lib/links'
 import heroAiInsights from '../../../public/app/hero-ai-insights.webp'
 import heroStatBars from '../../../public/app/hero-stat-bars.webp'
 import heroTrackingWheel from '../../../public/app/hero-tracking-wheel.webp'
-import sticksTunnel from '../../../public/imagery/sticks-tunnel.jpg'
+import sticksTunnel from '@/assets/imagery/sticks-tunnel.webp'
 
 // Big-graphic hero (design system v2): two duotone layers of the same photo.
 // The base takes the deep Stats tone; the upper layer, clipped on the arrow
@@ -68,7 +68,7 @@ export function Hero() {
           alt=""
           fill
           preload
-          loading="eager"
+          placeholder="blur"
           sizes="100vw"
           className="object-cover"
         />
@@ -85,6 +85,7 @@ export function Hero() {
           alt=""
           fill
           loading="eager"
+          placeholder="blur"
           sizes="100vw"
           className="object-cover"
         />

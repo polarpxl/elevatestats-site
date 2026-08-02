@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import boards from '../../../public/imagery/boards.jpg'
+import boards from '@/assets/imagery/boards.webp'
 
 // Section-band milestone strip (design system v2): full-bleed duotone photo,
 // band scrim, chunky Poppins-900 numbers with an orange accent bar. Numbers
@@ -20,7 +20,7 @@ export function StatBand() {
       {/* Inline position: elevate-treatments.css is unlayered, so its
           `.duotone { position: relative }` beats Tailwind's `absolute`. */}
       <div className="duotone duotone--stats" style={{ position: 'absolute', inset: 0 }}>
-        <Image src={boards} alt="" fill sizes="100vw" className="object-cover" />
+        <Image src={boards} alt="" fill sizes="100vw" placeholder="blur" className="object-cover" />
       </div>
       {/* Vertical scrim per the section-band reference — the left-heavy
           .band-scrim is for left-aligned copy, not centred stats */}

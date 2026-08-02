@@ -7,6 +7,8 @@ import { MobileCtaBar } from '@/components/start/MobileCtaBar'
 import { links } from '@/lib/links'
 
 import phonePlayerStats from '../../../public/app/phone-player-stats.webp'
+import boards from '@/assets/imagery/boards.webp'
+import sticksTunnel from '@/assets/imagery/sticks-tunnel.webp'
 
 // Low-prominence escape hatches for cautious visitors who want to vet us before
 // signing up. New-tab so the funnel (this /parents tab) stays open behind them.
@@ -101,16 +103,20 @@ export default function StartPage() {
         >
           {/* Duotone base — deep Stats blue over the full image */}
           <div className="duotone duotone--stats-deep" style={{ position: 'absolute', inset: 0 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/imagery/sticks-tunnel.jpg" alt="" />
+            {/* LCP element — preloaded, never lazy. `preload` replaces the
+                deprecated `priority` prop in Next 16. The clipped layer below
+                resolves to this same optimized URL, so it costs one fetch. */}
+            <Image src={sticksTunnel} alt="" fill sizes="100vw" preload placeholder="blur" className="object-cover" />
           </div>
           {/* Lighter Stats-blue layer, clipped on the arrow lean */}
           <div
             className="duotone duotone--stats"
             style={{ position: 'absolute', inset: 0, clipPath: 'polygon(54% 0,100% 0,100% 100%,34% 100%)' }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/imagery/sticks-tunnel.jpg" alt="" />
+            {/* Second duotone layer of the same photo (not a duplicate) — the
+                lighter Stats tone clipped to the arrow lean. Eager, not
+                preloaded: `preload` is already on the base layer. */}
+            <Image src={sticksTunnel} alt="" fill sizes="100vw" loading="eager" placeholder="blur" className="object-cover" />
           </div>
           {/* Orange glow stripes on the lean */}
           <div className="big-graphic__stripe" style={{ left: '64%' }} />
@@ -279,8 +285,9 @@ export default function StartPage() {
           chunky Poppins-900 over a Stats-blue duotone photo with a legibility scrim. */}
       <section className="relative overflow-hidden bg-surface-dark">
         <div className="duotone duotone--stats" style={{ position: 'absolute', inset: 0 }} aria-hidden>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/imagery/boards.jpg" alt="" loading="lazy" />
+          {/* Below the fold — stays lazy (next/image default). Full-bleed band,
+              so it renders at viewport width. */}
+          <Image src={boards} alt="" fill sizes="100vw" placeholder="blur" className="object-cover" />
         </div>
         <div className="band-scrim" aria-hidden />
         <Container className="relative z-[2]">
