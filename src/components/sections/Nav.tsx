@@ -120,12 +120,21 @@ export function Nav() {
       <header
         className={cn(
           // The logo's knocked-out HOCKEY lettering pulls the backdrop through,
-          // so the unscrolled veil stays white enough (75%) to keep it legible
-          // over the dark hero photo while the blur preserves the glass feel.
-          'fixed inset-x-0 top-0 z-50 safe-top backdrop-blur-lg transition-colors',
+          // so the veil stays white enough to keep it legible over the dark hero.
+          //
+          // Deliberately no backdrop-blur. Chrome re-blurs only the dirty rect of
+          // a backdrop-filter layer, so a partial repaint behind this full-width
+          // fixed bar left a vertical seam where the re-blurred region met the
+          // stale one — very visible over the hero's high-contrast duotone.
+          // Confirmed by isolating the blur; radius, layer promotion and backdrop
+          // isolation all failed to fix it, removing the blur did.
+          //
+          // Opacity is up from the old blurred values (75/85) to compensate: with
+          // no blur to soften it, sharp photo detail reads through the veil.
+          'fixed inset-x-0 top-0 z-50 safe-top transition-colors',
           scrolled
-            ? 'bg-white/85 border-b border-black/10'
-            : 'bg-white/75 border-b border-black/5',
+            ? 'bg-white/92 border-b border-black/10'
+            : 'bg-white/85 border-b border-black/5',
         )}
       >
         <Container>
