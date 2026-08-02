@@ -232,7 +232,12 @@ export default function StartPage() {
 
               {/* Social proof — static on purpose. Auto-advancing quotes pull
                   attention away from the form on a paid landing page. */}
-              <Testimonials autoplay={false} embedded authors={['Sarah K.', 'Tom R.']} />
+              <Testimonials
+                autoplay={false}
+                embedded
+                heading="What hockey families say"
+                authors={['Sarah K.', 'Tom R.']}
+              />
 
               {/* Screenshot + trust */}
               <div className="grid items-center gap-8 sm:grid-cols-2">

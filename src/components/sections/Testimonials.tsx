@@ -167,6 +167,9 @@ type TestimonialsProps = {
   embedded?: boolean
   /** Show only these authors, in this order. Defaults to all six. */
   authors?: string[]
+  /** Heading rendered above an embedded static row. Without it the quotes
+      read as decoration and get skipped. */
+  heading?: string
 }
 
 const DEFAULT_SUBHEAD = 'The team trust we have earned, one Saturday morning rink at a time.'
@@ -176,6 +179,7 @@ export function Testimonials({
   autoplay = true,
   embedded = false,
   authors,
+  heading,
 }: TestimonialsProps = {}) {
   const prefersReducedMotion = useReducedMotion()
 
@@ -198,7 +202,17 @@ export function Testimonials({
       </div>
     )
 
-    if (embedded) return cards
+    if (embedded) {
+      if (!heading) return cards
+      return (
+        <div>
+          <h2 className="text-center font-heading text-2xl font-bold text-ink md:text-3xl lg:text-left">
+            {heading}
+          </h2>
+          <div className="mt-8">{cards}</div>
+        </div>
+      )
+    }
 
     return (
       <section className="bg-brand-blue/5 py-20 md:py-28">
