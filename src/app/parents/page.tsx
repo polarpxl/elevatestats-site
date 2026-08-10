@@ -159,7 +159,7 @@ export default function StartPage() {
           <div className="flex flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start lg:gap-x-16">
             {/* HERO COPY — white, floating over the full-bleed image */}
             <div className="order-1 text-center text-white lg:col-start-1 lg:row-start-1 lg:pt-6 lg:text-left">
-              <span className="glass-chip">For hockey parents</span>
+              <span className="glass-chip">For hockey parents &amp; coaches</span>
 
               <h1 className="mt-5 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-white md:text-5xl lg:text-[3.1rem]">
                 Know exactly how your player is doing. Every game.
