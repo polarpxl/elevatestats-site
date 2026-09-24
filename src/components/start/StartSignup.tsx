@@ -31,6 +31,19 @@ const OAUTH_PENDING_KEY = 'ehs_oauth_pending'
 
 type Utms = Record<string, string>
 
+/** Only the five standard utm_* keys are stored on the profile; click ids are not. */
+const PROFILE_UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as const
+
+/** The subset of captured UTMs that goes into signUp user metadata. */
+function signupMetadataUtms(utms: Utms): Utms {
+  const out: Utms = {}
+  for (const key of PROFILE_UTM_KEYS) {
+    const value = utms[key]?.trim()
+    if (value) out[key] = value.slice(0, 200)
+  }
+  return out
+}
+
 /** Read UTM/click-id params from the current URL. */
 function readUtmsFromUrl(): Utms {
   if (typeof window === 'undefined') return {}
@@ -231,7 +244,10 @@ export function StartSignup() {
         options: {
           // `name` in user metadata is what the app's create_profile_on_signup
           // trigger reads to populate the profile — matches the app's own signup.
-          data: { name: name.trim() },
+          // The five utm_* keys ride along the same way: the trigger copies them
+          // into profiles.utm_* at account creation (first-touch attribution),
+          // so they are saved even if the confirmation link is never opened.
+          data: { name: name.trim(), ...signupMetadataUtms(utms) },
           emailRedirectTo: `${APP_URL}/${utmQuery(utms)}`,
           ...(captchaToken ? { captchaToken } : {}),
         },
