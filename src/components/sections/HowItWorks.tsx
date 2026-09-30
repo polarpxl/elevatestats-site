@@ -89,7 +89,7 @@ const steps: Step[] = [
     title: 'Add your team and opponents.',
     body: "Import rosters and opponent lists from a CSV, or add players manually if you're starting from scratch. Set up the rest of your season schedule whenever you're ready.",
     image: howitworksRoster,
-    imageAlt: 'Team roster card with player names',
+    imageAlt: 'Team roster in Manage, with goalies and skaters',
     imageSizes: STEP_SIZES,
     Icon: RosterIcon,
   },

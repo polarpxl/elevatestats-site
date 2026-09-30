@@ -79,7 +79,7 @@ export function FeaturesHero() {
         <div className="relative mx-auto mt-12 aspect-[4096/2437] max-w-5xl md:mt-16">
           <Image
             src="/app/EHS-Feature-Hero.webp"
-            alt="Elevate Stats app screens showing the game summary, shot map, and live tracking views on phone mockups."
+            alt="Elevate Stats app screens fanned out: Analyze, game summary, live tracking, a player's shot map and Home."
             fill
             preload
             loading="eager"
