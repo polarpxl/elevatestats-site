@@ -96,7 +96,7 @@ const steps: Step[] = [
   {
     number: '03',
     title: 'Track your first game.',
-    body: 'Tap once per shift, dot the rink for shots. The app handles ice time, plus-minus, and line combinations automatically. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
+    body: 'Tap the rink to log every goal, shot, miss and block, then pick the scorer and assists in two taps. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
     image: howitworksTracking,
     imageAlt: 'In-game tracking wheel for shot location entry',
     imageSizes: STEP_SIZES,

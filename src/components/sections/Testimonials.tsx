@@ -22,14 +22,6 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "I used to track shifts on a Post-it. Now I can see who's been out too long without taking my eyes off the ice.",
-    author: 'Mark D.',
-    role: 'U11 head coach',
-    initials: 'MD',
-    tone: 'orange',
-  },
-  {
-    quote:
       "First time I've actually understood my son's stats. Not just the goals, but where he's getting his shots from and how he's trending.",
     author: 'Sarah K.',
     role: 'Hockey parent',

@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   applicationName: 'Elevate Stats',
   title: 'Hockey Stats Tracking App for Coaches | Elevate Stats',
   description:
-    'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every shift, right from the bench, even when the rink has no signal.',
+    'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every game, right from the bench, even when the rink has no signal.',
   openGraph: {
     type: 'website',
     siteName: 'Elevate Stats',
     locale: 'en_CA',
     title: 'Hockey Stats Tracking App for Coaches | Elevate Stats',
     description:
-      'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every shift, right from the bench, even when the rink has no signal.',
+      'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every game, right from the bench, even when the rink has no signal.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hockey Stats Tracking App for Coaches | Elevate Stats',
     description:
-      'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every shift, right from the bench, even when the rink has no signal.',
+      'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every game, right from the bench, even when the rink has no signal.',
     images: ['/opengraph-image.png'],
   },
 }
