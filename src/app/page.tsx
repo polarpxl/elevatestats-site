@@ -38,7 +38,7 @@ const softwareApplicationSchema = {
   applicationCategory: 'SportsApplication',
   operatingSystem: 'Web, iOS, Android',
   description:
-    'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every shift, right from the bench, even when the rink has no signal.',
+    'Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share, and learn from every game, right from the bench, even when the rink has no signal.',
   publisher: { '@id': 'https://elevatesportslabs.com/#organization' },
   screenshot: [
     'https://elevatestats.app/app/feature-shot-mapping.webp',

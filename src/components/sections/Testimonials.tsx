@@ -157,7 +157,7 @@ type TestimonialsProps = {
   /** Render only the cards, without the section wrapper and heading, so the
       quotes can sit inside an existing content column. */
   embedded?: boolean
-  /** Show only these authors, in this order. Defaults to all six. */
+  /** Show only these authors, in this order. Defaults to all five. */
   authors?: string[]
   /** Heading rendered above an embedded static row. Without it the quotes
       read as decoration and get skipped. */

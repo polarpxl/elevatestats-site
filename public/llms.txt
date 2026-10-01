@@ -1,7 +1,7 @@
 # Elevate Stats
 
 > Elevate Stats is a hockey stats tracking app for amateur coaches. Capture,
-> share, and learn from every shift, right from the bench, even when the rink
+> share, and learn from every game, right from the bench, even when the rink
 > has no signal. Elevate Stats is made by Elevate Sports Labs Inc., a Canadian
 > company.
 
