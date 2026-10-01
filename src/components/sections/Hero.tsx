@@ -118,7 +118,7 @@ export function Hero() {
 
             <p className="mx-auto mt-5 max-w-xl text-lg text-white/80 md:mx-0 md:text-xl">
               Elevate Stats is a hockey stats tracking app for amateur coaches. Capture, share,
-              and learn from every shift, right from the bench, even when the rink has no signal.
+              and learn from every game, right from the bench, even when the rink has no signal.
             </p>
 
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row md:items-start md:justify-start">
