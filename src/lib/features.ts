@@ -40,7 +40,7 @@ export const featureCategories: FeatureCategory[] = [
     id: 'live-game-tracking',
     theme: 'light',
     eyebrow: 'Live Game Tracking',
-    heading: 'Track every shift without missing the game.',
+    heading: 'Track every shot without missing the game.',
     lede:
       'Big tap targets. Zero lag. Everything happens on-device first, so the bench never has to wait for signal.',
     cta: { label: 'Start tracking your next game', href: links.appHome },

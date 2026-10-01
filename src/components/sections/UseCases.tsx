@@ -73,7 +73,7 @@ type UseCase = {
 const useCases: UseCase[] = [
   {
     title: 'Coaches',
-    body: "See your bench in real time. Spot the line that's working, the player who's hot, the matchup to watch. Make in-game adjustments without flipping through a notebook.",
+    body: "See your bench in real time. Spot the player who's hot, where the shots are coming from, and the matchup to watch. Make in-game adjustments without flipping through a notebook.",
     Icon: ClipboardListIcon,
   },
   {
