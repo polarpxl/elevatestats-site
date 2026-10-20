@@ -31,6 +31,8 @@ app store install required).
 - [Quick mode vs full tracking](https://elevatestats.app/support/quick-mode-vs-full-tracking): the two tracking modes
 - [What AI insights look at](https://elevatestats.app/support/what-ai-insights-look-at): how the AI analysis works
 - [Working offline and how sync works](https://elevatestats.app/support/working-offline-and-how-sync-works): offline behaviour
+- [Set up your lines](https://elevatestats.app/support/set-up-your-lines): forward lines, defence pairs, PP and PK units
+- [Plus-minus and who was on the ice](https://elevatestats.app/support/plus-minus-and-who-was-on-the-ice): how plus-minus is recorded and counted
 
 ## Company
 
