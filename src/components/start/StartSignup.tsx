@@ -341,7 +341,7 @@ export function StartSignup() {
           Click it to activate your free account and jump straight into Elevate.
         </p>
         <p className="mt-4 text-sm text-brand-gray/80">
-          Didn&apos;t get it? Check your spam folder — it lands within a minute or two.
+          Didn&apos;t get it? Check your spam folder. It lands within a minute or two.
         </p>
       </div>
     )

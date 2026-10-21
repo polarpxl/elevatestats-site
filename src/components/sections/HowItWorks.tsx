@@ -78,7 +78,7 @@ const steps: Step[] = [
   {
     number: '01',
     title: 'Sign up, free.',
-    body: 'Team tracking is free forever, and your first 3 games include every PRO feature. No credit card, no account required for players or parents. Just an email to get started.',
+    body: 'Team tracking is free forever, and your first 3 games include every PRO feature. No credit card. Just an email to get started.',
     image: howitworksSignup,
     imageAlt: 'Email signup form for Elevate Stats',
     imageSizes: STEP_SIZES,
@@ -96,7 +96,7 @@ const steps: Step[] = [
   {
     number: '03',
     title: 'Track your first game.',
-    body: 'Tap the rink to log every goal, shot, miss and block, then pick the scorer and assists in two taps. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
+    body: 'Tap the rink to log every goal, shot, miss and block, then tap the player. On goals, tap the scorer, assists and who was on the ice. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
     image: howitworksTracking,
     imageAlt: 'In-game tracking wheel for shot location entry',
     imageSizes: STEP_SIZES,

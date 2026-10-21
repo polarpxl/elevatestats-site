@@ -204,7 +204,7 @@ const themeClasses: Record<CategoryTheme, ThemeClasses> = {
   },
 }
 
-function ProPill() {
+export function ProPill() {
   return (
     <span className="inline-flex items-center rounded-full bg-brand-orange px-2 py-0.5 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white">
       PRO

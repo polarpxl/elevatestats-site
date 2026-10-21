@@ -12,6 +12,11 @@ analytics, CSV import and export, and full game history. Every new account
 gets 3 full games of PRO features free, with no credit card required. Custom
 plans are available for clubs, associations, and leagues.
 
+- Plus-minus (PRO): tap who was on the ice for every goal that counts.
+- Power play and penalty kill: flip the PP switch to get PP%, PK% and power play goals.
+- Stats keepers: invite a parent or team manager to track games for your team.
+- Every Elevate Coach subscription includes Stats PRO.
+
 The app runs at https://app.elevatestats.app (a progressive web app, no
 app store install required).
 

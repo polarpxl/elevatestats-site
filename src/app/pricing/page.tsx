@@ -51,7 +51,7 @@ export default function PricingPage() {
       </main>
       <FooterCta
         headline="Start free. Upgrade anytime."
-        subhead="3 PRO games. No card. No clock. Cancel in two taps."
+        subhead="3 PRO games. No card. No clock. Cancel anytime from Settings, under Manage Subscription."
         primaryCtaLabel="Get started free"
         primaryCtaHref={links.appSignup}
         secondaryLabel="Questions? Contact us"
