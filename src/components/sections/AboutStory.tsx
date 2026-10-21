@@ -17,7 +17,7 @@ export function AboutStory() {
             <p>
               We built Elevate Stats to close that gap. Real-time tracking that works offline in a
               cold rink. Shot maps that tell you where your team actually generates chances. AI
-              insights that translate raw data into practice plans. All in one app, designed for
+              insights that turn the numbers into plain-language coaching tips. All in one app, designed for
               the tap-and-go reality of tracking a game from the bench.
             </p>
             <p>

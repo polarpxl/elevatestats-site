@@ -29,7 +29,7 @@ const footerLinks = [
 export const metadata: Metadata = {
   title: 'Know how your player is doing, every game | Elevate Stats',
   description:
-    'See how your player is doing, every game. Track shots, goals, and trends from the stands, plus shot maps and AI game insights. Free to track, with 3 games of every PRO feature included. No credit card.',
+    'See how your player is doing, every game. Track shots, goals and assists from the stands, plus shot maps and AI game insights. Free to track, with 3 games of every PRO feature included. No credit card. PRO keeps your player’s stats on all season.',
   alternates: { canonical: '/parents' },
   // Paid-traffic landing page: intentionally kept out of organic search so it
   // doesn't compete with the main marketing pages. Flip to index:true only if
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: 'Elevate Stats',
     locale: 'en_CA',
     url: '/parents',
-    title: 'Track your player’s hockey stats, free',
+    title: 'Track your player’s hockey stats. Start free.',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals, and trends from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card.',
+      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card. PRO keeps your player’s stats on all season.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Track your player’s hockey stats, free',
+    title: 'Track your player’s hockey stats. Start free.',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals, and trends from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card.',
+      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card. PRO keeps your player’s stats on all season.',
     images: ['/opengraph-image.png'],
   },
 }
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
 const benefits = [
   {
     title: 'Track every game in taps',
-    body: 'Tap the ice, and the shot is logged. Goals, assists, shots, saves, from the stands or the bench. No spreadsheets, no clipboard.',
+    body: 'Tap the ice, and the shot is logged. Goals, assists, shots and saves, from the stands or the bench (player stats on PRO). No spreadsheets, no clipboard.',
     icon: (
       <path d="M4 7h16M4 12h16M4 17h10" strokeLinecap="round" />
     ),
   },
   {
     title: 'See real progress, not just goals',
-    body: 'Shot maps and season trends show where your player shoots from, how they’re trending, and what’s actually changing game over game.',
+    body: 'Season stats and shot maps show where your player shoots from and how their season is adding up.',
     icon: (
       <path d="M4 19V5m0 14h16M8 15l3-3 2 2 5-6" strokeLinecap="round" strokeLinejoin="round" />
     ),
@@ -166,8 +166,8 @@ export default function StartPage() {
               </h1>
 
               <p className="mx-auto mt-4 max-w-xl text-base text-white/80 md:mt-5 md:text-lg lg:mx-0">
-                Track shots, goals, and trends from the stands, right on your phone. Free all
-                season, no credit card. Your first 3 games also unlock every PRO feature, including
+                Track shots, goals and assists from the stands, right on your phone. Free at the
+                team level, with 3 games of every PRO feature to start. Your first 3 games also unlock every PRO feature, including
                 personal shot maps and AI game insights.
               </p>
 
@@ -261,8 +261,8 @@ export default function StartPage() {
                   </h2>
                   <p className="mt-3 text-brand-gray">
                     No clipboards, no guessing whether the good game was actually a good game.
-                    Elevate Stats shows you your kid’s season the way pro teams see theirs. Tracking
-                    is free forever, and your first 3 games include every PRO feature.
+                    Elevate Stats shows you your kid’s season the way pro teams see theirs. Start on
+                    the Free plan, and your first 3 games include every PRO feature.
                   </p>
                   <p className="mt-5 font-heading text-sm font-semibold uppercase tracking-wide text-brand-gray/70">
                     Built by hockey parents and coaches · Your data stays private
@@ -277,7 +277,7 @@ export default function StartPage() {
                   Start tracking your player’s season today
                 </h2>
                 <p className="mx-auto mt-3 max-w-lg text-white/90">
-                  Free forever plan. No credit card. You can be set up before the next game.
+                  Free plan. No credit card. You can be set up before the next game.
                 </p>
                 <a
                   href="#signup"
@@ -305,7 +305,7 @@ export default function StartPage() {
             {[
               { num: '2 min', label: 'To set up your team' },
               { num: '1 tap', label: 'To log a shot' },
-              { num: '$0', label: 'To track all season' },
+              { num: '3', label: 'PRO games free to start' },
             ].map((stat) => (
               <div key={stat.label} className="relative pt-5">
                 <span className="absolute left-1/2 top-0 h-1.5 w-11 -translate-x-1/2 rounded-full bg-brand-orange" />

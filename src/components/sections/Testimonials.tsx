@@ -46,14 +46,6 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'Used to email parents a screenshot from a spreadsheet. Now they get a real recap and they actually open it.',
-    author: 'Jen M.',
-    role: 'U13 team manager',
-    initials: 'JM',
-    tone: 'blue',
-  },
-  {
-    quote:
       "Three games into our tournament, the rink WiFi died. Everything synced when we got back to the hotel. Didn't lose a thing.",
     author: 'Mike T.',
     role: 'U18 head coach',
@@ -157,7 +149,7 @@ type TestimonialsProps = {
   /** Render only the cards, without the section wrapper and heading, so the
       quotes can sit inside an existing content column. */
   embedded?: boolean
-  /** Show only these authors, in this order. Defaults to all five. */
+  /** Show only these authors, in this order. Defaults to all of them. */
   authors?: string[]
   /** Heading rendered above an embedded static row. Without it the quotes
       read as decoration and get skipped. */

@@ -78,12 +78,12 @@ const useCases: UseCase[] = [
   },
   {
     title: 'Players',
-    body: "See where you're shooting from, where your goals are coming from, and how you're trending game-to-game. The data parents and coaches see, you see too.",
+    body: "See where you're shooting from and where your goals are coming from, season by season. Ask your coach for the season export, or track your own games.",
     Icon: TargetIcon,
   },
   {
     title: 'Parents',
-    body: "Follow your kid's season without standing at the boards trying to count shots. Stats are there when the game ends, win or lose.",
+    body: "Follow your kid's season without standing at the boards trying to count shots. Track the game from the stands and the stats are ready when it ends, win or lose.",
     Icon: UsersRoundIcon,
   },
 ]

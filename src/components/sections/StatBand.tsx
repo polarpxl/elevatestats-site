@@ -8,7 +8,7 @@ import boards from '@/assets/imagery/boards.webp'
 const stats = [
   { value: '∞', srValue: 'Unlimited', label: 'Team games, free forever' },
   { value: '0', label: 'Setup, no install' },
-  { value: '1', label: 'Tap to track a shot' },
+  { value: '3', label: 'Taps to log a shot' },
 ]
 
 export function StatBand() {

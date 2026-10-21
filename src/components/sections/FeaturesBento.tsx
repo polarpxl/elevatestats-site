@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { ProPill } from '@/components/sections/CategorySection'
 import { Container } from '@/components/ui/Container'
 import { Placeholder } from '@/components/ui/Placeholder'
 import { cn } from '@/lib/cn'
@@ -28,6 +29,7 @@ type Feature = {
       slot. Wider cards take more, narrower cards less, so the rendered
       screenshot feels comparably sized across the grid. */
   imagePadX?: string
+  pro?: boolean
 }
 
 const features: Feature[] = [
@@ -54,6 +56,7 @@ const features: Feature[] = [
     imageAlt: 'Post-game AI coaching insights card',
     imageSizes: '(min-width: 1024px) 285px, (min-width: 768px) 225px, 80vw',
     imagePadX: 'px-[10%]',
+    pro: true,
   },
   {
     title: 'Tracks even with no signal',
@@ -78,18 +81,20 @@ const features: Feature[] = [
     imageAlt: 'Goalie save percentage and GAA stats card',
     imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
     imagePadX: 'px-[6%]',
+    pro: true,
   },
   {
     title: 'Every player, on the page',
-    body: 'Individual stats, shot maps, performance trends. See how each player is actually doing, not just the team total.',
+    body: 'Season stats, plus-minus and shot maps. See how each player is actually doing, not just the team total.',
     tone: 'blue',
     placeholderLabel: 'Player stats placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
     image: featurePlayerProfile,
-    imageAlt: 'Individual player profile with stats and shot trends',
+    imageAlt: 'Individual player profile with stats and shot map',
     imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
     imagePadX: 'px-[6%]',
+    pro: true,
   },
   {
     title: 'The whole rink, in landscape',
@@ -113,9 +118,12 @@ function FeatureTile({ feature }: { feature: Feature }) {
         feature.className,
       )}
     >
-      <h3 className="font-heading text-xl font-semibold tracking-tight text-ink">
-        {feature.title}
-      </h3>
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <h3 className="font-heading text-xl font-semibold tracking-tight text-ink">
+          {feature.title}
+        </h3>
+        {feature.pro && <ProPill />}
+      </div>
       <span aria-hidden className="brand-underline mt-3" />
       <p className="mt-4 text-brand-gray">{feature.body}</p>
       <div

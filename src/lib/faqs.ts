@@ -24,7 +24,7 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'Does it work at rinks with no cell signal?',
     answer:
-      'Yes. Tracking works fully offline and syncs automatically when your connection returns.',
+      'Yes. Once a game is started, tracking works with no signal and syncs automatically when you reconnect. Setting up a game, ending it and the dashboards need a connection.',
   },
   {
     question: 'Do I need to install an app from the App Store?',
@@ -39,17 +39,17 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: "Can parents see their player's stats?",
     answer:
-      "Yes. Coaches can share stats, and parents can also track games themselves from the stands to follow their player's progress across a season.",
+      "Yes. Coaches on PRO can export stats to CSV and share them, and parents can track games themselves from the stands to follow their player's season.",
   },
   {
     question: 'How is Elevate Stats different from a paper game sheet or a spreadsheet?',
     answer:
-      'A paper sheet captures totals. Elevate Stats captures where and when every event happened, then turns that into shot maps, trends, and AI insights with no manual data entry after the game.',
+      'A paper sheet captures totals. Elevate Stats captures where and in which period every event happened, then turns that into shot maps, trends, and AI insights with no manual data entry after the game.',
   },
   {
     question: 'What counts as a "PRO game" on the free tier?',
     answer:
-      "Only finalized games count toward your 3-game PRO trial. Games you start but don't finalize don't burn a trial game, and games you delete before finalizing don't count either. The counter is per account, so creating a new team won't reset it.",
+      "Only finalized games count toward your 3-game PRO trial. Games you start but don't finalize don't burn a trial game, and games you delete before finalizing don't count either. The counter is per account, so creating a new team won't reset it. Ending a game with nothing tracked doesn't count either.",
   },
   {
     question: 'What happens after my 3 PRO games?',
@@ -64,12 +64,12 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'Can I cancel anytime?',
     answer:
-      "Yes, in two taps from your account settings. You'll keep PRO access until the end of your current billing period, then drop to Free. No further charges.",
+      "Yes. Cancel anytime from Settings, under Manage Subscription. You'll keep PRO access until the end of your current billing period, then drop to Free. No further charges.",
   },
   {
     question: 'Do you offer refunds?',
     answer:
-      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get 3 full PRO games to try everything before you pay. If PRO isn't working for you, cancel anytime in two taps and you won't be charged again.",
+      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get 3 full PRO games to try everything before you pay. If PRO isn't working for you, cancel anytime from Settings, under Manage Subscription, and you won't be charged again.",
   },
   {
     question: 'What happens to my data if I cancel?',
@@ -87,6 +87,10 @@ export const faqs: readonly FaqEntry[] = [
       "Yes. If you're a club, association, or league looking to roll out Elevate Stats across multiple teams, contact us and we'll put together a plan that fits.",
   },
   {
+    question: 'Does Elevate Coach include Stats PRO?',
+    answer: 'Yes. Every Elevate Coach subscription includes Elevate Stats PRO at no extra cost.',
+  },
+  {
     question: 'Can I export my data?',
     answer:
       'PRO users can export every game, roster, and stat to CSV. Free users can’t export. If you upgrade, then cancel, you can re-subscribe later to export. Your data is always there waiting.',
@@ -94,6 +98,6 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'How do I delete my account?',
     answer:
-      "Account deletion is available from your account settings. This permanently deletes all your data and can't be undone. Contact us if you need help.",
+      "Email us at hello@elevatesportslabs.com and we'll permanently delete your account and all its data. This can't be undone.",
   },
 ] as const

@@ -35,7 +35,7 @@ export default function ContactPage() {
       <FooterCta
         eyebrow="Ready to track smarter?"
         headline="Start free. Unlimited team tracking. No card."
-        subhead="Spin up a team, track a game, and share a pro-quality report before the Zamboni hits the ice."
+        subhead="Spin up a team, track a game, and see the breakdown before the Zamboni hits the ice."
         primaryCtaLabel="Get started free"
         primaryCtaHref={links.appSignup}
         secondaryLabel="See pricing"

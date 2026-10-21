@@ -62,9 +62,15 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Player-level attribution',
         description:
-          'Select scorer, assists, and involved players from your roster in two taps.',
+          'Tap the shooter and the shot saves. On goals, tap the scorer, assists and who was on the ice for plus-minus.',
         hero: true,
         icon: 'layers',
+        pro: true,
+      },
+      {
+        title: 'Plus-minus',
+        description:
+          "On every goal that counts, tap who was on the ice. Plus-minus shows on the player page, the game's skater table and Roster Analysis.",
         pro: true,
       },
       {
@@ -75,8 +81,9 @@ export const featureCategories: FeatureCategory[] = [
         icon: 'clock',
       },
       {
-        title: 'Penalty tracking',
-        description: 'Log penalties as they happen during the game.',
+        title: 'Power play and penalty kill',
+        description:
+          'Flip the PP switch when a penalty starts and every event is tagged, so you get PP%, PK% and power play goals.',
       },
       {
         title: 'Goalie selection and mid-game switches',
@@ -85,7 +92,7 @@ export const featureCategories: FeatureCategory[] = [
       },
       {
         title: 'Configurable period lengths',
-        description: 'Three-per-period stepper so you can match any league format.',
+        description: "Set each period's length to match your league.",
       },
       {
         title: 'Live scoreboard',
@@ -98,7 +105,8 @@ export const featureCategories: FeatureCategory[] = [
       },
       {
         title: 'Game finalization',
-        description: 'Close out a game and lock in final stats. PRO games also generate AI Coaching Insights.',
+        description:
+          'End the game from Live Game Settings and the final stats lock in. Owners can still fix the scorer, assists and strength afterwards. PRO games also generate AI Coaching Insights.',
       },
     ],
   },
@@ -132,7 +140,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Player and goalie profile pages',
         description:
-          'Individual stats, shot maps, and performance trends per player. Goalie pages include SV% and GAA.',
+          'Season stats, plus-minus, power play points and a shot map for every player. Goalie pages include SV% and GAA.',
         hero: true,
         icon: 'shield',
         pro: true,
@@ -198,7 +206,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Stats keeper invites',
         description:
-          'Create an invite in two taps and share it straight from your phone. Your stats keeper signs up free and lands right on your team, ready to track.',
+          'Enter their email and we send the invite, or share the link from your phone. Your stats keeper signs up free and lands right on your team, ready to track.',
         hero: true,
         icon: 'upload',
       },
@@ -239,7 +247,7 @@ export const featureCategories: FeatureCategory[] = [
       },
       {
         title: 'Revoke anytime',
-        description: "Remove a stats keeper’s access in one tap from your team page.",
+        description: "Remove a stats keeper’s access from Manage at any time.",
       },
     ],
   },
@@ -262,7 +270,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Full offline tracking',
         description:
-          "Track an entire game with no signal. Everything syncs automatically when you’re back online.",
+          "Track an entire game with no signal. Everything syncs automatically when you’re back online. Starting and ending a game need a connection.",
         hero: true,
         icon: 'wifi-off',
       },
@@ -280,7 +288,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Pre-game data prefetch',
         description:
-          "Rosters, opponents, and schedules cached before puck drop, so you’re ready to track even if signal dies the moment you walk into the rink.",
+          "Start the game while you have signal and your roster and opponent are saved on your phone, so tracking keeps going if the rink has none.",
         hero: true,
         icon: 'cloud-download',
       },
