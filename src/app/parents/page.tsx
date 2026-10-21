@@ -167,8 +167,8 @@ export default function StartPage() {
 
               <p className="mx-auto mt-4 max-w-xl text-base text-white/80 md:mt-5 md:text-lg lg:mx-0">
                 Track shots, goals and assists from the stands, right on your phone. Free at the
-                team level, with 3 games of every PRO feature to start. Your first 3 games also unlock every PRO feature, including
-                personal shot maps and AI game insights.
+                team level, with 3 games of every PRO feature to start. That includes personal shot
+                maps and AI game insights.
               </p>
 
               {/* Reinforcing checklist — hidden on the smallest screens so the form
@@ -304,7 +304,7 @@ export default function StartPage() {
           <div className="flex flex-wrap items-start justify-center gap-x-16 gap-y-10 py-16 text-center text-white md:py-24">
             {[
               { num: '2 min', label: 'To set up your team' },
-              { num: '1 tap', label: 'To log a shot' },
+              { num: '3', label: 'Taps to log a shot' },
               { num: '3', label: 'PRO games free to start' },
             ].map((stat) => (
               <div key={stat.label} className="relative pt-5">
