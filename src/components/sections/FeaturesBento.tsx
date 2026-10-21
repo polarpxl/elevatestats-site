@@ -60,7 +60,7 @@ const features: Feature[] = [
   },
   {
     title: 'Tracks even with no signal',
-    body: "Cold arena, dead WiFi, no problem. Track the whole game offline and everything syncs the moment you're back online.",
+    body: "Cold arena, dead WiFi, no problem. Start the game with signal and tracking keeps going if the rink has none. Everything syncs the moment you're back online.",
     tone: 'gray',
     placeholderLabel: 'Offline sync placeholder',
     placeholderAspect: '4/3',
