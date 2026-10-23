@@ -101,7 +101,7 @@ export default function StartPage() {
             fades into the light page below. Copy and the signup card float over it.
             pointer-events-none so it never blocks the form. */}
         <div
-          className="big-graphic pointer-events-none inset-x-0 top-0 h-[600px] lg:h-[680px]"
+          className="big-graphic pointer-events-none inset-x-0 top-0 h-[600px] md:h-[660px] lg:h-[760px] min-[65.5rem]:h-[720px] xl:h-[680px]"
           style={{ position: 'absolute' }}
           aria-hidden
         >
@@ -135,7 +135,7 @@ export default function StartPage() {
             sticky form glides over them on scroll and text stays readable. Desktop
             only. top offset ~ the hero image height so they live in the content. */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-[680px] bottom-0 z-0 hidden overflow-hidden lg:block"
+          className="pointer-events-none absolute inset-x-0 top-[760px] min-[65.5rem]:top-[720px] xl:top-[680px] bottom-0 z-0 hidden overflow-hidden lg:block"
           aria-hidden
         >
           {/* eslint-disable @next/next/no-img-element */}

@@ -30,7 +30,7 @@ const footerLinks = [
 export const metadata: Metadata = {
   title: 'AI insights after every game | Elevate Stats for coaches',
   description:
-    'Track every game on your phone. When you end the game, AI insights powered by ElevateIQ tell you what’s working and what to work on next. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
+    'Track every game on your phone. On PRO, AI insights powered by ElevateIQ tell you what’s working and what to work on next when you end the game. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
   alternates: { canonical: '/coaches' },
   // Paid-traffic landing page: intentionally kept out of organic search so it
   // doesn't compete with the main marketing pages. Flip to index:true only if
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: '/coaches',
     title: 'Coach the game. ElevateIQ reads the numbers.',
     description:
-      'Track every game on your phone. When you end the game, AI insights powered by ElevateIQ tell you what’s working and what to work on next. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
+      'Track every game on your phone. On PRO, AI insights powered by ElevateIQ tell you what’s working and what to work on next when you end the game. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Coach the game. ElevateIQ reads the numbers.',
     description:
-      'Track every game on your phone. When you end the game, AI insights powered by ElevateIQ tell you what’s working and what to work on next. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
+      'Track every game on your phone. On PRO, AI insights powered by ElevateIQ tell you what’s working and what to work on next when you end the game. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
     images: ['/opengraph-image.png'],
   },
 }
