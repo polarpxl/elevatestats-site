@@ -1,8 +1,8 @@
 import Image, { type StaticImageData } from 'next/image'
 import Link from 'next/link'
-import { ProPill } from '@/components/sections/CategorySection'
 import { Container } from '@/components/ui/Container'
 import { Placeholder } from '@/components/ui/Placeholder'
+import { ProChip } from '@/components/ui/ProChip'
 import { cn } from '@/lib/cn'
 import { links } from '@/lib/links'
 
@@ -46,14 +46,14 @@ const features: Feature[] = [
     imagePadX: 'px-[12%]',
   },
   {
-    title: 'AI insights after every game',
+    title: 'AI insights powered by ElevateIQ',
     body: "Finalize the game and get coaching tips tailored to your team's trends. Built into the app, ready before the parking lot empties.",
     tone: 'blue',
     placeholderLabel: 'AI insights placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-5',
     image: featureAiInsights,
-    imageAlt: 'Post-game AI coaching insights card',
+    imageAlt: 'Post-game ElevateIQ coaching insights card',
     imageSizes: '(min-width: 1024px) 285px, (min-width: 768px) 225px, 80vw',
     imagePadX: 'px-[10%]',
     pro: true,
@@ -122,7 +122,7 @@ function FeatureTile({ feature }: { feature: Feature }) {
         <h3 className="font-heading text-xl font-semibold tracking-tight text-ink">
           {feature.title}
         </h3>
-        {feature.pro && <ProPill />}
+        {feature.pro && <ProChip />}
       </div>
       <span aria-hidden className="brand-underline mt-3" />
       <p className="mt-4 text-brand-gray">{feature.body}</p>

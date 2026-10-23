@@ -74,6 +74,12 @@ export const featureCategories: FeatureCategory[] = [
         pro: true,
       },
       {
+        title: 'Faceoffs',
+        description:
+          'Tap a dot, mark it Won or Lost, and pick who took it. See win rates by zone, for the team and each player.',
+        pro: true,
+      },
+      {
         title: 'Quick Tracking mode',
         description:
           "Team-vs-opponent toggle for fast entry when you don’t need player detail. PRO can switch into full tracking with per-player attribution; Free stays in Quick mode.",
@@ -106,7 +112,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Game finalization',
         description:
-          'End the game from Live Game Settings and the final stats lock in. Owners can still fix the scorer, assists and strength afterwards. PRO games also generate AI Coaching Insights.',
+          'End the game from Live Game Settings and the final stats lock in. Owners can still fix the scorer, assists and strength afterwards. PRO games also generate AI insights powered by ElevateIQ.',
       },
     ],
   },
@@ -123,7 +129,7 @@ export const featureCategories: FeatureCategory[] = [
     },
     features: [
       {
-        title: 'AI Coaching Insights',
+        title: 'AI insights powered by ElevateIQ',
         description:
           "Swipeable carousel of AI-generated coaching tips after every finalized game, tailored to your team’s trends.",
         hero: true,
@@ -243,7 +249,7 @@ export const featureCategories: FeatureCategory[] = [
       {
         title: 'Works with your plan',
         description:
-          'Stats keepers track at your team’s level. On PRO, they log player-level detail; on Free, Quick Tracking. Their own account never matters.',
+          'Stats keepers track at your team’s level. On PRO, they log player-level detail; on Free, Quick Tracking.',
       },
       {
         title: 'Revoke anytime',

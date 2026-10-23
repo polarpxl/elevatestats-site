@@ -4,12 +4,12 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'What is Elevate Stats?',
     answer:
-      'Elevate Stats is a hockey stats tracking app for amateur coaches. You track shots, goals, and game events from the bench on your phone or tablet, and get shot maps, player and goalie stats, and AI coaching insights after every game.',
+      'Elevate Stats is a hockey stats tracking app for amateur coaches. You track shots, goals, and game events from the bench on your phone or tablet, and get shot maps, player and goalie stats, and AI insights powered by ElevateIQ after every game.',
   },
   {
     question: 'Is there a free hockey stats tracking app?',
     answer:
-      'Yes. Elevate Stats has a Free tier with unlimited team-level game tracking, forever. Every new account also gets 3 full games of PRO features to try, with no credit card required.',
+      'Yes. Elevate Stats has a Free tier with unlimited team-level game tracking, forever. Your first 3 games unlock PRO tracking and stats, with no credit card required.',
   },
   {
     question: 'How do I track shots on goal for a minor hockey team?',
@@ -44,7 +44,7 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'How is Elevate Stats different from a paper game sheet or a spreadsheet?',
     answer:
-      'A paper sheet captures totals. Elevate Stats captures where and in which period every event happened, then turns that into shot maps, trends, and AI insights with no manual data entry after the game.',
+      'A paper sheet captures totals. Elevate Stats captures where and in which period every event happened, then turns that into shot maps, trends, and ElevateIQ insights with no manual data entry after the game.',
   },
   {
     question: 'What counts as a "PRO game" on the free tier?',
@@ -54,7 +54,7 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'What happens after my 3 PRO games?',
     answer:
-      "You drop to the Free tier automatically. You can keep tracking unlimited games at the team level forever. You'll lose access to player-level stats, AI insights, opponent analysis, full game history, and CSV import/export until you upgrade. Your data stays put. Nothing is deleted.",
+      "You drop to the Free tier automatically. You can keep tracking unlimited games at the team level forever. You'll lose access to player-level stats, ElevateIQ insights, opponent analysis, full game history, and CSV import/export until you upgrade. Your data stays put. Nothing is deleted.",
   },
   {
     question: 'Does PRO auto-renew?',
@@ -74,7 +74,7 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'What happens to my data if I cancel?',
     answer:
-      "Nothing. Your account stays active and all your game data stays in your account. You'll keep seeing team-level stats and your last 5 games. Player stats, AI insights, and full history get hidden until you re-subscribe, at which point everything reappears exactly as it was.",
+      "Nothing. Your account stays active and all your game data stays in your account. You'll keep seeing team-level stats and your last 5 games. Player stats, ElevateIQ insights, and full history get hidden until you re-subscribe, at which point everything reappears exactly as it was.",
   },
   {
     question: 'Why is pricing in CAD?',

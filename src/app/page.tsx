@@ -49,7 +49,7 @@ const softwareApplicationSchema = {
     'Live game tracking on a rink visual',
     'Player and goalie stats',
     'Shot maps and zone analysis',
-    'AI coaching insights after every game',
+    'AI insights powered by ElevateIQ after every game',
     'Opponent analysis',
     'Full season analytics',
     'Works offline at the rink',

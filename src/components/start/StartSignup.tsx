@@ -352,7 +352,7 @@ export function StartSignup() {
       <div className="mb-5 text-center">
         <h2 className="font-heading text-xl font-bold text-ink">Start tracking in your next game</h2>
         <p className="mt-1 text-sm text-brand-gray">
-          Create your free account. Your first 3 games include every PRO feature.
+          Create your free account. Your first 3 games unlock PRO tracking and stats.
         </p>
         <p className="mt-2 text-sm font-semibold text-brand-gray">
           Free forever plan · No credit card required

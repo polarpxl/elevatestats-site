@@ -84,7 +84,7 @@ export function MarketingContactForm({
   const resolvedSuccessCopy =
     successCopy ??
     (formType === 'support'
-      ? 'Thanks for reaching out. Someone from our team will get back to you within one business day, often sooner.'
+      ? 'Thanks for reaching out. Someone from our team will get back to you within one to two business days.'
       : "Thanks for reaching out. We'll get back to you within one to two business days.")
 
   if (state.status === 'success') {

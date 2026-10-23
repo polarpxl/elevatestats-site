@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react'
 import Image, { type StaticImageData } from 'next/image'
 import { Container } from '@/components/ui/Container'
+import { ProChip } from '@/components/ui/ProChip'
 
 import howitworksSignup from '../../../public/app/howitworks-signup.webp'
 import howitworksRoster from '../../../public/app/howitworks-roster.webp'
@@ -8,7 +10,7 @@ import howitworksTracking from '../../../public/app/howitworks-tracking.webp'
 type Step = {
   number: string
   title: string
-  body: string
+  body: ReactNode
   image: StaticImageData
   imageAlt: string
   imageSizes: string
@@ -78,7 +80,7 @@ const steps: Step[] = [
   {
     number: '01',
     title: 'Sign up, free.',
-    body: 'Team tracking is free forever, and your first 3 games include every PRO feature. No credit card. Just an email to get started.',
+    body: 'Team tracking is free forever, and your first 3 games unlock PRO tracking and stats. No credit card. Just an email to get started.',
     image: howitworksSignup,
     imageAlt: 'Email signup form for Elevate Stats',
     imageSizes: STEP_SIZES,
@@ -87,7 +89,13 @@ const steps: Step[] = [
   {
     number: '02',
     title: 'Add your team and opponents.',
-    body: "Import rosters and opponent lists from a CSV, or add players manually if you're starting from scratch. Set up the rest of your season schedule whenever you're ready.",
+    body: (
+      <>
+        Import rosters and opponent lists from a CSV <ProChip className="ml-1" />, or add players
+        manually if you&apos;re starting from scratch. Set up the rest of your season schedule
+        whenever you&apos;re ready.
+      </>
+    ),
     image: howitworksRoster,
     imageAlt: 'Team roster in Manage, with goalies and skaters',
     imageSizes: STEP_SIZES,
@@ -96,7 +104,13 @@ const steps: Step[] = [
   {
     number: '03',
     title: 'Track your first game.',
-    body: 'Tap the rink to log every goal, shot, miss and block, then tap the player. On goals, tap the scorer, assists and who was on the ice. AI coaching insights drop in after the final whistle, ready before the parking lot empties.',
+    body: (
+      <>
+        Tap the rink to log every goal, shot, miss and block. With PRO, tap the player too: the
+        scorer, assists and who was on the ice for plus-minus. <ProChip className="mr-1" />
+        ElevateIQ insights drop in after the final whistle, ready before the parking lot empties. <ProChip className="ml-1" />
+      </>
+    ),
     image: howitworksTracking,
     imageAlt: 'In-game tracking wheel for shot location entry',
     imageSizes: STEP_SIZES,

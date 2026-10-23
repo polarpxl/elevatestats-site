@@ -170,7 +170,7 @@ export function supportAutoReplyEmail(params: { name: string; subject: string })
     heading('We got your support request') +
     paragraph(`Hi ${name},`) +
     paragraph(
-      `Thanks for reaching out. We've received your support request about "${subject}" and someone from our team will get back to you within one business day, often sooner.`,
+      `Thanks for reaching out. We've received your support request about "${subject}" and someone from our team will get back to you within one to two business days.`,
     ) +
     paragraph(
       'If you need an answer right away, our support articles at elevatestats.app/support cover most common questions.',

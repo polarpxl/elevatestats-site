@@ -50,7 +50,8 @@ const pro: Plan = {
   featuresIntro: 'Everything in Free, plus:',
   features: [
     'Player and goalie stats',
-    'AI coaching insights after every game',
+    'Plus-minus and faceoffs',
+    'AI insights powered by ElevateIQ after every game',
     'Opponent analysis and shot maps',
     'Full season analytics and roster analysis',
     'CSV import and export',
@@ -72,9 +73,7 @@ const teams: Plan = {
   featuresIntro: "What's included:",
   features: [
     'Everything in PRO for every coach',
-    'Centralized billing',
-    'Onboarding support',
-    'Priority email support',
+    'Onboarding help',
   ],
   subPriceLine: 'Volume pricing for clubs, associations, and leagues.',
   ctaLabel: 'Contact us',
