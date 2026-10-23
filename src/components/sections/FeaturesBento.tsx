@@ -41,7 +41,7 @@ const features: Feature[] = [
     placeholderAspect: '16/10',
     className: 'md:col-span-7',
     image: featureAiInsights,
-    imageAlt: 'ElevateIQ post-game insight card for the Ridgeview Raptors',
+    imageAlt: "ElevateIQ season insight card under the team's win-loss record",
     imageSizes: '(min-width: 1024px) 410px, (min-width: 768px) 320px, 76vw',
     imagePadX: 'px-[12%]',
     pro: true,
@@ -54,7 +54,7 @@ const features: Feature[] = [
     placeholderAspect: '4/3',
     className: 'md:col-span-5',
     image: featureShotMapping,
-    imageAlt: 'Live tracker with shots and goals marked on the rink',
+    imageAlt: 'Hockey rink with shots, misses and goals marked as dots',
     imageSizes: '(min-width: 1024px) 285px, (min-width: 768px) 225px, 80vw',
     imagePadX: 'px-[10%]',
   },
@@ -66,7 +66,7 @@ const features: Feature[] = [
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
     image: featurePlayerProfile,
-    imageAlt: 'Player page with season stats, plus-minus and faceoffs',
+    imageAlt: 'Player page with season stats, plus-minus and special teams',
     imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
     imagePadX: 'px-[6%]',
     pro: true,
@@ -79,7 +79,7 @@ const features: Feature[] = [
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
     image: featureKeepers,
-    imageAlt: 'Manage screen with the stats keepers list and the invite button',
+    imageAlt: 'Stats keeper invite form with an email field and a Create invite button',
     imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
     imagePadX: 'px-[6%]',
   },
@@ -105,7 +105,7 @@ const features: Feature[] = [
     image: featureDetails,
     imageAlt: 'Game detail page showing faceoffs won and lost by zone',
     imageSizes: '(min-width: 1024px) 450px, (min-width: 768px) 360px, 88vw',
-    imagePadX: 'px-[6%]',
+    imagePadX: 'px-[6%] md:px-[24%]',
     pro: true,
   },
 ]
@@ -168,7 +168,7 @@ export function FeaturesBento() {
           </p>
         </div>
 
-        <div className="mt-12 grid auto-rows-[minmax(0,1fr)] grid-cols-1 gap-4 md:mt-16 md:grid-cols-12 md:gap-6">
+        <div className="mt-12 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-12 md:auto-rows-[minmax(0,1fr)] md:gap-6">
           {features.map((feature) => (
             <FeatureTile key={feature.title} feature={feature} />
           ))}
