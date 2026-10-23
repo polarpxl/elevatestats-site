@@ -69,7 +69,7 @@ export const faqs: readonly FaqEntry[] = [
   {
     question: 'Do you offer refunds?',
     answer:
-      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get 3 full PRO games to try everything before you pay. If PRO isn't working for you, cancel anytime from Settings, under Manage Subscription, and you won't be charged again.",
+      "No, but we make it easy to avoid needing one. The Free tier is genuinely free forever, and you get your first 3 games of PRO tracking and stats, so you can try it first. If PRO isn't working for you, cancel anytime from Settings, under Manage Subscription, and you won't be charged again.",
   },
   {
     question: 'What happens to my data if I cancel?',
