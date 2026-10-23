@@ -30,7 +30,7 @@ const footerLinks = [
 export const metadata: Metadata = {
   title: 'Know how your player is doing, every game | Elevate Stats',
   description:
-    'See how your player is doing, every game. Track shots, goals and assists from the stands, plus shot maps and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card. PRO keeps your player’s stats on all season.',
+    'See how your player is doing, every game. Track shots and goals from the stands. On PRO, add the scorer and assists, your player’s shot map and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
   alternates: { canonical: '/parents' },
   // Paid-traffic landing page: intentionally kept out of organic search so it
   // doesn't compete with the main marketing pages. Flip to index:true only if
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     url: '/parents',
     title: 'Track your player’s hockey stats. Start free.',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card. PRO keeps your player’s stats on all season.',
+      'Pro-level hockey stats for parents. Track shots and goals from the stands. On PRO, add the scorer and assists, your player’s shot map and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Track your player’s hockey stats. Start free.',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card. PRO keeps your player’s stats on all season.',
+      'Pro-level hockey stats for parents. Track shots and goals from the stands. On PRO, add the scorer and assists, your player’s shot map and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card.',
     images: ['/opengraph-image.png'],
   },
 }
