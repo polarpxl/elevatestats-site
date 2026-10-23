@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { ComponentType, ReactNode } from 'react'
 import { Container } from '@/components/ui/Container'
+import { ProChip } from '@/components/ui/ProChip'
 import { cn } from '@/lib/cn'
 import type { CategoryTheme, FeatureCategory, FeatureItem, IconName } from '@/lib/features'
 
@@ -157,6 +158,7 @@ type ThemeClasses = {
   compactTitle: string
   compactDescription: string
   ctaLink: string
+  onDark: boolean
 }
 
 const themeClasses: Record<CategoryTheme, ThemeClasses> = {
@@ -173,6 +175,7 @@ const themeClasses: Record<CategoryTheme, ThemeClasses> = {
     compactTitle: 'text-ink',
     compactDescription: 'text-brand-gray',
     ctaLink: 'text-brand-orange hover:text-[#E65C00]',
+    onDark: false,
   },
   surface: {
     section: 'bg-surface-alt',
@@ -187,6 +190,7 @@ const themeClasses: Record<CategoryTheme, ThemeClasses> = {
     compactTitle: 'text-ink',
     compactDescription: 'text-brand-gray',
     ctaLink: 'text-brand-orange hover:text-[#E65C00]',
+    onDark: false,
   },
   dark: {
     section: 'bg-surface-dark text-white',
@@ -201,15 +205,8 @@ const themeClasses: Record<CategoryTheme, ThemeClasses> = {
     compactTitle: 'text-white',
     compactDescription: 'text-white/60',
     ctaLink: 'text-white hover:text-brand-orange',
+    onDark: true,
   },
-}
-
-export function ProPill() {
-  return (
-    <span className="inline-flex items-center rounded-full bg-brand-orange px-2 py-0.5 font-heading text-xs font-semibold uppercase tracking-[0.14em] text-white">
-      PRO
-    </span>
-  )
 }
 
 function HeroTile({
@@ -239,7 +236,7 @@ function HeroTile({
         >
           {feature.title}
         </h3>
-        {feature.pro && <ProPill />}
+        {feature.pro && <ProChip onDark={theme.onDark} />}
       </div>
       <p className={cn('mt-3 text-base', theme.heroDescription)}>{feature.description}</p>
     </article>
@@ -271,7 +268,7 @@ function CompactRow({
           <p className={cn('font-heading text-sm font-semibold', theme.compactTitle)}>
             {feature.title}
           </p>
-          {feature.pro && <ProPill />}
+          {feature.pro && <ProChip onDark={theme.onDark} />}
         </div>
         <p className={cn('mt-1 text-sm', theme.compactDescription)}>{feature.description}</p>
       </div>

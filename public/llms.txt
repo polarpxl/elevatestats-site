@@ -7,12 +7,14 @@
 
 Pricing: the Free tier includes unlimited team-level game tracking, forever.
 PRO is $14 CAD per month or $109 CAD per year and adds player and goalie
-stats, AI coaching insights, opponent analysis and shot maps, full season
-analytics, CSV import and export, and full game history. Every new account
-gets 3 full games of PRO features free, with no credit card required. Custom
+stats, plus-minus and faceoffs, AI insights powered by ElevateIQ, opponent
+analysis and shot maps, full season analytics, CSV import and export, and full
+game history. Your first 3 games unlock PRO tracking and stats, with no credit
+card required. Custom
 plans are available for clubs, associations, and leagues.
 
 - Plus-minus (PRO): tap who was on the ice for every goal that counts.
+- Faceoffs (PRO): tap a dot, mark it Won or Lost, and pick who took it. See win rates by zone, for the team and each player.
 - Power play and penalty kill: flip the PP switch to get PP%, PK% and power play goals.
 - Stats keepers: invite a parent or team manager to track games for your team.
 - Every Elevate Coach subscription includes Stats PRO.
@@ -34,7 +36,7 @@ app store install required).
 - [Understanding player stats](https://elevatestats.app/support/understanding-player-stats): every stat defined
 - [Reading the shot map](https://elevatestats.app/support/reading-the-shot-map): how to interpret shot maps
 - [Quick mode vs full tracking](https://elevatestats.app/support/quick-mode-vs-full-tracking): the two tracking modes
-- [What AI insights look at](https://elevatestats.app/support/what-ai-insights-look-at): how the AI analysis works
+- [What AI insights powered by ElevateIQ look at](https://elevatestats.app/support/what-ai-insights-look-at): how the ElevateIQ analysis works (PRO)
 - [Working offline and how sync works](https://elevatestats.app/support/working-offline-and-how-sync-works): offline behaviour
 - [Plus-minus and who was on the ice](https://elevatestats.app/support/plus-minus-and-who-was-on-the-ice): how plus-minus is recorded and counted
 

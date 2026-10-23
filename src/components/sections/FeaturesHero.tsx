@@ -64,7 +64,7 @@ export function FeaturesHero() {
 
         <p className="mx-auto mt-5 max-w-2xl text-lg text-brand-gray md:text-xl">
           Elevate Stats gives you pro-level tracking, insights, and reports. Unlimited free team tracking,
-          plus 3 games of PRO features to start.
+          plus PRO tracking and stats for your first 3 games.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

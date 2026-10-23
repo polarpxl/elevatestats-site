@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 import { PoweredBy } from '@/components/ui/PoweredBy'
+import { ProChip } from '@/components/ui/ProChip'
 import { StartSignup } from '@/components/start/StartSignup'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { MobileCtaBar } from '@/components/start/MobileCtaBar'
@@ -29,7 +30,7 @@ const footerLinks = [
 export const metadata: Metadata = {
   title: 'Know how your player is doing, every game | Elevate Stats',
   description:
-    'See how your player is doing, every game. Track shots, goals and assists from the stands, plus shot maps and AI game insights. Free to track, with 3 games of every PRO feature included. No credit card. PRO keeps your player’s stats on all season.',
+    'See how your player is doing, every game. Track shots, goals and assists from the stands, plus shot maps and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card. PRO keeps your player’s stats on all season.',
   alternates: { canonical: '/parents' },
   // Paid-traffic landing page: intentionally kept out of organic search so it
   // doesn't compete with the main marketing pages. Flip to index:true only if
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     url: '/parents',
     title: 'Track your player’s hockey stats. Start free.',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card. PRO keeps your player’s stats on all season.',
+      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card. PRO keeps your player’s stats on all season.',
     images: [
       {
         url: '/opengraph-image.png',
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Track your player’s hockey stats. Start free.',
     description:
-      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights. Free to track, with 3 games of every PRO feature included. No credit card. PRO keeps your player’s stats on all season.',
+      'Pro-level hockey stats for parents. Track shots, goals and assists from the stands, with shot maps and AI insights powered by ElevateIQ. Free to track, and your first 3 games unlock PRO tracking and stats. No credit card. PRO keeps your player’s stats on all season.',
     images: ['/opengraph-image.png'],
   },
 }
@@ -73,13 +74,15 @@ const benefits = [
   {
     title: 'See real progress, not just goals',
     body: 'Season stats and shot maps show where your player shoots from and how their season is adding up.',
+    pro: true,
     icon: (
       <path d="M4 19V5m0 14h16M8 15l3-3 2 2 5-6" strokeLinecap="round" strokeLinejoin="round" />
     ),
   },
   {
-    title: 'AI insights after every game',
+    title: 'AI insights powered by ElevateIQ',
     body: 'Instant post-game breakdowns turn the numbers into plain English: what went well, what to work on next.',
+    pro: true,
     icon: (
       <path d="M12 3a6 6 0 0 1 3 11v3H9v-3a6 6 0 0 1 3-11zM9.5 21h5" strokeLinecap="round" strokeLinejoin="round" />
     ),
@@ -166,9 +169,10 @@ export default function StartPage() {
               </h1>
 
               <p className="mx-auto mt-4 max-w-xl text-base text-white/80 md:mt-5 md:text-lg lg:mx-0">
-                Track shots, goals and assists from the stands, right on your phone. Free at the
-                team level, with 3 games of every PRO feature to start. That includes personal shot
-                maps and AI game insights.
+                Track shots and goals from the stands, right on your phone. Add the scorer and
+                assists with PRO. <ProChip onDark className="ml-1" /> Free at the team level, and
+                your first 3 games unlock PRO tracking and stats. That includes personal shot maps
+                and AI insights powered by ElevateIQ.
               </p>
 
               {/* Reinforcing checklist — hidden on the smallest screens so the form
@@ -177,7 +181,7 @@ export default function StartPage() {
                 {[
                   'Tracking a game takes taps, not spreadsheets',
                   'Works at the rink, even with no signal',
-                  '3 full-featured games free, no credit card',
+                  'Your first 3 games unlock PRO, no credit card',
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-white/85">
                     <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-brand-orange" />
@@ -222,7 +226,10 @@ export default function StartPage() {
                         </svg>
                       </span>
                       <div>
-                        <h3 className="font-heading text-lg font-bold text-ink">{b.title}</h3>
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                          <h3 className="font-heading text-lg font-bold text-ink">{b.title}</h3>
+                          {b.pro && <ProChip />}
+                        </div>
                         <p className="mt-1 text-brand-gray">{b.body}</p>
                       </div>
                     </li>
@@ -262,7 +269,7 @@ export default function StartPage() {
                   <p className="mt-3 text-brand-gray">
                     No clipboards, no guessing whether the good game was actually a good game.
                     Elevate Stats shows you your kid’s season the way pro teams see theirs. Start on
-                    the Free plan, and your first 3 games include every PRO feature.
+                    the Free plan, and your first 3 games unlock PRO tracking and stats.
                   </p>
                   <p className="mt-5 font-heading text-sm font-semibold uppercase tracking-wide text-brand-gray/70">
                     Built by hockey parents and coaches · Your data stays private

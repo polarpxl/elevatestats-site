@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react'
 import { Container } from '@/components/ui/Container'
+import { ProChip } from '@/components/ui/ProChip'
 import { cn } from '@/lib/cn'
 
 type IconProps = { className?: string }
@@ -70,6 +71,7 @@ type Card = {
   body: string
   Icon: (props: IconProps) => ReactElement
   gradient: 'a' | 'b' | 'c'
+  pro?: boolean
 }
 
 const cards: Card[] = [
@@ -79,13 +81,15 @@ const cards: Card[] = [
     body: 'On Free, every event belongs to your team. On PRO, every event belongs to a player. See who’s driving your offence and who’s still finding their game.',
     Icon: PlayerIcon,
     gradient: 'a',
+    pro: true,
   },
   {
     eyebrow: 'Coaching tips after every game',
-    headline: 'AI breakdowns that catch what you missed.',
+    headline: 'AI insights powered by ElevateIQ catch what you missed.',
     body: 'After every finalized game, PRO generates 3 to 4 coaching insights tailored to your team. Patterns you’d otherwise miss, surfaced automatically.',
     Icon: SparkleIcon,
     gradient: 'b',
+    pro: true,
   },
   {
     eyebrow: 'Know your opponent',
@@ -93,6 +97,7 @@ const cards: Card[] = [
     body: "Pull up any opponent and see exactly where they shoot, how you've matched up against them, and what's worked. Head-to-head records, shot charts, game-by-game breakdowns.",
     Icon: TargetIcon,
     gradient: 'c',
+    pro: true,
   },
 ]
 
@@ -147,6 +152,11 @@ export function WhyPro() {
               <h3 className="mt-3 font-heading text-xl font-extrabold leading-tight tracking-tight text-ink md:text-2xl">
                 {card.headline}
               </h3>
+              {card.pro && (
+                <div className="mt-3">
+                  <ProChip />
+                </div>
+              )}
               <p className="mt-3 text-brand-gray">{card.body}</p>
             </article>
           ))}

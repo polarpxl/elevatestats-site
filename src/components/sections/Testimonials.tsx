@@ -22,7 +22,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "First time I've actually understood my son's stats. Not just the goals, but where he's getting his shots from and how he's trending.",
+      "First time I've actually understood my son's stats. Not just the goals, but where he's getting his shots from.",
     author: 'Sarah K.',
     role: 'Hockey parent',
     initials: 'SK',

@@ -131,7 +131,7 @@ export function Hero() {
             </div>
 
             <p className="mt-5 text-sm text-white/70">
-              Free forever. Unlimited team tracking, plus 3 games of PRO features. No credit card.
+              Free forever. Unlimited team tracking, plus PRO tracking and stats for your first 3 games. No credit card.
             </p>
             <p className="mt-2 text-sm text-white/60">
               iPhone, iPad, web-based. No install.
@@ -184,7 +184,7 @@ export function Hero() {
               <div className="ui-tile overflow-hidden rounded-2xl">
                 <Image
                   src={heroAiInsights}
-                  alt="AI-generated coaching insights card"
+                  alt="ElevateIQ coaching insights card"
                   sizes="(min-width: 1024px) 280px, (min-width: 768px) 230px, 52vw"
                   className="h-auto w-full"
                   preload

@@ -12,7 +12,7 @@ export const supportCategories = [
   {
     id: 'analytics-insights',
     name: 'Analytics and insights',
-    description: 'Make sense of player stats, shot maps, and AI-generated insights.',
+    description: 'Make sense of player stats, shot maps, and AI insights powered by ElevateIQ.',
   },
   {
     id: 'account-billing',

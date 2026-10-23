@@ -13,7 +13,7 @@ export function ContactInfoBlock() {
       </p>
 
       <p className="mt-4 text-sm text-brand-gray/80">
-        We typically reply within 1-2 business days.
+        We typically reply within one to two business days.
       </p>
 
       <div className="mt-8 rounded-card bg-surface-alt p-5 ring-1 ring-black/5">

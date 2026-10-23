@@ -53,7 +53,7 @@ export default function SupportPage() {
                   Drop us a line and we&rsquo;ll help you sort it out.
                 </p>
                 <p className="mt-4 text-sm text-brand-gray/80">
-                  We usually respond within one business day.
+                  We usually respond within one to two business days.
                 </p>
               </div>
               <MarketingContactForm formType="support" idPrefix="support-contact" />
