@@ -73,7 +73,7 @@ const benefits = [
   },
   {
     title: 'See real progress, not just goals',
-    body: 'Season stats and shot maps show where your player shoots from and how their season is adding up.',
+    body: 'Season stats, plus-minus, faceoffs and shot maps show where your player shoots from and how their season is adding up.',
     pro: true,
     icon: (
       <path d="M4 19V5m0 14h16M8 15l3-3 2 2 5-6" strokeLinecap="round" strokeLinejoin="round" />
@@ -81,7 +81,7 @@ const benefits = [
   },
   {
     title: 'AI insights powered by ElevateIQ',
-    body: 'Instant post-game breakdowns turn the numbers into plain English: what went well, what to work on next.',
+    body: 'After every game, ElevateIQ turns your team\'s numbers into plain English: what\'s working and what to work on next.',
     pro: true,
     icon: (
       <path d="M12 3a6 6 0 0 1 3 11v3H9v-3a6 6 0 0 1 3-11zM9.5 21h5" strokeLinecap="round" strokeLinejoin="round" />
@@ -179,7 +179,7 @@ export default function StartPage() {
               <ul className="mx-auto mt-7 hidden max-w-md flex-col gap-3 text-left sm:flex lg:mx-0">
                 {[
                   'Tracking a game takes taps, not spreadsheets',
-                  'Works at the rink, even with no signal',
+                  'Keeps tracking at the rink, even with no signal',
                   'Your first 3 games unlock PRO, no credit card',
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-white/85">
