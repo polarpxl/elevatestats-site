@@ -6,12 +6,12 @@ import { ProChip } from '@/components/ui/ProChip'
 import { cn } from '@/lib/cn'
 import { links } from '@/lib/links'
 
-import featureShotMapping from '../../../public/app/feature-shot-mapping.webp'
 import featureAiInsights from '../../../public/app/feature-ai-insights.webp'
-import featureOffline from '../../../public/app/feature-offline.webp'
-import featureGoalies from '../../../public/app/feature-goalies.webp'
+import featureShotMapping from '../../../public/app/feature-shot-mapping.webp'
 import featurePlayerProfile from '../../../public/app/feature-player-profile.webp'
-import featureLandscape from '../../../public/app/feature-landscape.webp'
+import featureKeepers from '../../../public/app/feature-keepers.webp'
+import featureOffline from '../../../public/app/feature-offline.webp'
+import featureDetails from '../../../public/app/feature-details.webp'
 
 type Tone = 'orange' | 'blue' | 'gray'
 
@@ -34,79 +34,79 @@ type Feature = {
 
 const features: Feature[] = [
   {
-    title: 'Tap-to-track shot mapping',
-    body: "Goals, shots, misses, blocks. Tap the rink, dot drops, stats follow. Colour-coded by position so the shot map tells you who's shooting from where.",
-    tone: 'orange',
-    placeholderLabel: 'Shot map placeholder',
-    placeholderAspect: '16/10',
-    className: 'md:col-span-7',
-    image: featureShotMapping,
-    imageAlt: 'Goal entry sheet: pick the scorer and assists, colour-coded by position',
-    imageSizes: '(min-width: 1024px) 410px, (min-width: 768px) 320px, 76vw',
-    imagePadX: 'px-[12%]',
-  },
-  {
     title: 'AI insights powered by ElevateIQ',
     body: "Finalize the game and get coaching tips tailored to your team's trends. Built into the app, ready before the parking lot empties.",
-    tone: 'blue',
+    tone: 'orange',
     placeholderLabel: 'AI insights placeholder',
+    placeholderAspect: '16/10',
+    className: 'md:col-span-7',
+    image: featureAiInsights,
+    imageAlt: 'ElevateIQ post-game insight card for the Ridgeview Raptors',
+    imageSizes: '(min-width: 1024px) 410px, (min-width: 768px) 320px, 76vw',
+    imagePadX: 'px-[12%]',
+    pro: true,
+  },
+  {
+    title: 'Tap-to-track shot mapping',
+    body: 'Goals, shots, misses and blocks. Tap the rink, the dot drops, the stats follow. Every event lands on the shot map, for both teams.',
+    tone: 'blue',
+    placeholderLabel: 'Shot map placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-5',
-    image: featureAiInsights,
-    imageAlt: 'Post-game ElevateIQ coaching insights card',
+    image: featureShotMapping,
+    imageAlt: 'Live tracker with shots and goals marked on the rink',
     imageSizes: '(min-width: 1024px) 285px, (min-width: 768px) 225px, 80vw',
     imagePadX: 'px-[10%]',
-    pro: true,
-  },
-  {
-    title: 'Tracks even with no signal',
-    body: "Cold arena, dead WiFi, no problem. Start the game with signal and tracking keeps going if the rink has none. Everything syncs the moment you're back online.",
-    tone: 'gray',
-    placeholderLabel: 'Offline sync placeholder',
-    placeholderAspect: '4/3',
-    className: 'md:col-span-4',
-    image: featureOffline,
-    imageAlt: 'Live tracker offline, with the bar that says tracking still works',
-    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
-    imagePadX: 'px-[6%]',
-  },
-  {
-    title: 'Goalies, done right',
-    body: 'Save percentage, GAA, mid-game swaps. Stats follow the right goalie automatically. No spreadsheet gymnastics.',
-    tone: 'orange',
-    placeholderLabel: 'Goalie stats placeholder',
-    placeholderAspect: '4/3',
-    className: 'md:col-span-4',
-    image: featureGoalies,
-    imageAlt: 'Goalie save percentage and GAA stats card',
-    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
-    imagePadX: 'px-[6%]',
-    pro: true,
   },
   {
     title: 'Every player, on the page',
-    body: 'Season stats, plus-minus and shot maps. See how each player is actually doing, not just the team total.',
-    tone: 'blue',
+    body: 'Season stats, plus-minus, faceoffs and shot maps for every player. See how each one is actually doing, not just the team total.',
+    tone: 'gray',
     placeholderLabel: 'Player stats placeholder',
     placeholderAspect: '4/3',
     className: 'md:col-span-4',
     image: featurePlayerProfile,
-    imageAlt: 'Individual player profile with stats and shot map',
+    imageAlt: 'Player page with season stats, plus-minus and faceoffs',
     imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
     imagePadX: 'px-[6%]',
     pro: true,
   },
   {
-    title: 'The whole rink, in landscape',
-    body: 'Rotate to landscape for the full-rink view. Works on phone or tablet, more room to read the play.',
+    title: 'Hand the phone to a parent',
+    body: 'Invite a parent or team manager as your stats keeper. They sign up free, land on your team and track the game. Your roster and settings stay yours.',
+    tone: 'orange',
+    placeholderLabel: 'Stats keepers placeholder',
+    placeholderAspect: '4/3',
+    className: 'md:col-span-4',
+    image: featureKeepers,
+    imageAlt: 'Manage screen with the stats keepers list and the invite button',
+    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
+    imagePadX: 'px-[6%]',
+  },
+  {
+    title: 'Tracks even with no signal',
+    body: "Cold arena, dead WiFi, no problem. Start the game with signal and tracking keeps going if the rink has none. Everything syncs the moment you're back online.",
+    tone: 'blue',
+    placeholderLabel: 'Offline sync placeholder',
+    placeholderAspect: '4/3',
+    className: 'md:col-span-4',
+    image: featureOffline,
+    imageAlt: 'Live tracker with no signal, still recording the game',
+    imageSizes: '(min-width: 1024px) 235px, (min-width: 768px) 185px, 88vw',
+    imagePadX: 'px-[6%]',
+  },
+  {
+    title: 'The details coaches ask for',
+    body: 'Plus-minus on every goal that counts. Faceoffs by zone. Power play and penalty kill by player. Goalie save percentage and GAA that follow mid-game swaps.',
     tone: 'gray',
-    placeholderLabel: 'Landscape rink placeholder',
+    placeholderLabel: 'Game detail placeholder',
     placeholderAspect: '21/9',
     className: 'md:col-span-7 md:p-10 lg:p-12',
-    image: featureLandscape,
-    imageAlt: 'Full-rink landscape view of in-game shot tracking',
+    image: featureDetails,
+    imageAlt: 'Game detail page showing faceoffs won and lost by zone',
     imageSizes: '(min-width: 1024px) 450px, (min-width: 768px) 360px, 88vw',
     imagePadX: 'px-[6%]',
+    pro: true,
   },
 ]
 

@@ -274,6 +274,11 @@ export const featureCategories: FeatureCategory[] = [
         icon: 'phone',
       },
       {
+        title: 'Full-rink landscape view',
+        description:
+          'Turn your phone or tablet sideways for the whole rink. More room to read the play.',
+      },
+      {
         title: 'Full offline tracking',
         description:
           "Track an entire game with no signal. Everything syncs automatically when you’re back online. Starting and ending a game need a connection.",

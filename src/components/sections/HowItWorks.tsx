@@ -82,7 +82,7 @@ const steps: Step[] = [
     title: 'Sign up, free.',
     body: 'Team tracking is free forever, and your first 3 games unlock PRO tracking and stats. No credit card. Just an email to get started.',
     image: howitworksSignup,
-    imageAlt: 'Email signup form for Elevate Stats',
+    imageAlt: 'Create account form with name, email and password, or continue with Google',
     imageSizes: STEP_SIZES,
     Icon: EnvelopeIcon,
   },

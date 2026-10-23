@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image.png',
         width: 1200,
         height: 630,
-        alt: 'Elevate Stats: pro-level stats for parents',
+        alt: 'Elevate Stats: Smarter Insights. Better Coaching. Stronger Players.',
       },
     ],
   },
@@ -252,7 +252,7 @@ export default function StartPage() {
                     <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2.1rem] bg-black">
                       <Image
                         src={phonePlayerStats}
-                        alt="A player’s profile and shot map in the Elevate Stats app"
+                        alt="A player’s profile with season stats, special teams and faceoffs in the Elevate Stats app"
                         fill
                         sizes="(min-width: 640px) 240px, 55vw"
                         className="object-cover object-top"
