@@ -171,8 +171,7 @@ export default function StartPage() {
               <p className="mx-auto mt-4 max-w-xl text-base text-white/80 md:mt-5 md:text-lg lg:mx-0">
                 Track shots and goals from the stands, right on your phone. Add the scorer and
                 assists with PRO. <ProChip onDark className="ml-1" /> Free at the team level, and
-                your first 3 games unlock PRO tracking and stats. That includes personal shot maps
-                and AI insights powered by ElevateIQ.
+                your first 3 games unlock PRO tracking and stats.
               </p>
 
               {/* Reinforcing checklist — hidden on the smallest screens so the form
