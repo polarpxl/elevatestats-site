@@ -150,7 +150,7 @@ export function Hero() {
                 <div className="relative aspect-[9/19.5] overflow-hidden rounded-[2.1rem] bg-black">
                   <Image
                     src={heroStatBars}
-                    alt="Player stat bar chart in the Elevate Stats app"
+                    alt="Analyze screen comparing team and opponent goals, shots, misses and blocks"
                     fill
                     sizes="(min-width: 1024px) 280px, (min-width: 768px) 240px, 55vw"
                     className="object-cover object-top"
@@ -168,7 +168,7 @@ export function Hero() {
               <div className="ui-tile overflow-hidden rounded-2xl">
                 <Image
                   src={heroTrackingWheel}
-                  alt="Shot-tracking wheel showing rink zones"
+                  alt="Tracking wheel with goal, shot, miss, block and faceoff buttons over the rink"
                   sizes="(min-width: 1024px) 200px, (min-width: 768px) 170px, 38vw"
                   className="h-auto w-full"
                   preload
