@@ -139,7 +139,7 @@ export function Nav() {
       >
         <Container>
           <div className="flex h-16 items-center justify-between gap-4 md:h-20">
-            <Link href="/" className="flex items-center" aria-label="Elevate Stats home">
+            <Link href="/" className="flex shrink-0 items-center" aria-label="Elevate Stats home">
               {/* Plain <img> for a 1KB SVG logo — sidesteps next/image's dangerouslyAllowSVG requirement */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -147,22 +147,22 @@ export function Nav() {
                 alt="Elevate Stats"
                 width={600}
                 height={234}
-                className="h-auto w-[135px] -translate-y-[1px] md:w-[172px]"
+                className="h-auto w-[135px] -translate-y-[1px] md:w-[152px] lg:w-[172px]"
               />
             </Link>
 
             <nav
               aria-label="Primary"
-              className="hidden items-center gap-8 text-sm font-medium text-ink md:flex"
+              className="hidden items-center gap-5 whitespace-nowrap text-sm font-medium text-ink md:flex lg:gap-8"
             >
               {navLinks.map((link) => (
                 <NavLinkItem key={link.label} link={link} />
               ))}
             </nav>
 
-            <div className="hidden items-center gap-2 md:flex">
+            <div className="hidden shrink-0 items-center gap-2 whitespace-nowrap md:flex">
               <Button href={links.appLogin} variant="ghost" size="md">
-                Log in
+                Sign in
               </Button>
               <Button href={links.appHome} variant="primary" size="md">
                 Start free
@@ -240,7 +240,7 @@ export function Nav() {
 
               <div className="safe-bottom flex flex-col gap-3 border-t border-black/5 p-5">
                 <Button href={links.appLogin} variant="secondary" size="lg" className="w-full">
-                  Log in
+                  Sign in
                 </Button>
                 <Button href={links.appHome} variant="primary" size="lg" className="w-full">
                   Start free
