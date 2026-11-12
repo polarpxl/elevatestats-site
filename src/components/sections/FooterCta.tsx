@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { PoweredBy } from '@/components/ui/PoweredBy'
@@ -268,11 +269,18 @@ function Footer() {
   )
 }
 
-export function FooterCta(props: Partial<GradientCtaContent> = {}) {
+export function FooterCta({
+  beforeFooter,
+  ...props
+}: Partial<GradientCtaContent> & {
+  /** Optional section rendered between the gradient CTA band and the footer. */
+  beforeFooter?: ReactNode
+} = {}) {
   const content: GradientCtaContent = { ...DEFAULT_GRADIENT, ...props }
   return (
     <>
       <GradientCta {...content} />
+      {beforeFooter}
       <Footer />
     </>
   )
