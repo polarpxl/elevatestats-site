@@ -1,6 +1,8 @@
 import Image, { type StaticImageData } from 'next/image'
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 import { Container } from '@/components/ui/Container'
+import { ElevateIQMark } from '@/components/ui/ElevateIQMark'
 import { Placeholder } from '@/components/ui/Placeholder'
 import { ProChip } from '@/components/ui/ProChip'
 import { cn } from '@/lib/cn'
@@ -17,6 +19,11 @@ type Tone = 'orange' | 'blue' | 'gray'
 
 type Feature = {
   title: string
+  /** Rendered in place of `title` when the heading needs markup (e.g. the
+      ElevateIQ wordmark). `title` stays the plain-text key. */
+  titleContent?: ReactNode
+  /** Show the ElevateIQ lockup above the title. */
+  elevateIQLockup?: boolean
   body: string
   tone: Tone
   placeholderLabel: string
@@ -35,6 +42,12 @@ type Feature = {
 const features: Feature[] = [
   {
     title: 'AI insights powered by ElevateIQ',
+    titleContent: (
+      <>
+        AI insights powered by <ElevateIQMark />
+      </>
+    ),
+    elevateIQLockup: true,
     body: "Finalize the game and get coaching tips tailored to your team's trends. Built into the app, ready before the parking lot empties.",
     tone: 'orange',
     placeholderLabel: 'AI insights placeholder',
@@ -118,9 +131,15 @@ function FeatureTile({ feature }: { feature: Feature }) {
         feature.className,
       )}
     >
+      {feature.elevateIQLockup && (
+        // Decorative: the heading below already names ElevateIQ.
+        <span aria-hidden className="mb-4 self-start">
+          <ElevateIQMark variant="lockup" size={15} />
+        </span>
+      )}
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <h3 className="font-heading text-xl font-semibold tracking-tight text-ink">
-          {feature.title}
+          {feature.titleContent ?? feature.title}
         </h3>
         {feature.pro && <ProChip />}
       </div>

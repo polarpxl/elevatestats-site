@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { CtaPanel } from '@/components/sections/CtaPanel'
+import { ElevateFamily } from '@/components/sections/ElevateFamily'
 import { FeaturesBento } from '@/components/sections/FeaturesBento'
 import { FooterCta } from '@/components/sections/FooterCta'
 import { HashScrollOnMount } from '@/components/sections/HashScrollOnMount'
@@ -116,7 +117,7 @@ export default function Home() {
         <Testimonials />
         <CtaPanel />
       </main>
-      <FooterCta />
+      <FooterCta beforeFooter={<ElevateFamily />} />
     </>
   )
 }
