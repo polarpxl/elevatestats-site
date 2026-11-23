@@ -143,11 +143,11 @@ export function Nav() {
               {/* Plain <img> for a 1KB SVG logo — sidesteps next/image's dangerouslyAllowSVG requirement */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/logo-primary.svg?v=4"
+                src="/brand/logo-primary.svg?v=5"
                 alt="Elevate Stats"
-                width={600}
-                height={234}
-                className="h-auto w-[135px] -translate-y-[1px] md:w-[152px] lg:w-[172px]"
+                width={807}
+                height={380}
+                className="h-auto w-[116px] -translate-y-[1px] md:w-[130px] lg:w-[146px]"
               />
             </Link>
 

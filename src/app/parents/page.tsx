@@ -151,11 +151,11 @@ export default function StartPage() {
           <div className="mb-6 flex justify-center lg:mb-10 lg:justify-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/brand/logo-primary-wht.svg"
+              src="/brand/logo-primary-wht.svg?v=2"
               alt="Elevate Stats"
-              width={528}
-              height={192}
-              className="h-auto w-[221px] md:w-[255px]"
+              width={807}
+              height={380}
+              className="h-auto w-[170px] md:w-[197px]"
             />
           </div>
 
