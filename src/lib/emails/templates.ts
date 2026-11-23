@@ -1,4 +1,4 @@
-const LOGO_URL = 'https://elevatestats.app/brand/EmailLogo-EHS-logo-primary.png'
+const LOGO_URL = 'https://elevatestats.app/brand/EmailLogo-EHS-logo-primary.png?v=2'
 const SUPPORT_URL = 'https://elevatestats.app/support'
 const SUPPORT_EMAIL = 'support@elevatesportslabs.com'
 
@@ -45,7 +45,7 @@ function wrap({ title, body }: { title: string; body: string }): string {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
             <tr>
               <td align="center" style="padding-bottom:24px;">
-                <img src="${LOGO_URL}" alt="Elevate Stats" width="160" style="display:block;border:0;outline:none;text-decoration:none;" />
+                <img src="${LOGO_URL}" alt="Elevate Stats" width="160" height="75" style="display:block;border:0;outline:none;text-decoration:none;" />
               </td>
             </tr>
             <tr>
